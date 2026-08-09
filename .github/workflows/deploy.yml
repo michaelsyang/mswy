@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - staging
+    paths-ignore:
+      - 'public/data.json'
   workflow_dispatch:
 
 permissions:
