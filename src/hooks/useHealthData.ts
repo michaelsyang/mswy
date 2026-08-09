@@ -1,23 +1,14 @@
 import { useQuery } from '@tanstack/react-query'
 import type { HealthData } from '../lib/types'
 
-const DATA_URLS = [
-  '/data.json',
-  'data.json',
-  './data.json',
-]
+const DATA_URL = '/data.json'
 
 async function fetchHealthData(): Promise<HealthData> {
-  for (const url of DATA_URLS) {
-    try {
-      const resp = await fetch(url)
-      if (!resp.ok) continue
-      return (await resp.json()) as HealthData
-    } catch {
-      continue
-    }
+  const resp = await fetch(DATA_URL)
+  if (!resp.ok) {
+    throw new Error(`Failed to load health data: ${resp.status} ${resp.statusText}`)
   }
-  throw new Error('Failed to load health data from all URLs')
+  return (await resp.json()) as HealthData
 }
 
 export function useHealthData() {
