@@ -67,7 +67,7 @@ export interface Anomaly {
   date: string
   metric: string
   value: number
-  baseline: number
+  baseline: number | null
   deviation_pct: number
   severity: 'warning' | 'critical'
   acknowledged: number

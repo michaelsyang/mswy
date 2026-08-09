@@ -48,8 +48,9 @@ export default function Observations({ anomalies, allDays }: ObservationsProps) 
 
                   const severityColor = a.severity === 'critical' ? 'var(--danger)' : 'var(--warn)'
                   const valStr = a.metric === 'hrv' ? `${a.value.toFixed(1)} ms` : `${a.value.toFixed(0)} bpm`
-                  const baseStr =
-                    a.metric === 'hrv' ? `${a.baseline.toFixed(1)} ms` : `${a.baseline.toFixed(0)} bpm`
+                  const baseStr = a.baseline !== null
+                    ? a.metric === 'hrv' ? `${a.baseline.toFixed(1)} ms` : `${a.baseline.toFixed(0)} bpm`
+                    : 'N/A'
                   const devPct = a.deviation_pct.toFixed(0)
 
                   let context = ''
