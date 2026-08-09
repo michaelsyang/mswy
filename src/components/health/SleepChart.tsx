@@ -2,17 +2,20 @@ import { useEffect, useRef } from 'react'
 import type { HealthDay } from '../../lib/types'
 import { svgEl, makeResponsive } from '../../lib/svg-utils'
 import { calcAvg, calcPreviousAvg } from '../../lib/health-utils'
+import { useTooltip, type TooltipRow } from '../health/TooltipProvider'
 
 interface SleepChartProps {
   days: HealthDay[]
   allDays: HealthDay[]
   currentRange: number
   selectedDayIndex: number
+  onDaySelect: (index: number) => void
 }
 
-export default function SleepChart({ days, allDays, currentRange, selectedDayIndex }: SleepChartProps) {
+export default function SleepChart({ days, allDays, currentRange, selectedDayIndex, onDaySelect }: SleepChartProps) {
   const svgRef = useRef<SVGSVGElement>(null)
   const legendRef = useRef<HTMLDivElement>(null)
+  const { show, hide } = useTooltip()
 
   useEffect(() => {
     const svg = svgRef.current
@@ -90,6 +93,34 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
       if (selectedDayIndex >= 0 && allDays.indexOf(d) === selectedDayIndex) {
         svg.appendChild(svgEl('line', { x1: x + barW / 2, y1: padT, x2: x + barW / 2, y2: padT + chartH, class: 'guide-line' }))
       }
+
+      // Transparent hit area for tooltip + day selection
+      const hitArea = svgEl('rect', {
+        x: x - gap / 2,
+        y: padT,
+        width: barW + gap,
+        height: chartH,
+        fill: 'transparent',
+        style: 'cursor: pointer',
+      })
+      hitArea.addEventListener('pointerdown', (e: PointerEvent) => {
+        e.preventDefault()
+        const idx = allDays.indexOf(d)
+        if (idx >= 0) onDaySelect(idx)
+        const rows: TooltipRow[] = [
+          { label: 'Readiness', value: d.readiness !== null ? `${Math.round(d.readiness)}/100` : '—' },
+          { label: 'Sleep Hours', value: d.sleep_hours !== null ? `${d.sleep_hours.toFixed(1)}h` : '—' },
+          { label: 'Sleep Efficiency', value: d.sleep_efficiency !== null ? `${Math.round(d.sleep_efficiency)}%` : '—' },
+          { label: 'Deep Sleep', value: d.sleep_deep_min !== null ? `${Math.round(d.sleep_deep_min)}m` : '—' },
+          { label: 'REM Sleep', value: d.sleep_rem_min !== null ? `${Math.round(d.sleep_rem_min)}m` : '—' },
+          { label: 'Light Sleep', value: d.sleep_light_min !== null ? `${Math.round(d.sleep_light_min)}m` : '—' },
+          { label: 'Awake Time', value: d.sleep_awake_min !== null ? `${Math.round(d.sleep_awake_min)}m` : '—' },
+          { label: 'Bedtime', value: d.sleep_start_pt || '—' },
+          { label: 'Wake Time', value: d.sleep_end_pt || '—' },
+        ]
+        show(e.clientX, e.clientY, d.date, rows)
+      })
+      svg.appendChild(hitArea)
     })
 
     // Legend
@@ -131,7 +162,12 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
         legend.appendChild(div)
       })
     }
-  }, [days, allDays, currentRange, selectedDayIndex])
+  }, [days, allDays, currentRange, selectedDayIndex, onDaySelect, show])
+
+  // Hide tooltip when selection changes or data updates
+  useEffect(() => {
+    hide()
+  }, [selectedDayIndex, currentRange, hide])
 
   const validSleepDays = days.filter((d) => !d.data_quality)
   const avgSleep = calcAvg(validSleepDays.map((d) => d.sleep_hours))

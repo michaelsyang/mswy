@@ -53,12 +53,14 @@ export default function TrendsSection({
         allDays={allDays}
         currentRange={currentRange}
         selectedDayIndex={selectedDayIndex}
+        onDaySelect={onDaySelect}
       />
 
       <StepsChart
         days={days}
         allDays={allDays}
         selectedDayIndex={selectedDayIndex}
+        onDaySelect={onDaySelect}
       />
 
       <CardioCalendar
@@ -73,12 +75,14 @@ export default function TrendsSection({
         days={days}
         allDays={allDays}
         selectedDayIndex={selectedDayIndex}
+        onDaySelect={onDaySelect}
       />
 
       <Spo2Chart
         days={days}
         allDays={allDays}
         selectedDayIndex={selectedDayIndex}
+        onDaySelect={onDaySelect}
       />
     </section>
   )

@@ -83,6 +83,20 @@ export default function TodaySection({ day, baselines, displayIndex, allDays }: 
     rhrSubClass = delta < 0 ? 'delta-good' : delta > 0 ? 'delta-bad' : ''
   }
 
+  // Readiness contributors (Oura-style breakdown)
+  const hrvContrib = day.readiness_hrv_delta !== null ? day.readiness_hrv_delta : 0
+  const rhrContrib = day.readiness_rhr_delta !== null ? -day.readiness_rhr_delta * 4 : 0
+  const sleepContrib = day.readiness_sleep_eff !== null ? day.readiness_sleep_eff - 90 : 0
+  const loadContrib = day.readiness_training_load !== null ? -day.readiness_training_load / 8 : 0
+
+  const contributors = [
+    { name: 'HRV', val: hrvContrib, label: day.readiness_hrv_delta !== null ? `${day.readiness_hrv_delta >= 0 ? '+' : ''}${Math.round(day.readiness_hrv_delta)}%` : 'N/A' },
+    { name: 'RHR', val: rhrContrib, label: day.readiness_rhr_delta !== null ? `${day.readiness_rhr_delta >= 0 ? '+' : ''}${Math.round(day.readiness_rhr_delta)} bpm` : 'N/A' },
+    { name: 'Sleep', val: sleepContrib, label: day.readiness_sleep_eff !== null ? `${Math.round(day.readiness_sleep_eff)}%` : 'N/A' },
+    { name: 'Load', val: loadContrib, label: day.readiness_training_load !== null ? `${Math.round(day.readiness_training_load)}` : 'N/A' },
+  ]
+  const totalAbs = contributors.reduce((sum, f) => sum + Math.abs(f.val), 0)
+
   // Narrative
   const bullets = generateNarrative(day, baselines)
 
@@ -153,6 +167,36 @@ export default function TodaySection({ day, baselines, displayIndex, allDays }: 
             </div>
             <div className={`mc-sub ${rhrSubClass}`}>{rhrSub}</div>
           </div>
+        </div>
+      </div>
+      <div className="readiness-breakdown">
+        <div className="breakdown-header">
+          <span>Readiness Contributors</span>
+          <span>Impact Allocation</span>
+        </div>
+        <div className="breakdown-bar">
+          {totalAbs === 0 ? (
+            <div className="breakdown-empty">No contribution data</div>
+          ) : (
+            contributors.map((f, i) => {
+              const pct = totalAbs > 0 ? (Math.abs(f.val) / totalAbs) * 100 : 0
+              if (pct === 0) return null
+              const color = f.val >= 0 ? 'var(--success)' : 'var(--danger)'
+              return <div key={i} className="breakdown-segment" style={{ width: `${pct}%`, background: color }} title={`${f.name}: ${f.label}`} />
+            })
+          )}
+        </div>
+        <div className="breakdown-factors">
+          {contributors.map((f, i) => {
+            const isPositive = f.val >= 0
+            const color = isPositive ? 'var(--success)' : 'var(--danger)'
+            return (
+              <div key={i} className="breakdown-factor">
+                <div className="breakdown-factor-name">{f.name}</div>
+                <div className="breakdown-factor-val" style={{ color }}>{f.label}</div>
+              </div>
+            )
+          })}
         </div>
       </div>
       <div className="narrative-card">

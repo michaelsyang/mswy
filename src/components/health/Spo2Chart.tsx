@@ -2,15 +2,18 @@ import { useEffect, useRef } from 'react'
 import type { HealthDay } from '../../lib/types'
 import { svgEl, makeResponsive } from '../../lib/svg-utils'
 import { calcAvg } from '../../lib/health-utils'
+import { useTooltip, type TooltipRow } from '../health/TooltipProvider'
 
 interface Spo2ChartProps {
   days: HealthDay[]
   allDays: HealthDay[]
   selectedDayIndex: number
+  onDaySelect: (index: number) => void
 }
 
-export default function Spo2Chart({ days, allDays, selectedDayIndex }: Spo2ChartProps) {
+export default function Spo2Chart({ days, allDays, selectedDayIndex, onDaySelect }: Spo2ChartProps) {
   const svgRef = useRef<SVGSVGElement>(null)
+  const { show, hide } = useTooltip()
 
   useEffect(() => {
     const svg = svgRef.current
@@ -84,7 +87,8 @@ export default function Spo2Chart({ days, allDays, selectedDayIndex }: Spo2Chart
       })
     }
 
-    // X labels + guide lines
+    // X labels + guide lines + hit areas
+    const colW = chartW / Math.max(days.length, 1)
     days.forEach((d, i) => {
       if (i % Math.ceil(days.length / 6) === 0 || i === days.length - 1) {
         const x = padL + i * xStep
@@ -104,8 +108,33 @@ export default function Spo2Chart({ days, allDays, selectedDayIndex }: Spo2Chart
           }),
         )
       }
+
+      // Transparent hit area for tooltip + day selection
+      const hitArea = svgEl('rect', {
+        x: padL + i * xStep - colW / 2,
+        y: padT,
+        width: colW,
+        height: chartH,
+        fill: 'transparent',
+        style: 'cursor: pointer',
+      })
+      hitArea.addEventListener('pointerdown', (e: PointerEvent) => {
+        e.preventDefault()
+        const idx = allDays.indexOf(d)
+        if (idx >= 0) onDaySelect(idx)
+        const rows: TooltipRow[] = [
+          { label: 'SpO₂ Average', value: d.spo2_avg !== null ? `${d.spo2_avg.toFixed(1)}%` : 'No data' },
+          { label: 'SpO₂ Range', value: d.spo2_min !== null ? `${d.spo2_min}% – ${d.spo2_max}%` : '—' },
+        ]
+        show(e.clientX, e.clientY, d.date, rows)
+      })
+      svg.appendChild(hitArea)
     })
-  }, [days, allDays, selectedDayIndex])
+  }, [days, allDays, selectedDayIndex, onDaySelect, show])
+
+  useEffect(() => {
+    hide()
+  }, [selectedDayIndex, hide])
 
   const avgSp = calcAvg(days.map((d) => d.spo2_avg))
 

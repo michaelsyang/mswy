@@ -2,17 +2,20 @@ import { useEffect, useRef } from 'react'
 import type { HealthDay } from '../../lib/types'
 import { svgEl, makeResponsive } from '../../lib/svg-utils'
 import { calcAvg } from '../../lib/health-utils'
+import { useTooltip, type TooltipRow } from '../health/TooltipProvider'
 
 interface RecoveryChartProps {
   days: HealthDay[]
   allDays: HealthDay[]
   selectedDayIndex: number
+  onDaySelect: (index: number) => void
 }
 
-export default function RecoveryChart({ days, allDays, selectedDayIndex }: RecoveryChartProps) {
+export default function RecoveryChart({ days, allDays, selectedDayIndex, onDaySelect }: RecoveryChartProps) {
   const dualSvgRef = useRef<SVGSVGElement>(null)
   const cvSvgRef = useRef<SVGSVGElement>(null)
   const balanceSvgRef = useRef<SVGSVGElement>(null)
+  const { show, hide } = useTooltip()
 
   // Dual-axis HRV + RHR chart
   useEffect(() => {
@@ -126,7 +129,33 @@ export default function RecoveryChart({ days, allDays, selectedDayIndex }: Recov
         svg.appendChild(svgEl('line', { x1: x, y1: padT, x2: x, y2: padT + chartH, class: 'guide-line' }))
       }
     }
-  }, [days, allDays, selectedDayIndex])
+
+    // Transparent hit areas for tooltip + day selection
+    const colW = xStep
+    days.forEach((d, i) => {
+      const x = padL + i * xStep
+      const hitArea = svgEl('rect', {
+        x: x - colW / 2,
+        y: padT,
+        width: colW,
+        height: chartH,
+        fill: 'transparent',
+        style: 'cursor: pointer',
+      })
+      hitArea.addEventListener('pointerdown', (e: PointerEvent) => {
+        e.preventDefault()
+        const idx = allDays.indexOf(d)
+        if (idx >= 0) onDaySelect(idx)
+        const rows: TooltipRow[] = [
+          { label: 'HRV', value: d.hrv !== null ? `${d.hrv.toFixed(1)} ms` : 'No data' },
+          { label: 'RHR', value: d.rhr !== null ? `${d.rhr.toFixed(0)} bpm` : 'No data' },
+          { label: 'Readiness', value: d.readiness !== null ? `${Math.round(d.readiness)}/100` : '—' },
+        ]
+        show(e.clientX, e.clientY, d.date, rows)
+      })
+      svg.appendChild(hitArea)
+    })
+  }, [days, allDays, selectedDayIndex, onDaySelect, show])
 
   // HRV-CV bar chart
   useEffect(() => {
@@ -177,13 +206,34 @@ export default function RecoveryChart({ days, allDays, selectedDayIndex }: Recov
       if (selectedDayIndex >= 0 && allDays.indexOf(d) === selectedDayIndex) {
         svg.appendChild(svgEl('line', { x1: x + barW / 2, y1: padT, x2: x + barW / 2, y2: padT + chartH, class: 'guide-line' }))
       }
+
+      // Transparent hit area for tooltip + day selection
+      const hitArea = svgEl('rect', {
+        x: x - gap / 2,
+        y: padT,
+        width: barW + gap,
+        height: chartH,
+        fill: 'transparent',
+        style: 'cursor: pointer',
+      })
+      hitArea.addEventListener('pointerdown', (e: PointerEvent) => {
+        e.preventDefault()
+        const idx = allDays.indexOf(d)
+        if (idx >= 0) onDaySelect(idx)
+        const rows: TooltipRow[] = [
+          { label: 'HRV-CV', value: `${cv.toFixed(1)}%` },
+          { label: 'HRV Range', value: d.hrv_range_low !== null ? `${d.hrv_range_low}–${d.hrv_range_high}ms` : '—' },
+        ]
+        show(e.clientX, e.clientY, d.date, rows)
+      })
+      svg.appendChild(hitArea)
     })
 
     const avgCV = calcAvg(cvVals)
     const avgText = svgEl('text', { x: W - padR, y: 10, 'text-anchor': 'end', class: 'axis-text' })
     avgText.textContent = 'avg ' + avgCV!.toFixed(1) + '%'
     svg.appendChild(avgText)
-  }, [days, allDays, selectedDayIndex])
+  }, [days, allDays, selectedDayIndex, onDaySelect, show])
 
   // Recovery Balance
   useEffect(() => {
@@ -232,6 +282,33 @@ export default function RecoveryChart({ days, allDays, selectedDayIndex }: Recov
       if (selectedDayIndex >= 0 && allDays.indexOf(d) === selectedDayIndex) {
         svg.appendChild(svgEl('line', { x1: x + barW / 2, y1: padT, x2: x + barW / 2, y2: padT + chartH, class: 'guide-line' }))
       }
+
+      // Transparent hit area for tooltip + day selection
+      const hitArea = svgEl('rect', {
+        x: x - gap / 2,
+        y: padT,
+        width: barW + gap,
+        height: chartH,
+        fill: 'transparent',
+        style: 'cursor: pointer',
+      })
+      hitArea.addEventListener('pointerdown', (e: PointerEvent) => {
+        e.preventDefault()
+        const idx = allDays.indexOf(d)
+        if (idx >= 0) onDaySelect(idx)
+        const loadVal = d.readiness_training_load !== null ? Math.round(d.readiness_training_load) : '—'
+        const readVal = d.readiness !== null ? `${Math.round(d.readiness)}/100` : '—'
+        let statusStr = 'Balanced'
+        if (d.readiness_training_load !== null && d.readiness_training_load > 200 && d.readiness !== null && d.readiness < 60) statusStr = 'Overreaching (Reduce Load)'
+        else if (d.readiness_training_load !== null && d.readiness_training_load < 100 && d.readiness !== null && d.readiness >= 75) statusStr = 'Primed (Ready to Train)'
+        const rows: TooltipRow[] = [
+          { label: 'Readiness', value: readVal },
+          { label: 'Training Load', value: String(loadVal) },
+          { label: 'Balance State', value: statusStr },
+        ]
+        show(e.clientX, e.clientY, d.date, rows)
+      })
+      svg.appendChild(hitArea)
     })
 
     // Connect readiness dots
@@ -245,7 +322,11 @@ export default function RecoveryChart({ days, allDays, selectedDayIndex }: Recov
     if (rPath) {
       svg.appendChild(svgEl('path', { d: rPath, fill: 'none', stroke: 'var(--fg)', 'stroke-width': 1.5, opacity: 0.6 }))
     }
-  }, [days, allDays, selectedDayIndex])
+  }, [days, allDays, selectedDayIndex, onDaySelect, show])
+
+  useEffect(() => {
+    hide()
+  }, [selectedDayIndex, hide])
 
   const hrvAvg = calcAvg(days.map((d) => d.hrv))
   const rhrAvg = calcAvg(days.map((d) => d.rhr))

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import type { Baselines, HealthDay } from '../../lib/types'
+import { useTooltip, type TooltipRow } from '../health/TooltipProvider'
 
 interface CardioCalendarProps {
   days: HealthDay[]
@@ -11,6 +12,7 @@ interface CardioCalendarProps {
 
 export default function CardioCalendar({ days, allDays, baselines, selectedDayIndex, onDaySelect }: CardioCalendarProps) {
   const calRef = useRef<HTMLDivElement>(null)
+  const { show, hide } = useTooltip()
 
   useEffect(() => {
     const cal = calRef.current
@@ -66,13 +68,24 @@ export default function CardioCalendar({ days, allDays, baselines, selectedDayIn
         <div class="cal-dt">${d.short_date}</div>
         ${icon ? `<div class="cal-icon">${icon}</div>` : ''}
       `
-      cell.addEventListener('pointerdown', () => {
+      cell.addEventListener('pointerdown', (e: PointerEvent) => {
         const idx = allDays.indexOf(d)
-        onDaySelect(idx)
+        if (idx >= 0) onDaySelect(idx)
+        const rows: TooltipRow[] = [
+          { label: 'Cardio Zone', value: `${d.cardio_min || 0} min` },
+          { label: 'Fat Burn', value: `${d.fat_burn_min || 0} min` },
+          { label: 'Total Active', value: `${cardio} min` },
+          { label: 'Workouts', value: String(d.exercise_count || 0) },
+        ]
+        show(e.clientX, e.clientY, d.date, rows)
       })
       cal.appendChild(cell)
     })
-  }, [days, allDays, baselines, selectedDayIndex, onDaySelect])
+  }, [days, allDays, baselines, selectedDayIndex, onDaySelect, show])
+
+  useEffect(() => {
+    hide()
+  }, [selectedDayIndex, hide])
 
   const totalCardio = days.reduce((sum, d) => sum + (d.cardio_min || 0) + (d.fat_burn_min || 0), 0)
   const activeDays = days.filter((d) => (d.cardio_min || 0) + (d.fat_burn_min || 0) > 0).length

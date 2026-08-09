@@ -2,15 +2,18 @@ import { useEffect, useRef } from 'react'
 import type { HealthDay } from '../../lib/types'
 import { svgEl, makeResponsive } from '../../lib/svg-utils'
 import { calcAvg } from '../../lib/health-utils'
+import { useTooltip, type TooltipRow } from '../health/TooltipProvider'
 
 interface StepsChartProps {
   days: HealthDay[]
   allDays: HealthDay[]
   selectedDayIndex: number
+  onDaySelect: (index: number) => void
 }
 
-export default function StepsChart({ days, allDays, selectedDayIndex }: StepsChartProps) {
+export default function StepsChart({ days, allDays, selectedDayIndex, onDaySelect }: StepsChartProps) {
   const svgRef = useRef<SVGSVGElement>(null)
+  const { show, hide } = useTooltip()
 
   useEffect(() => {
     const svg = svgRef.current
@@ -57,8 +60,34 @@ export default function StepsChart({ days, allDays, selectedDayIndex }: StepsCha
       if (selectedDayIndex >= 0 && allDays.indexOf(d) === selectedDayIndex) {
         svg.appendChild(svgEl('line', { x1: x + barW / 2, y1: padT, x2: x + barW / 2, y2: padT + chartH, class: 'guide-line' }))
       }
+
+      // Transparent hit area for tooltip + day selection
+      const hitArea = svgEl('rect', {
+        x: x - gap / 2,
+        y: padT,
+        width: barW + gap,
+        height: chartH,
+        fill: 'transparent',
+        style: 'cursor: pointer',
+      })
+      hitArea.addEventListener('pointerdown', (e: PointerEvent) => {
+        e.preventDefault()
+        const idx = allDays.indexOf(d)
+        if (idx >= 0) onDaySelect(idx)
+        const rows: TooltipRow[] = [
+          { label: 'Steps', value: steps > 0 ? steps.toLocaleString() : 'No data' },
+          { label: 'Goal', value: steps > 0 ? `${Math.round((steps / 10000) * 100)}%` : '—' },
+          { label: 'Distance', value: d.distance_km !== null ? `${d.distance_km.toFixed(2)} km` : '—' },
+        ]
+        show(e.clientX, e.clientY, d.date, rows)
+      })
+      svg.appendChild(hitArea)
     })
-  }, [days, allDays, selectedDayIndex])
+  }, [days, allDays, selectedDayIndex, onDaySelect, show])
+
+  useEffect(() => {
+    hide()
+  }, [selectedDayIndex, hide])
 
   const avgSteps = calcAvg(days.map((d) => d.steps))
 
