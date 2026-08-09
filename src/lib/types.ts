@@ -44,6 +44,7 @@ export interface HealthDay {
   hrv_cv: number | null
   hrv_range_low: number | null
   hrv_range_high: number | null
+  data_quality?: string | null
 }
 
 export interface Baselines {

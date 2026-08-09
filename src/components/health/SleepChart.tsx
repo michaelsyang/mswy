@@ -53,6 +53,9 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
       const light = (stages.light || 0) / 60
       const awake = (stages.awake || 0) / 60
 
+      const isFlagged = !!d.data_quality
+      const barOpacity = isFlagged ? 0.2 : 1.0
+
       let yOffset = padT + chartH
       const segments = [
         { val: deep, color: 'var(--sleep-deep)' },
@@ -65,7 +68,7 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
         if (seg.val > 0) {
           const segH = (seg.val / maxY) * chartH
           yOffset -= segH
-          svg.appendChild(svgEl('rect', { x, y: yOffset, width: barW, height: Math.max(segH, 0.5), fill: seg.color, rx: 0 }))
+          svg.appendChild(svgEl('rect', { x, y: yOffset, width: barW, height: Math.max(segH, 0.5), fill: seg.color, rx: 0, opacity: barOpacity }))
         }
       })
 
@@ -74,6 +77,13 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
         const t = svgEl('text', { x: x + barW / 2, y: H - 8, 'text-anchor': 'middle', class: 'axis-text' })
         t.textContent = d.short_date
         svg.appendChild(t)
+      }
+
+      // Data quality indicator for flagged days
+      if (isFlagged) {
+        const warn = svgEl('text', { x: x + barW / 2, y: padT + 8, 'text-anchor': 'middle', 'font-size': 10, fill: 'var(--warn, #e88)' })
+        warn.textContent = '⚠'
+        svg.appendChild(warn)
       }
 
       // Guide line
@@ -86,9 +96,10 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
     const legend = legendRef.current
     if (legend) {
       legend.innerHTML = ''
-      const deepAvg = calcAvg(days.map((d) => (d.stage_summary?.deep || 0) / 60))
-      const remAvg = calcAvg(days.map((d) => (d.stage_summary?.rem || 0) / 60))
-      const lightAvg = calcAvg(days.map((d) => (d.stage_summary?.light || 0) / 60))
+      const validDays = days.filter((d) => !d.data_quality)
+      const deepAvg = calcAvg(validDays.map((d) => (d.stage_summary?.deep || 0) / 60))
+      const remAvg = calcAvg(validDays.map((d) => (d.stage_summary?.rem || 0) / 60))
+      const lightAvg = calcAvg(validDays.map((d) => (d.stage_summary?.light || 0) / 60))
 
       const prevDeep = calcPreviousAvg(allDays, 'sleep_deep_min', currentRange)
       const prevRem = calcPreviousAvg(allDays, 'sleep_rem_min', currentRange)
@@ -122,7 +133,8 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
     }
   }, [days, allDays, currentRange, selectedDayIndex])
 
-  const avgSleep = calcAvg(days.map((d) => d.sleep_hours))
+  const validSleepDays = days.filter((d) => !d.data_quality)
+  const avgSleep = calcAvg(validSleepDays.map((d) => d.sleep_hours))
 
   return (
     <div className="chart-group">
