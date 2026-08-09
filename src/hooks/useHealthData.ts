@@ -2,9 +2,9 @@ import { useQuery } from '@tanstack/react-query'
 import type { HealthData } from '../lib/types'
 
 const DATA_URLS = [
+  '/data.json',
   'data.json',
   './data.json',
-  'https://mswy.xyz/health-v3/data.json',
 ]
 
 async function fetchHealthData(): Promise<HealthData> {
