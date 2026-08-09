@@ -387,8 +387,30 @@
   gap: var(--space-3);
 }
 
-.sleep-chart-area {
+.sleep-chart-scroll {
   width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.sleep-chart-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.sleep-chart-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sleep-chart-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.sleep-chart-scroll .chart-svg {
+  width: 100%;
+  display: block;
 }
 
 .sleep-legend {
