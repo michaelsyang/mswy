@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T04:05:27.885025+00:00",
+  "generated_at": "2026-08-10T05:05:50.399294+00:00",
   "days": [
     {
       "date": "2026-07-11",
@@ -1357,7 +1357,7 @@
       "cardio_min": 80.0,
       "fat_burn_min": 161.0,
       "distance_km": 11.07,
-      "floors": 20.0,
+      "floors": 21.0,
       "exercises": [
         {
           "type": "WALKING",
