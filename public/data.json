@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T02:14:26.531211+00:00",
+  "generated_at": "2026-08-11T02:14:54.759949+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -5372,7 +5372,7 @@
         "deep": 73.5,
         "rem": 142.0
       },
-      "hrv": 12.75,
+      "hrv": 10.75,
       "rhr": 84.0,
       "spo2_avg": 95.2,
       "spo2_min": 92.7,
@@ -5385,7 +5385,7 @@
       "floors": 9.0,
       "exercises": [],
       "exercise_count": 0,
-      "hrv_cv": 9.2,
+      "hrv_cv": 10.2,
       "hrv_range_low": 8.25,
       "hrv_range_high": 21.3
     },
@@ -5426,13 +5426,13 @@
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
-      "hrv_cv": 8.9,
-      "hrv_range_low": 10.8,
+      "hrv_cv": 9.9,
+      "hrv_range_low": 10.75,
       "hrv_range_high": 21.3
     }
   ],
   "baselines": {
-    "hrv_avg": 15.5,
+    "hrv_avg": 15.4,
     "hrv_min": 8.25,
     "hrv_max": 30.25,
     "rhr_avg": 83.9,
