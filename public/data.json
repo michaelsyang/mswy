@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T04:05:34.953972+00:00",
+  "generated_at": "2026-08-12T05:05:59.175382+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -5423,7 +5423,7 @@
       "cardio_min": 54.0,
       "fat_burn_min": 57.0,
       "distance_km": 4.66,
-      "floors": 14.0,
+      "floors": 16.0,
       "exercises": [
         {
           "type": "WEIGHTLIFTING",
@@ -5465,14 +5465,20 @@
       "spo2_avg": 94.8,
       "spo2_min": 90.5,
       "spo2_max": 97.3,
-      "steps": 7004,
-      "active_kcal": 427.713065,
-      "cardio_min": 4.0,
-      "fat_burn_min": 5.0,
-      "distance_km": 6.4,
+      "steps": 8275,
+      "active_kcal": 529.285159,
+      "cardio_min": 8.0,
+      "fat_burn_min": 22.0,
+      "distance_km": 7.25,
       "floors": 0,
-      "exercises": [],
-      "exercise_count": 0,
+      "exercises": [
+        {
+          "type": "RUNNING",
+          "name": "Run",
+          "calories": 382.0
+        }
+      ],
+      "exercise_count": 1,
       "hrv_cv": 10.4,
       "hrv_range_low": 10.8,
       "hrv_range_high": 21.3
@@ -5489,7 +5495,7 @@
     "readiness_avg": 72.2,
     "readiness_min": 39.0,
     "readiness_max": 99.0,
-    "steps_avg": 8864,
+    "steps_avg": 8906,
     "cardio_avg": 34
   },
   "anomalies": [
