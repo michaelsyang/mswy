@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T10:05:10.885779+00:00",
+  "generated_at": "2026-08-12T15:05:28.970497+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -5492,18 +5492,23 @@
       "readiness_rhr_delta": null,
       "readiness_sleep_eff": null,
       "readiness_training_load": null,
-      "sleep_hours": null,
-      "sleep_efficiency": null,
-      "sleep_deep_min": null,
-      "sleep_rem_min": null,
-      "sleep_light_min": null,
-      "sleep_awake_min": null,
-      "sleep_start_pt": null,
-      "sleep_end_pt": null,
-      "sleep_duration_min": null,
-      "stage_summary": {},
-      "hrv": null,
-      "rhr": null,
+      "sleep_hours": 4.8,
+      "sleep_efficiency": 97.3,
+      "sleep_deep_min": 61.0,
+      "sleep_rem_min": 57.0,
+      "sleep_light_min": 168.0,
+      "sleep_awake_min": 8.0,
+      "sleep_start_pt": "02:35",
+      "sleep_end_pt": "07:29",
+      "sleep_duration_min": 286.0,
+      "stage_summary": {
+        "awake": 8.0,
+        "light": 168.0,
+        "deep": 61.0,
+        "rem": 57.0
+      },
+      "hrv": 18.5,
+      "rhr": 80.0,
       "spo2_avg": null,
       "spo2_min": null,
       "spo2_max": null,
@@ -5515,16 +5520,16 @@
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
-      "hrv_cv": 10.4,
+      "hrv_cv": 9.8,
       "hrv_range_low": 10.8,
       "hrv_range_high": 21.3
     }
   ],
   "baselines": {
-    "hrv_avg": 16.0,
+    "hrv_avg": 16.1,
     "hrv_min": 8.25,
     "hrv_max": 30.25,
-    "rhr_avg": 84.0,
+    "rhr_avg": 83.9,
     "rhr_min": 79.0,
     "rhr_max": 92.0,
     "sleep_avg": 6.1,
@@ -5535,6 +5540,17 @@
     "cardio_avg": 36
   },
   "anomalies": [
+    {
+      "id": 406,
+      "date": "2026-08-12",
+      "metric": "sleep_quality",
+      "value": 170.6584,
+      "baseline": null,
+      "deviation_pct": 100.0,
+      "severity": "warning",
+      "acknowledged": 0,
+      "detected_at": "2026-08-12T14:23:36.986196+00:00"
+    },
     {
       "id": 405,
       "date": "2026-08-10",
