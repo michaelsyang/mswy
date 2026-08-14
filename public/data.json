@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T05:46:14.026012+00:00",
+  "generated_at": "2026-08-14T06:05:09.413720+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -5758,8 +5758,6 @@
       "sleep_awake_min": 5.5,
       "sleep_start_pt": "02:35",
       "sleep_end_pt": "08:32",
-      "sleep_start_utc": "2026-08-12T09:35:00Z",
-      "sleep_end_utc": "2026-08-12T15:32:00Z",
       "sleep_duration_min": 351.5,
       "stage_summary": {
         "awake": 5.5,
@@ -5801,8 +5799,6 @@
       "sleep_awake_min": 5.0,
       "sleep_start_pt": "03:19",
       "sleep_end_pt": "08:15",
-      "sleep_start_utc": "2026-08-13T10:19:00Z",
-      "sleep_end_utc": "2026-08-13T15:15:00Z",
       "sleep_duration_min": 291.0,
       "stage_summary": {
         "awake": 5.0,
@@ -5844,7 +5840,7 @@
   },
   "anomalies": [
     {
-      "id": 460,
+      "id": 461,
       "date": "2026-08-13",
       "metric": "hrv",
       "value": 9.55,
@@ -5852,7 +5848,7 @@
       "deviation_pct": 11.574074074074073,
       "severity": "warning",
       "acknowledged": 0,
-      "detected_at": "2026-08-14T05:39:18.355780+00:00"
+      "detected_at": "2026-08-14T05:55:18.459841+00:00"
     },
     {
       "id": 406,
