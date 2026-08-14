@@ -26,6 +26,8 @@ export interface HealthDay {
   sleep_awake_min: number | null
   sleep_start_pt: string | null
   sleep_end_pt: string | null
+  sleep_start_utc: string | null
+  sleep_end_utc: string | null
   sleep_duration_min: number | null
   stage_summary: StageSummary
   hrv: number | null

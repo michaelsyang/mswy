@@ -3,6 +3,8 @@ import type { HealthDay } from '../../lib/types'
 import { svgEl } from '../../lib/svg-utils'
 import { calcAvg, calcPreviousAvg } from '../../lib/health-utils'
 import { useTooltip, type TooltipRow } from '../health/TooltipProvider'
+import { useTimezone } from '../../context/TimezoneContext'
+import { utcToWallClock } from '../../lib/timezones'
 
 interface SleepChartProps {
   days: HealthDay[]
@@ -10,6 +12,13 @@ interface SleepChartProps {
   currentRange: number
   selectedDayIndex: number
   onDaySelect: (index: number) => void
+}
+
+/** Wall-clock "HH:MM" of a sleep boundary in the target tz (UTC preferred, PT fallback). */
+function wallClock(day: HealthDay, tz: string, which: 'start' | 'end'): string | null {
+  const utc = which === 'start' ? day.sleep_start_utc : day.sleep_end_utc
+  const pt = which === 'start' ? day.sleep_start_pt : day.sleep_end_pt
+  return utcToWallClock(utc, tz) || pt
 }
 
 /** Parse "HH:MM" (24h PT) to hours-after-11pm offset.
@@ -53,13 +62,14 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
   const scrollRef = useRef<HTMLDivElement>(null)
   const legendRef = useRef<HTMLDivElement>(null)
   const { show, hide } = useTooltip()
+  const { tz } = useTimezone()
 
   useEffect(() => {
     const svg = svgRef.current
     if (!svg) return
     svg.innerHTML = ''
 
-    const hasData = days.some((d) => d.sleep_hours !== null && d.sleep_start_pt)
+    const hasData = days.some((d) => d.sleep_hours !== null && wallClock(d, tz, 'start'))
     if (!hasData) {
       svg.innerHTML = '<text x="50%" y="50%" text-anchor="middle" fill="var(--muted)" font-size="13">No sleep data</text>'
       return
@@ -70,8 +80,8 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
     let yMax = 12
 
     days.forEach((d) => {
-      const start = parseTimeOffset(d.sleep_start_pt, true)
-      const end = parseTimeOffset(d.sleep_end_pt, false)
+      const start = parseTimeOffset(wallClock(d, tz, 'start'), true)
+      const end = parseTimeOffset(wallClock(d, tz, 'end'), false)
       if (start !== null && start < yMin) yMin = Math.floor(start)
       if (end !== null && end > yMax) yMax = Math.ceil(end)
     })
@@ -123,8 +133,8 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
 
     days.forEach((d, i) => {
       const x = padL + i * daySlot + gap / 2
-      const start = parseTimeOffset(d.sleep_start_pt, true)
-      const end = parseTimeOffset(d.sleep_end_pt, false)
+      const start = parseTimeOffset(wallClock(d, tz, 'start'), true)
+      const end = parseTimeOffset(wallClock(d, tz, 'end'), false)
 
       // X label (always show for all days if ≤14, else every few)
       const labelEvery = Math.max(1, Math.ceil(days.length / 7))
@@ -199,8 +209,8 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
           { label: 'REM Sleep', value: d.sleep_rem_min !== null ? `${Math.round(d.sleep_rem_min)}m` : '—' },
           { label: 'Light Sleep', value: d.sleep_light_min !== null ? `${Math.round(d.sleep_light_min)}m` : '—' },
           { label: 'Awake Time', value: d.sleep_awake_min !== null ? `${Math.round(d.sleep_awake_min)}m` : '—' },
-          { label: 'Bedtime', value: d.sleep_start_pt || '—' },
-          { label: 'Wake Time', value: d.sleep_end_pt || '—' },
+          { label: 'Bedtime', value: utcToWallClock(d.sleep_start_utc, tz) || d.sleep_start_pt || '—' },
+          { label: 'Wake Time', value: utcToWallClock(d.sleep_end_utc, tz) || d.sleep_end_pt || '—' },
         ]
         show(e.clientX, e.clientY, d.date, rows)
       })
@@ -246,7 +256,7 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
         legend.appendChild(div)
       })
     }
-  }, [days, allDays, currentRange, selectedDayIndex, onDaySelect, show])
+  }, [days, allDays, currentRange, selectedDayIndex, onDaySelect, show, tz])
 
   useEffect(() => {
     hide()

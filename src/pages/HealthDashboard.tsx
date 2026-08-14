@@ -6,6 +6,7 @@ import HealthHeader from '../components/health/HealthHeader'
 import TodaySection from '../components/health/TodaySection'
 import TrendsSection from '../components/health/TrendsSection'
 import { TooltipProvider } from '../components/health/TooltipProvider'
+import { TimezoneProvider } from '../context/TimezoneContext'
 import ErrorState from '../components/ui/ErrorState'
 import LoadingState from '../components/ui/LoadingState'
 import './health-dashboard.css'
@@ -36,27 +37,29 @@ export default function HealthDashboard() {
   }
 
   return (
-    <TooltipProvider>
-      <div className="health-dashboard">
-        <HealthHeader
-          generatedAt={RAW.generated_at}
-          days={RAW.days}
-          selectedDayIndex={displayDayIndex}
-          onDaySelect={handleDaySelect}
-        />
-        <TodaySection day={displayDay} baselines={RAW.baselines} displayIndex={displayDayIndex} allDays={RAW.days} />
-        <div className="section-divider" />
-        <TrendsSection
-          days={days}
-          allDays={RAW.days}
-          baselines={RAW.baselines}
-          anomalies={RAW.anomalies}
-          currentRange={currentRange}
-          onRangeChange={setCurrentRange}
-          selectedDayIndex={selectedDayIndex}
-          onDaySelect={handleDaySelect}
-        />
-      </div>
-    </TooltipProvider>
+    <TimezoneProvider>
+      <TooltipProvider>
+        <div className="health-dashboard">
+          <HealthHeader
+            generatedAt={RAW.generated_at}
+            days={RAW.days}
+            selectedDayIndex={displayDayIndex}
+            onDaySelect={handleDaySelect}
+          />
+          <TodaySection day={displayDay} baselines={RAW.baselines} displayIndex={displayDayIndex} allDays={RAW.days} />
+          <div className="section-divider" />
+          <TrendsSection
+            days={days}
+            allDays={RAW.days}
+            baselines={RAW.baselines}
+            anomalies={RAW.anomalies}
+            currentRange={currentRange}
+            onRangeChange={setCurrentRange}
+            selectedDayIndex={selectedDayIndex}
+            onDaySelect={handleDaySelect}
+          />
+        </div>
+      </TooltipProvider>
+    </TimezoneProvider>
   )
 }
