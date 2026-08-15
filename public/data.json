@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T13:05:48.633813+00:00",
+  "generated_at": "2026-08-15T14:05:51.909943+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -5923,7 +5923,18 @@
   },
   "anomalies": [
     {
-      "id": 558,
+      "id": 562,
+      "date": "2026-08-15",
+      "metric": "sleep_quality",
+      "value": 151.5,
+      "baseline": null,
+      "deviation_pct": 100.0,
+      "severity": "warning",
+      "acknowledged": 0,
+      "detected_at": "2026-08-15T14:00:01.888927+00:00"
+    },
+    {
+      "id": 561,
       "date": "2026-08-14",
       "metric": "sleep_quality",
       "value": 151.5,
@@ -5931,7 +5942,7 @@
       "deviation_pct": 100.0,
       "severity": "warning",
       "acknowledged": 0,
-      "detected_at": "2026-08-15T12:55:57.779461+00:00"
+      "detected_at": "2026-08-15T13:44:00.231096+00:00"
     },
     {
       "id": 491,
