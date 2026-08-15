@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T21:05:15.625035+00:00",
+  "generated_at": "2026-08-15T22:05:19.029926+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -5879,16 +5879,21 @@
       "readiness_rhr_delta": null,
       "readiness_sleep_eff": null,
       "readiness_training_load": null,
-      "sleep_hours": null,
-      "sleep_efficiency": null,
-      "sleep_deep_min": null,
-      "sleep_rem_min": null,
-      "sleep_light_min": null,
-      "sleep_awake_min": null,
-      "sleep_start_pt": null,
-      "sleep_end_pt": null,
-      "sleep_duration_min": null,
-      "stage_summary": {},
+      "sleep_hours": 9.3,
+      "sleep_efficiency": 96.1,
+      "sleep_deep_min": 84.0,
+      "sleep_rem_min": 196.0,
+      "sleep_light_min": 280.5,
+      "sleep_awake_min": 22.5,
+      "sleep_start_pt": "04:36",
+      "sleep_end_pt": "14:19",
+      "sleep_duration_min": 560.5,
+      "stage_summary": {
+        "awake": 22.5,
+        "light": 280.5,
+        "deep": 84.0,
+        "rem": 196.0
+      },
       "hrv": null,
       "rhr": 84.0,
       "spo2_avg": null,
@@ -5914,7 +5919,7 @@
     "rhr_avg": 84.2,
     "rhr_min": 79.0,
     "rhr_max": 92.0,
-    "sleep_avg": 5.9,
+    "sleep_avg": 6.1,
     "readiness_avg": 72.0,
     "readiness_min": 39.0,
     "readiness_max": 99.0,
@@ -5923,7 +5928,7 @@
   },
   "anomalies": [
     {
-      "id": 588,
+      "id": 589,
       "date": "2026-08-15",
       "metric": "sleep_quality",
       "value": 151.5,
@@ -5931,7 +5936,7 @@
       "deviation_pct": 100.0,
       "severity": "warning",
       "acknowledged": 0,
-      "detected_at": "2026-08-15T20:56:25.261726+00:00"
+      "detected_at": "2026-08-15T21:12:25.611767+00:00"
     },
     {
       "id": 561,
