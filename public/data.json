@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T04:05:18.955942+00:00",
+  "generated_at": "2026-08-15T05:05:22.154679+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -5858,12 +5858,12 @@
       "spo2_avg": null,
       "spo2_min": null,
       "spo2_max": null,
-      "steps": 5916,
-      "active_kcal": 286.824236,
-      "cardio_min": 0,
-      "fat_burn_min": 6.0,
-      "distance_km": 4.25,
-      "floors": 6.0,
+      "steps": 6438,
+      "active_kcal": 338.43236,
+      "cardio_min": 2.0,
+      "fat_burn_min": 17.0,
+      "distance_km": 4.63,
+      "floors": 11.0,
       "exercises": [],
       "exercise_count": 0,
       "hrv_cv": 11.4,
@@ -5882,12 +5882,12 @@
     "readiness_avg": 72.0,
     "readiness_min": 39.0,
     "readiness_max": 99.0,
-    "steps_avg": 9114,
-    "cardio_avg": 38
+    "steps_avg": 9132,
+    "cardio_avg": 36
   },
   "anomalies": [
     {
-      "id": 525,
+      "id": 529,
       "date": "2026-08-14",
       "metric": "sleep_quality",
       "value": 151.5,
@@ -5895,7 +5895,7 @@
       "deviation_pct": 100.0,
       "severity": "warning",
       "acknowledged": 0,
-      "detected_at": "2026-08-15T03:50:29.087019+00:00"
+      "detected_at": "2026-08-15T04:54:31.888067+00:00"
     },
     {
       "id": 491,
