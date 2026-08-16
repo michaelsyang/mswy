@@ -57,6 +57,15 @@ function offsetToLabel(offset: number): string {
   return `${displayH}:${String(m).padStart(2, '0')}${period}`
 }
 
+/** True time-in-bed (hours) between two UTC ISO instants, or null if either is missing/invalid. */
+function hoursBetweenUtc(a: string | null, b: string | null): number | null {
+  if (!a || !b) return null
+  const A = Date.parse(a)
+  const B = Date.parse(b)
+  if (!Number.isFinite(A) || !Number.isFinite(B)) return null
+  return (B - A) / 3600000
+}
+
 export default function SleepChart({ days, allDays, currentRange, selectedDayIndex, onDaySelect }: SleepChartProps) {
   const svgRef = useRef<SVGSVGElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -81,9 +90,9 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
 
     days.forEach((d) => {
       const start = parseTimeOffset(wallClock(d, tz, 'start'), true)
-      const end = parseTimeOffset(wallClock(d, tz, 'end'), false)
+      const dur = hoursBetweenUtc(d.sleep_start_utc, d.sleep_end_utc)
       if (start !== null && start < yMin) yMin = Math.floor(start)
-      if (end !== null && end > yMax) yMax = Math.ceil(end)
+      if (start !== null && dur !== null && start + dur > yMax) yMax = Math.ceil(start + dur)
     })
 
     const yRange = yMax - yMin
@@ -134,7 +143,7 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
     days.forEach((d, i) => {
       const x = padL + i * daySlot + gap / 2
       const start = parseTimeOffset(wallClock(d, tz, 'start'), true)
-      const end = parseTimeOffset(wallClock(d, tz, 'end'), false)
+      const actualSleepH = hoursBetweenUtc(d.sleep_start_utc, d.sleep_end_utc)
 
       // X label (always show for all days if ≤14, else every few)
       const labelEvery = Math.max(1, Math.ceil(days.length / 7))
@@ -144,7 +153,7 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
         svg.appendChild(t)
       }
 
-      if (start === null || end === null) return
+      if (start === null || actualSleepH === null) return
 
       const stages = d.stage_summary || {}
       const deep = (stages.deep || 0) / 60
@@ -152,7 +161,6 @@ export default function SleepChart({ days, allDays, currentRange, selectedDayInd
       const light = (stages.light || 0) / 60
       const awake = (stages.awake || 0) / 60
       const totalStageH = deep + rem + light + awake
-      const actualSleepH = end - start
       const scaleFactor = totalStageH > 0 ? actualSleepH / totalStageH : 1
 
       const isFlagged = !!d.data_quality
