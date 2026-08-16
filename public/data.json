@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T11:46:33.829657+00:00",
+  "generated_at": "2026-08-16T12:05:05.635858+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -6041,8 +6041,6 @@
       "sleep_awake_min": 22.5,
       "sleep_start_pt": "04:36",
       "sleep_end_pt": "14:19",
-      "sleep_start_utc": "2026-08-15T11:36:00Z",
-      "sleep_end_utc": "2026-08-15T21:19:00Z",
       "sleep_duration_min": 560.5,
       "stage_summary": {
         "awake": 22.5,
@@ -6050,7 +6048,6 @@
         "deep": 84.0,
         "rem": 196.0
       },
-      "data_quality": null,
       "hrv": null,
       "rhr": 84.0,
       "spo2_avg": null,
@@ -6085,11 +6082,8 @@
       "sleep_awake_min": null,
       "sleep_start_pt": null,
       "sleep_end_pt": null,
-      "sleep_start_utc": null,
-      "sleep_end_utc": null,
       "sleep_duration_min": null,
       "stage_summary": {},
-      "data_quality": null,
       "hrv": 26.1,
       "rhr": 81.0,
       "spo2_avg": null,
@@ -6121,7 +6115,7 @@
     "rhr_avg": 84.2,
     "rhr_min": 79.0,
     "rhr_max": 92.0,
-    "sleep_avg": 6.5,
+    "sleep_avg": 6.0,
     "readiness_avg": 74.2,
     "readiness_min": 39.0,
     "readiness_max": 99.0,
