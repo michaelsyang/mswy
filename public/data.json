@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T16:05:39.965904+00:00",
+  "generated_at": "2026-08-18T19:05:51.703470+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -6209,9 +6209,14 @@
           "type": "WALKING",
           "name": "Walk",
           "calories": 166.0
+        },
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": null
         }
       ],
-      "exercise_count": 2,
+      "exercise_count": 3,
       "hrv_cv": 12.8,
       "hrv_range_low": 9.55,
       "hrv_range_high": 26.4
