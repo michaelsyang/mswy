@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T06:05:41.267928+00:00",
+  "generated_at": "2026-08-19T07:05:45.177090+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -6198,12 +6198,12 @@
       "spo2_avg": 95.0,
       "spo2_min": 92.0,
       "spo2_max": 97.4,
-      "steps": 20744,
-      "active_kcal": 795.822008,
+      "steps": 21781,
+      "active_kcal": 832.0264,
       "cardio_min": 0,
       "fat_burn_min": 3.0,
-      "distance_km": 12.61,
-      "floors": 4.0,
+      "distance_km": 13.17,
+      "floors": 5.0,
       "exercises": [
         {
           "type": "WALKING",
@@ -6219,26 +6219,72 @@
           "type": "WALKING",
           "name": "Walk",
           "calories": null
+        },
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": null
+        },
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": null
         }
       ],
-      "exercise_count": 3,
+      "exercise_count": 5,
       "hrv_cv": 12.8,
+      "hrv_range_low": 9.55,
+      "hrv_range_high": 26.4
+    },
+    {
+      "date": "2026-08-19",
+      "day_name": "Wed",
+      "short_date": "8/19",
+      "readiness": 67.0,
+      "readiness_hrv_delta": 33.516483516483525,
+      "readiness_rhr_delta": -6.714285714285708,
+      "readiness_sleep_eff": null,
+      "readiness_training_load": 166.0,
+      "sleep_hours": null,
+      "sleep_efficiency": null,
+      "sleep_deep_min": null,
+      "sleep_rem_min": null,
+      "sleep_light_min": null,
+      "sleep_awake_min": null,
+      "sleep_start_pt": null,
+      "sleep_end_pt": null,
+      "sleep_duration_min": null,
+      "stage_summary": {},
+      "hrv": 24.3,
+      "rhr": 75.0,
+      "spo2_avg": null,
+      "spo2_min": null,
+      "spo2_max": null,
+      "steps": 0,
+      "active_kcal": 0,
+      "cardio_min": 0,
+      "fat_burn_min": 0,
+      "distance_km": 0.0,
+      "floors": 0,
+      "exercises": [],
+      "exercise_count": 0,
+      "hrv_cv": 12.9,
       "hrv_range_low": 9.55,
       "hrv_range_high": 26.4
     }
   ],
   "baselines": {
-    "hrv_avg": 16.8,
+    "hrv_avg": 16.5,
     "hrv_min": 8.25,
-    "hrv_max": 30.25,
-    "rhr_avg": 83.8,
-    "rhr_min": 77.0,
+    "hrv_max": 26.4,
+    "rhr_avg": 83.6,
+    "rhr_min": 75.0,
     "rhr_max": 92.0,
     "sleep_avg": 6.2,
-    "readiness_avg": 76.4,
+    "readiness_avg": 75.4,
     "readiness_min": 39.0,
     "readiness_max": 99.0,
-    "steps_avg": 9609,
+    "steps_avg": 9427,
     "cardio_avg": 39
   },
   "anomalies": [
