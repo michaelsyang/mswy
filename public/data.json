@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T19:05:31.866819+00:00",
+  "generated_at": "2026-08-21T23:05:48.682164+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -6410,21 +6410,26 @@
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": null,
       "readiness_contrib_load": 0.0,
-      "sleep_hours": null,
-      "sleep_efficiency": null,
-      "sleep_deep_min": null,
-      "sleep_rem_min": null,
-      "sleep_light_min": null,
-      "sleep_awake_min": null,
-      "sleep_start_pt": null,
-      "sleep_end_pt": null,
-      "sleep_start_utc": null,
-      "sleep_end_utc": null,
-      "sleep_duration_min": null,
-      "stage_summary": {},
+      "sleep_hours": 4.7,
+      "sleep_efficiency": 95.6,
+      "sleep_deep_min": 60.0,
+      "sleep_rem_min": 32.0,
+      "sleep_light_min": 192.0,
+      "sleep_awake_min": 13.0,
+      "sleep_start_pt": "03:03",
+      "sleep_end_pt": "08:00",
+      "sleep_start_utc": "2026-08-21T18:03:00Z",
+      "sleep_end_utc": "2026-08-21T23:00:00Z",
+      "sleep_duration_min": 284.0,
+      "stage_summary": {
+        "awake": 13.0,
+        "light": 192.0,
+        "deep": 60.0,
+        "rem": 32.0
+      },
       "data_quality": null,
-      "hrv": null,
-      "rhr": 73.0,
+      "hrv": 9.7,
+      "rhr": 74.0,
       "spo2_avg": null,
       "spo2_min": null,
       "spo2_max": null,
@@ -6436,19 +6441,19 @@
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
-      "hrv_cv": 5.8,
+      "hrv_cv": 13.7,
       "hrv_range_low": 9.55,
       "hrv_range_high": 39.9
     }
   ],
   "baselines": {
-    "hrv_avg": 18.2,
+    "hrv_avg": 17.8,
     "hrv_min": 8.25,
     "hrv_max": 39.9,
     "rhr_avg": 82.7,
     "rhr_min": 72.0,
     "rhr_max": 92.0,
-    "sleep_avg": 6.7,
+    "sleep_avg": 6.6,
     "readiness_avg": 76.3,
     "readiness_min": 15.0,
     "readiness_max": 100.0,
@@ -6456,6 +6461,17 @@
     "cardio_avg": 38
   },
   "anomalies": [
+    {
+      "id": 591,
+      "date": "2026-08-22",
+      "metric": "hrv",
+      "value": 9.5,
+      "baseline": 9.55,
+      "deviation_pct": 0.5235602094240912,
+      "severity": "warning",
+      "acknowledged": 0,
+      "detected_at": "2026-08-21T22:48:57.640783+00:00"
+    },
     {
       "id": 589,
       "date": "2026-08-15",
