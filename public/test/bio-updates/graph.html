@@ -121,14 +121,32 @@ const DATA = {"node_count": 100, "edge_count": 1634, "date": "2026-08-21", "gene
   nodes.forEach(n => { n.radius = 5 + 3.6 * Math.sqrt(n.degree / dmax); });
 
   const g = svg.append("g");
-  svg.call(d3.zoom().scaleExtent([0.15, 6]).on("zoom", (e) => g.attr("transform", e.transform)));
+  svg.call(d3.zoom().scaleExtent([0.15, 6]).on("zoom", (e) => {
+    g.attr("transform", e.transform);
+    zoomScale = e.transform.k;
+    refreshLabels();   // zoom in surfaces all labels, zoom out returns to hubs
+  }));
 
   const link = g.append("g").selectAll("line")
     .data(edges).join("line")
     .attr("class", "edge")
     .attr("stroke", e => color[e.topics[0]] || "#30363d")
-    .attr("stroke-opacity", 0.35)
+    .attr("stroke-opacity", 0.05)
     .attr("stroke-width", d => Math.min(3, 0.5 + Math.sqrt(d.topics.length)));
+
+  // hub papers = highest-degree nodes; only these carry always-on labels
+  const hubCount = Math.min(24, Math.max(8, Math.round(nodes.length * 0.24)));
+  const hubs = new Set([...nodes].sort((a, b) => b.degree - a.degree)
+    .slice(0, hubCount).map(n => n.id));
+  let zoomScale = 1, hoverSet = null;
+
+  // labels: hubs always on; everything else fades in on hover, topic-isolate or zoom-in
+  function refreshLabels(forceHoverSet) {
+    const hover = forceHoverSet || hoverSet;
+    const showAll = activeTopic || zoomScale >= 1.4;
+    node.select("text.nodelabel").style("opacity", d =>
+      (showAll || hubs.has(d.id) || (hover && hover.has(d.id))) ? 0.9 : 0);
+  }
 
   const node = g.append("g").selectAll("g")
     .data(nodes).join("g")
@@ -146,13 +164,14 @@ const DATA = {"node_count": 100, "edge_count": 1634, "date": "2026-08-21", "gene
     .attr("dy", 3.5)
     .attr("dx", d => d.radius + 4)
     .text(d => d.rank + ". " + d.title.slice(0, 40))
-    .style("opacity", 0.55);
+    .style("opacity", 0);
 
   let activeTopic = null;
   const dmax2 = dmax;
 
   function applyVisibility(topicFilter, searchQuery) {
     const q = (searchQuery || "").toLowerCase();
+    const filtering = !!(topicFilter || q);
     const show = new Set();
     nodes.forEach(n => {
       let ok = true;
@@ -164,7 +183,10 @@ const DATA = {"node_count": 100, "edge_count": 1634, "date": "2026-08-21", "gene
       if (ok) show.add(n.id);
     });
     node.attr("opacity", d => show.has(d.id) ? 1 : 0.12);
-    link.attr("opacity", d => show.has(d.source.id) && show.has(d.target.id) ? 1 : 0.04);
+    // edges stay faint by default; only light up when actually isolating a topic/query
+    link.attr("opacity", d => show.has(d.source.id) && show.has(d.target.id)
+      ? (filtering ? 0.9 : 0.05) : 0.03);
+    refreshLabels();
   }
 
   function clearIsolate() {
@@ -191,13 +213,15 @@ const DATA = {"node_count": 100, "edge_count": 1634, "date": "2026-08-21", "gene
       if (e.source.id === d.id) nb.add(e.target.id);
       if (e.target.id === d.id) nb.add(e.source.id);
     });
+    hoverSet = nb;
     const hover = nb.has.bind(nb);
     node.attr("opacity", dd => hover(dd.id) ? 1 : 0.18)
         .select("circle").attr("stroke-width", dd => dd.id === d.id ? 3 : 1.5);
     link.attr("opacity", e => hover(e.source.id) && hover(e.target.id) ? 1 : 0.05)
         .attr("stroke-width", e => (e.source.id===d.id||e.target.id===d.id) ? 2.5 : 1);
+    refreshLabels(nb);
   });
-  node.on("mouseout", function () { applyVisibility(activeTopic, currentQuery()); });
+  node.on("mouseout", function () { hoverSet = null; applyVisibility(activeTopic, currentQuery()); });
   node.on("click", function (event, d) { openPanel(d); });
 
   document.getElementById("search").addEventListener("input", function () {
