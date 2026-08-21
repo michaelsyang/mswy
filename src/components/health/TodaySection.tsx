@@ -83,19 +83,20 @@ export default function TodaySection({ day, baselines, displayIndex, allDays }: 
     rhrSubClass = delta < 0 ? 'delta-good' : delta > 0 ? 'delta-bad' : ''
   }
 
-  // Readiness contributors (Oura-style breakdown)
-  const hrvContrib = day.readiness_hrv_delta !== null ? day.readiness_hrv_delta : 0
-  const rhrContrib = day.readiness_rhr_delta !== null ? -day.readiness_rhr_delta * 4 : 0
-  const sleepContrib = day.readiness_sleep_eff !== null ? day.readiness_sleep_eff - 90 : 0
-  const loadContrib = day.readiness_training_load !== null ? -day.readiness_training_load / 8 : 0
-
-  const contributors = [
-    { name: 'HRV', val: hrvContrib, label: day.readiness_hrv_delta !== null ? `${day.readiness_hrv_delta >= 0 ? '+' : ''}${Math.round(day.readiness_hrv_delta)}%` : 'N/A' },
-    { name: 'RHR', val: rhrContrib, label: day.readiness_rhr_delta !== null ? `${day.readiness_rhr_delta >= 0 ? '+' : ''}${Math.round(day.readiness_rhr_delta)} bpm` : 'N/A' },
-    { name: 'Sleep', val: sleepContrib, label: day.readiness_sleep_eff !== null ? `${Math.round(day.readiness_sleep_eff)}%` : 'N/A' },
-    { name: 'Load', val: loadContrib, label: day.readiness_training_load !== null ? `${Math.round(day.readiness_training_load)}` : 'N/A' },
+  // Readiness contributors — true per-factor point contributions from compute_readiness.
+  // score = 80 neutral baseline (base 15 + HRV 20 + RHR 25 + Sleep 20 midpoints)
+  //       + sum(signed contributions). Positive = helped, negative = hurt.
+  const NEUTRAL_BASE = 80
+  const factors = [
+    { name: 'HRV', contrib: day.readiness_contrib_hrv, unit: '%', delta: day.readiness_hrv_delta, isDeltaPct: true },
+    { name: 'RHR', contrib: day.readiness_contrib_rhr, unit: 'bpm', delta: day.readiness_rhr_delta, isDeltaPct: false },
+    { name: 'Sleep', contrib: day.readiness_contrib_sleep, unit: '%', delta: day.readiness_sleep_eff, isDeltaPct: false },
+    { name: 'Load', contrib: day.readiness_contrib_load, unit: 'kcal', delta: day.readiness_training_load, isDeltaPct: false },
   ]
-  const totalAbs = contributors.reduce((sum, f) => sum + Math.abs(f.val), 0)
+  const hasContrib = factors.some((f) => f.contrib !== null)
+  const totalPos = factors.reduce((s, f) => s + (f.contrib !== null && f.contrib > 0 ? f.contrib : 0), 0)
+  const totalNeg = factors.reduce((s, f) => s + (f.contrib !== null && f.contrib < 0 ? Math.abs(f.contrib) : 0), 0)
+  const span = Math.max(totalPos, totalNeg, 1) // half-bar scale, symmetric around neutral
 
   // Narrative
   const bullets = generateNarrative(day, baselines)
@@ -172,28 +173,53 @@ export default function TodaySection({ day, baselines, displayIndex, allDays }: 
       <div className="readiness-breakdown">
         <div className="breakdown-header">
           <span>Readiness Contributors</span>
-          <span>Impact Allocation</span>
+          <span>{`{score} = ${NEUTRAL_BASE} baseline + contributions`}</span>
         </div>
         <div className="breakdown-bar">
-          {totalAbs === 0 ? (
+          {!hasContrib ? (
             <div className="breakdown-empty">No contribution data</div>
           ) : (
-            contributors.map((f, i) => {
-              const pct = totalAbs > 0 ? (Math.abs(f.val) / totalAbs) * 100 : 0
-              if (pct === 0) return null
-              const color = f.val >= 0 ? 'var(--success)' : 'var(--danger)'
-              return <div key={i} className="breakdown-segment" style={{ width: `${pct}%`, background: color }} title={`${f.name}: ${f.label}`} />
-            })
+            <div className="breakdown-inner">
+              <div className="breakdown-side breakdown-side-neg">
+                {factors
+                  .filter((f) => f.contrib !== null && f.contrib < 0)
+                  .map((f, i) => {
+                    const w = (Math.abs(f.contrib!) / span) * 100
+                    return (
+                      <div key={`neg-${i}`} className="breakdown-segment" style={{ width: `${w}%`, background: 'var(--danger)' }} title={`${f.name}: ${Math.round(f.contrib!)} pts`} />
+                    )
+                  })}
+              </div>
+              <div className="breakdown-neutral" title="Neutral baseline (80)" />
+              <div className="breakdown-side breakdown-side-pos">
+                {factors
+                  .filter((f) => f.contrib !== null && f.contrib > 0)
+                  .map((f, i) => {
+                    const w = (Math.abs(f.contrib!) / span) * 100
+                    return (
+                      <div key={`pos-${i}`} className="breakdown-segment" style={{ width: `${w}%`, background: 'var(--success)' }} title={`${f.name}: +${Math.round(f.contrib!)} pts`} />
+                    )
+                  })}
+              </div>
+            </div>
           )}
         </div>
         <div className="breakdown-factors">
-          {contributors.map((f, i) => {
-            const isPositive = f.val >= 0
-            const color = isPositive ? 'var(--success)' : 'var(--danger)'
+          {factors.map((f, i) => {
+            const isHelping = f.contrib !== null && f.contrib > 0
+            const isHurting = f.contrib !== null && f.contrib < 0
+            const color = isHelping ? 'var(--success)' : isHurting ? 'var(--danger)' : 'var(--muted)'
+            const pts = f.contrib !== null ? `${f.contrib > 0 ? '+' : ''}${Math.round(f.contrib)}` : '—'
+            const deltaLabel =
+              f.delta !== null
+                ? `${f.delta >= 0 ? '+' : ''}${Math.round(f.delta)}${f.unit}`
+                : 'N/A'
             return (
               <div key={i} className="breakdown-factor">
                 <div className="breakdown-factor-name">{f.name}</div>
-                <div className="breakdown-factor-val" style={{ color }}>{f.label}</div>
+                <div className="breakdown-factor-val" style={{ color }}>
+                  <span className="breakdown-factor-pts">{pts}</span> <span className="breakdown-factor-delta">({deltaLabel})</span>
+                </div>
               </div>
             )
           })}

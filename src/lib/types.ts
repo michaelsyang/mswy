@@ -18,6 +18,10 @@ export interface HealthDay {
   readiness_rhr_delta: number | null
   readiness_sleep_eff: number | null
   readiness_training_load: number | null
+  readiness_contrib_hrv: number | null
+  readiness_contrib_rhr: number | null
+  readiness_contrib_sleep: number | null
+  readiness_contrib_load: number | null
   sleep_hours: number | null
   sleep_efficiency: number | null
   sleep_deep_min: number | null
