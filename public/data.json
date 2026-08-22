@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T03:05:35.924526+00:00",
+  "generated_at": "2026-08-22T04:05:39.525562+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -6402,9 +6402,9 @@
       "day_name": "Sat",
       "short_date": "8/22",
       "readiness": 67.0,
-      "readiness_hrv_delta": -55.385205059409735,
+      "readiness_hrv_delta": -52.62552702184744,
       "readiness_rhr_delta": -5.642857142857139,
-      "readiness_sleep_eff": 95.62289562289563,
+      "readiness_sleep_eff": 92.82352941176471,
       "readiness_training_load": 123.0,
       "readiness_contrib_hrv": -20.0,
       "readiness_contrib_rhr": 7.0,
