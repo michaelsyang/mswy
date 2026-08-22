@@ -3,19 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Top 100 Molecular &amp; Cell Biology Papers — 2026/08/21</title>
+<title>Top 100 Molecular &amp; Cell Biology Papers</title>
 <meta name="description" content="Daily top 100 molecular & cell biology papers ranked by journal impact factor. Data: PubMed + JCR 2024.">
 <style>
   :root { --bg:#0d1117; --card:#161b22; --border:#30363d; --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff; --if:#3fb950; }
   * { box-sizing:border-box; margin:0; padding:0; }
   body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.5; padding:48px 20px; }
   .wrap { max-width:980px; margin:0 auto; }
-  header { text-align:center; margin-bottom:36px; }
+  header { text-align:center; margin-bottom:28px; }
   h1 { font-size:28px; letter-spacing:-0.5px; margin-bottom:8px; }
   .sub { color:var(--muted); font-size:14px; }
   .badges { display:flex; gap:10px; justify-content:center; margin-top:16px; flex-wrap:wrap; }
   .badge { background:var(--card); border:1px solid var(--border); border-radius:999px; padding:6px 14px; font-size:13px; color:var(--muted); }
   .badge b { color:var(--text); }
+  .controls { display:flex; gap:12px; justify-content:center; align-items:center; flex-wrap:wrap; margin:24px 0 20px; position:sticky; top:0; z-index:10; background:var(--bg); padding:12px 0; border-bottom:1px solid var(--border); }
+  select, input[type=search] { background:var(--card); color:var(--text); border:1px solid var(--border); border-radius:10px; padding:10px 14px; font-size:14.5px; outline:none; }
+  select:focus, input[type=search]:focus { border-color:var(--accent); }
+  input[type=search] { width:min(420px, 90vw); }
+  .result-count { color:var(--muted); font-size:13px; text-align:center; margin-bottom:16px; min-height:18px; }
   .paper { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px 24px; margin-bottom:16px; display:flex; gap:18px; }
   .rank { font-size:22px; font-weight:800; color:var(--accent); min-width:40px; text-align:center; padding-top:2px; }
   .body { flex:1; }
@@ -25,6 +30,9 @@
   .pmid { color:var(--muted); font-size:13px; }
   .title { font-size:17px; font-weight:600; margin-bottom:8px; color:var(--accent); }
   .sum { font-size:14.5px; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+  .tag { background:rgba(88,166,255,0.12); color:var(--accent); border:1px solid rgba(88,166,255,0.35); border-radius:999px; padding:2px 10px; font-size:12px; cursor:pointer; }
+  .tag:hover { background:rgba(88,166,255,0.25); }
   .pmid a { color:var(--muted); text-decoration:none; }
   .pmid a:hover { color:var(--accent); }
   footer { text-align:center; color:var(--muted); font-size:12.5px; margin-top:40px; line-height:1.7; }
@@ -34,518 +42,89 @@
 <body>
 <div class="wrap">
   <header>
-  <h1>Top 100 Molecular &amp; Cell Biology Papers</h1>
-    <div class="sub">Published 2026/08/21 · ranked by Clarivate Journal Impact Factor (JCR 2024)</div>
+    <h1>Top 100 Molecular &amp; Cell Biology Papers</h1>
+    <div class="sub">Ranked by Clarivate Journal Impact Factor (JCR 2024)</div>
     <div class="badges">
-      <span class="badge"><b>1815</b> papers published today</span>
-      <span class="badge"><b>237</b> molecular/cell biology</span>
       <span class="badge">Source: <b>PubMed + JCR</b></span>
+      <span class="badge" id="date-badge">Loading…</span>
     </div>
   </header>
-  <div class="paper"><div class="rank">1</div><div class="body">
-    <div class="meta"><span class="journal">Autophagy</span><span class="if">IF 14.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42625531/" target="_blank">PMID 42625531</a></span></div>
-    <div class="title">AI-augmented discovery of autophagy regulators through mechanistic interpretation of multiomics data.</div>
-    <div class="sum">LYMOI, a hybrid AI workflow combining graph-based deep learning with LLM chain-of-thought reasoning, interprets 1.3 TB of autophagy multiomics across 34 conditions. It identified regulators including GIN4, ELM1, CTSL and FAM98A; silencing CTSL/FAM98A attenuated disulfiram-induced autophagy, and combining disulfiram with the CTSL inhibitor Z-FY-CHO suppressed tumor growth.</div>
-  </div></div>
-  <div class="paper"><div class="rank">2</div><div class="body">
-    <div class="meta"><span class="journal">Autophagy</span><span class="if">IF 14.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42625472/" target="_blank">PMID 42625472</a></span></div>
-    <div class="title">Loss of BECN1 does not compromise autophagosome formation but alters cargo selection and HLA-restricted antigen presentation of B cells.</div>
-    <div class="sum">In BECN1-knockout human B lymphoblastoid cells, autophagosome formation and starvation/mTOR-inhibition-induced flux were intact, but cargo differed: autophagosomes formed preferentially at the ER, incorporated less endosomal TLR3, and were enriched in MHC-I peptide-loading complex proteins, diminishing detection by T cells. BECN1 is dispensable for autophagosome formation yet shapes cargo selection and B-cell immunogenicity.</div>
-  </div></div>
-  <div class="paper"><div class="rank">3</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627922/" target="_blank">PMID 42627922</a></span></div>
-    <div class="title">RNA delivery to the corneal endothelium using charge-altering releasable transporters.</div>
-    <div class="sum">Charge-altering releasable transporters (CARTs) delivered RNA selectively to the corneal endothelium, a non-regenerative layer critical to several blinding conditions. CART-RNA nanoparticles were safe and redosable in mice, delivering circular RNA and CRISPR/Cas9 for corneal gene editing, and transfecting human donor corneal endothelial cells in vitro and non-human primates in vivo, supporting clinical translation for corneal dystrophies.</div>
-  </div></div>
-  <div class="paper"><div class="rank">4</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627920/" target="_blank">PMID 42627920</a></span></div>
-    <div class="title">Constitutively active glucagon receptor (GCGR) physiologically regulates body temperature in lizards.</div>
-    <div class="sum">Hepatic expression of constitutively active glucagon receptor (GCGR) correlated with thermoregulatory capacity in lizards such as iguana, Pogona and Phrynocephalus. Knockdown or antagonism lowered body temperature and energy-metabolism gene expression, whereas overexpressing GCGR in non-thermoregulating Eremias argus raised temperature. Constitutively active GCGR drives physiological thermoregulation, adding insight into GPCR-mediated environmental adaptation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">5</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627918/" target="_blank">PMID 42627918</a></span></div>
-    <div class="title">Regulating phonon-carrier transport by interfacial symmetry breaking in thermoelectric multilayers.</div>
-    <div class="sum">Graded interfacial size distributions that break translational symmetry in Bi2Te3/metal multilayers enabled anisotropic regulation of phonon-carrier transport. Multiscale interfaces induced broadband phonon suppression (ultralow cross-plane conductivity, 0.22 W/m/K) and a high room-temperature zT of 1.51, while asymmetric interfaces enhanced carrier mobility. Interface statistical engineering offers a platform for thermoelectric harvesting and solid-state cooling.</div>
-  </div></div>
-  <div class="paper"><div class="rank">6</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627916/" target="_blank">PMID 42627916</a></span></div>
-    <div class="title">Multilocus basis of incipient reproductive isolation in hybridizing populations is revealed by pangenomic and epigenetic divergence.</div>
-    <div class="sum">A pangenome framework applied to the Heliconius erato adaptive radiation revealed widespread genome-wide divergence, supporting a multilocus barrier to gene flow under selection on regulatory phenotypes in migration-selection balance. Single-reference inference overestimated population-specific structural and regulatory variation due to reference bias. Regulatory variation and mutational change together shape divergence as barriers strengthen amid ongoing gene flow.</div>
-  </div></div>
-  <div class="paper"><div class="rank">7</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627913/" target="_blank">PMID 42627913</a></span></div>
-    <div class="title">Single-cell quantification reveals divergent mixotrophic strategies underlying niche partitioning in marine Synechococcus.</div>
-    <div class="sum">NanoSIMS single-cell measurements in marine Synechococcus revealed lineage-specific mixotrophy. Nutrient-depleted lineages took up urea supplying about 40-63% of nitrogen demand, consistent with up-regulated high-affinity dur3 transporter expression; nutrient-rich lineages showed greater glucose uptake. These divergent mixotrophic strategies underpin niche partitioning, refining understanding of trophic differentiation and marine biogeochemical cycling.</div>
-  </div></div>
-  <div class="paper"><div class="rank">8</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627910/" target="_blank">PMID 42627910</a></span></div>
-    <div class="title">Sphingosine kinase 2 regulates adipocyte browning and whole-body metabolism.</div>
-    <div class="sum">Adipocyte-expressed sphingosine kinase 2 (SPHK2) regulated adipose browning. Adipocyte-specific SPHK2 deletion protected mice from western-diet obesity with higher energy expenditure, browning of subcutaneous fat, elevated UCP1 and thermogenic genes, and improved glucose tolerance and insulin sensitivity. Obesogenic diet drove nuclear SPHK2 to suppress the thermogenic transcriptome, highlighting SPHK2 as a target for metabolic disorders.</div>
-  </div></div>
-  <div class="paper"><div class="rank">9</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627907/" target="_blank">PMID 42627907</a></span></div>
-    <div class="title">A multi-functional oral small molecule targeting energy and lipid metabolism to treat obesity and related metabolic disorders.</div>
-    <div class="sum">TOFA, an orally bioavailable small molecule, promotes energy expenditure and rebalances lipid synthesis. It inhibits acetyl-CoA carboxylases 1/2 and activates PPAR-alpha/delta, alleviating obesity, abnormal glucose homeostasis, and fatty liver without affecting food intake or muscle mass. It acted more than additively with incretin analogs (semaglutide, tirzepatide), representing a multi-target approach to metabolic disease.</div>
-  </div></div>
-  <div class="paper"><div class="rank">10</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627904/" target="_blank">PMID 42627904</a></span></div>
-    <div class="title">Abscisic acid-regulated stability of CmABF1 and CmBRM modulates salt tolerance in chrysanthemum via epigenetic regulation of CmHSFA4.</div>
-    <div class="sum">In chrysanthemum, salt-induced ABA up-regulates CmHSFA4 to enhance salt tolerance. CmABF1 activates its promoter, while SnRK2.2 stabilizes CmABF1 and degrades the remodeler CmBRM, increasing H3K4me3 at CmHSFA4. This ABA-SnRK2.2-ABF1/BRM module integrates phosphorylation, protein stability, and histone methylation to fine-tune salt stress-responsive gene expression.</div>
-  </div></div>
-  <div class="paper"><div class="rank">11</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627902/" target="_blank">PMID 42627902</a></span></div>
-    <div class="title">Geneformer-guided multiomics integration identifies Pbx1 as a network hub of hematopoietic stem cell aging.</div>
-    <div class="sum">Single-cell RNA-seq showed old HSCs harbor two transcriptional programs (megakaryocyte-shared and primitive). Fine-tuned Geneformer plus transcriptomic, epigenetic, and transcription-factor analyses identified Pbx1 as a key regulator of age-related HSC changes; Pbx1 suppresses erythroid differentiation by repressing Gata1. These findings clarify HSC aging and may inform interventions against age-associated hematopoietic dysfunction.</div>
-  </div></div>
-  <div class="paper"><div class="rank">12</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627899/" target="_blank">PMID 42627899</a></span></div>
-    <div class="title">Metabolic-epigenetic rewiring of CCR5(hi) monocytes sustains long-term trained immunity against lethal sepsis.</div>
-    <div class="sum">Coimmunization with BCG and bacterial lipoprotein induced durable trained immunity against polymicrobial sepsis from early life to adulthood. Single-cell RNA-seq implicated expanded CCR5(hi) memory-like monocytes. AKT-mTOR-HIF-1alpha glycolytic reprogramming and lactate accumulation drove KAT2B-dependent H3K18 lactylation, facilitating phagocytic/inflammatory gene transcription. A lactate-KAT2B-H3K18la axis sustains long-term CCR5(hi) monocyte reprogramming, nominating them as therapeutic targets in sepsis.</div>
-  </div></div>
-  <div class="paper"><div class="rank">13</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627896/" target="_blank">PMID 42627896</a></span></div>
-    <div class="title">Engineering a biomimetic multiphasic suture anchor system for enhanced rotator cuff enthesis regeneration.</div>
-    <div class="sum">A biomimetic multiphasic scaffold (BMS) integrated with suture anchors delivered spatially organized cues for rotator cuff enthesis regeneration. Three phases combined aligned or nonaligned decellularized tendon ECM with stiff/soft methacrylated hyaluronic acid and a porous citrate composite. In vitro it enhanced tenogenic, fibrochondrogenic, and chondrogenic differentiation, and in vivo promoted integrative healing forming distinct tendon, fibrocartilage, and bone zones.</div>
-  </div></div>
-  <div class="paper"><div class="rank">14</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627894/" target="_blank">PMID 42627894</a></span></div>
-    <div class="title">Matrix stress relaxation drives glioblastoma cell response in viscoelastic biomaterials.</div>
-    <div class="sum">Tunable hyaluronan-elastin-like protein (HELP) hydrogels with matched stiffness but distinct stress relaxation revealed matrix viscoelasticity as a regulator of glioblastoma cell state. Slow stress-relaxing matrices promoted cell clustering and p-selectin (invasion marker) expression, increased nascent ECM production and lipid droplet storage, and altered cytokine secretion. Offers a viscoelastic tumor model and potential therapeutic targets.</div>
-  </div></div>
-  <div class="paper"><div class="rank">15</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627885/" target="_blank">PMID 42627885</a></span></div>
-    <div class="title">High-spatiotemporal resolution deuterium metabolic imaging enables in vivo phenotyping of intra- and intertumoral heterogeneity.</div>
-    <div class="sum">High-spatiotemporal-resolution deuterium metabolic imaging (DMI) provided a minimally invasive means to characterize intra- and intertumoral metabolic heterogeneity in colon cancer models. K-means and PCA/GMM clustering delineated glucose- and lactate-enriched subregions that aligned with histology; glucose areas correlated with GLUT1/DLAT, lactate areas with LDHA/MCT4. DMI metabolic maps could support imaging-based phenotyping in precision oncology.</div>
-  </div></div>
-  <div class="paper"><div class="rank">16</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616903/" target="_blank">PMID 42616903</a></span></div>
-    <div class="title">Mitochondrial profiling across macrophage states reveals inhibition of IL-4/IL-13 reprogramming by the integrated stress response.</div>
-    <div class="sum">Integrated transcriptomics and mitochondrial proteomics in LPS/IFN-gamma- and IL-4/IL-13-stimulated macrophages revealed disconnects between transcript and protein levels and STAT6-dependent mitochondrial DNA expression. ATP synthase inhibition uniquely triggered an HRI-dependent integrated stress response via mitochondrial hyperpolarization, blocking IL-4/IL-13 reprogramming. Mitochondrial translation, mtDNA expression, and membrane potential are drug-sensitive determinants of the IL-4/IL-13 response.</div>
-  </div></div>
-  <div class="paper"><div class="rank">17</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616902/" target="_blank">PMID 42616902</a></span></div>
-    <div class="title">Central T cell tolerance from sparse peptide sampling.</div>
-    <div class="sum">The authors propose that central T cell tolerance generalizes from sparse thymic self-peptide sampling because the immune system satisfies conditions analogous to machine-learning generalization. Randomly sampling only 10% of self-peptides sufficed to avoid reactivity to 90% of peripheral self. A computational model plus diverse experimental data address how negative selection tolerizes unencountered peripheral self-peptides.</div>
-  </div></div>
-  <div class="paper"><div class="rank">18</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616901/" target="_blank">PMID 42616901</a></span></div>
-    <div class="title">Targeting PKGIα Cys(42) attenuates cardiac dysfunction in heart failure with preserved ejection fraction.</div>
-    <div class="sum">Urolithin A was identified as a counterintuitive activator of PKGI-alpha by directly modifying Cys(42). In a multihit HFpEF model it improved diastolic function and attenuated cardiac remodeling through Cys(42)-dependent PKGI-alpha activation. Validated in human engineered heart tissue, urolithin A enhanced relaxation and contraction kinetics, nominating PKGI-alpha Cys(42) as a therapeutic target and urolithin A as an activator.</div>
-  </div></div>
-  <div class="paper"><div class="rank">19</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616895/" target="_blank">PMID 42616895</a></span></div>
-    <div class="title">Unconventional role of hydroxymethylglutaryl-CoA synthase 1 in driving pathogenic T(H)17 cell immunity and autoimmune diseases.</div>
-    <div class="sum">HMGCS1, a cholesterol-biosynthesis precursor enzyme, was preferentially expressed by pathogenic TH17 cells and driven by inflammatory cytokines. It dictated pathogenic TH17 differentiation and aggravated autoimmunity independent of cholesterol metabolism but requiring catalytic Cys(129). HMGCS1 stabilized IRE1-alpha on the ER membrane, preventing MARCH5-mediated ubiquitination, activating an IRE1alpha-XBP1s ER-stress response that up-regulates ROR-gamma-t, licensing pathogenic TH17 immunity.</div>
-  </div></div>
-  <div class="paper"><div class="rank">20</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616893/" target="_blank">PMID 42616893</a></span></div>
-    <div class="title">Endometriosis-derived iPSCs reveal conserved stromal maturation and endocrine responsiveness.</div>
-    <div class="sum">Endometriosis-derived iPSCs were established as a human platform to model endometrial stromal differentiation. A defined protocol drove iPSCs from pluripotency through mesenchymal commitment to hormone-responsive stromal-like states. Transcriptomic analyses showed progressive acquisition of gene signatures resembling eutopic endometrial stroma, and conditioned media reprogrammed THP-1 macrophage-like cells, providing a tractable model of stromal and stromal-immune interactions in endometriosis.</div>
-  </div></div>
-  <div class="paper"><div class="rank">21</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616886/" target="_blank">PMID 42616886</a></span></div>
-    <div class="title">Isocaloric switch from low-fat to Western high-fat diet triggers transcriptomic reprogramming and ectopic olfactory receptor responses.</div>
-    <div class="sum">In 92 twins fed a western high-fat diet for 6 weeks after a low-fat diet at stable weight, cholesterol rose with transient insulin resistance and inflammatory markers. Extensive transcriptomic remodeling of subcutaneous adipose tissue occurred, with olfactory receptor mRNA increases correlating with insulin resistance, liver/visceral fat, IL-18, and VEGF but inverse to adiponectin. Western diet reprograms adipose expression linked to ectopic olfactory receptor responses.</div>
-  </div></div>
-  <div class="paper"><div class="rank">22</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616881/" target="_blank">PMID 42616881</a></span></div>
-    <div class="title">Screening of anti-metastasis drugs by targeting angiopellosis and cancer cluster extravasation.</div>
-    <div class="sum">An image-based high-throughput screen co-culturing cancer-coated spheres with endothelial monolayers identified BAY 61-3606 as an angiopellosis inhibitor. It reduced cancer cluster extravasation in zebrafish and mice and decreased distant metastases in lung carcinoma and triple-negative breast cancer models. Mechanistically it targeted JNK signaling and down-regulated endothelial COL8A1, impairing angiopellosis, offering a strategy to inhibit extravasation-driven metastasis.</div>
-  </div></div>
-  <div class="paper"><div class="rank">23</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616879/" target="_blank">PMID 42616879</a></span></div>
-    <div class="title">Large language models enhance annotation of enzymes in metagenomes.</div>
-    <div class="sum">FedKEA, an enzyme-annotation tool leveraging protein language models, and the MENZMAP metagenomic pipeline (from QC to function prediction) were developed with a web platform. Applied to human gut metagenomes from the iHMP2 project, they generated enzyme profiles for healthy individuals and inflammatory bowel disease patients. These tools improve functional annotation of microbial dark matter and enable discovery of disease-associated enzymes.</div>
-  </div></div>
-  <div class="paper"><div class="rank">24</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616878/" target="_blank">PMID 42616878</a></span></div>
-    <div class="title">HMOX1 controls a heme-ferritin switch that protects cells from ferroptosis.</div>
-    <div class="sum">Heme oxygenase-1 (HMOX1) heme catabolism releases iron into the labile iron pool, promoting ferroptosis. Paradoxically, when HMOX1 is inactive, stabilized heme up-regulates ferritin, suppresses ferroptosis, and rescues cell death from pharmacological or genetic GPX4 inhibition. This heme-HMOX1-ferritin axis controls ferroptosis sensitivity and may offer a new way to modulate ferroptosis in cancer.</div>
-  </div></div>
-  <div class="paper"><div class="rank">25</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616876/" target="_blank">PMID 42616876</a></span></div>
-    <div class="title">Population-level geometric filtering generates motion-coherence selectivity in the retina.</div>
-    <div class="sum">Using correlative light/electron microscopy, two-photon imaging, and modeling, the mouse retina&#x27;s th2 amacrine cells were shown to geometrically filter motion coherence. A dense proximal arbor with sparse radiating distal neurites multiplexes local computation and long-range integration, producing a daisy-shaped inhibitory surround on object-motion-sensing ganglion cells. The surround suppresses coherent global (self) motion while preserving detection of independently moving objects.</div>
-  </div></div>
-  <div class="paper"><div class="rank">26</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616873/" target="_blank">PMID 42616873</a></span></div>
-    <div class="title">ROS-responsive nanogels enable inhaled CD24 immunotherapy for selective hyperinflammation suppression in severe pneumonia.</div>
-    <div class="sum">ROS-responsive, mucus-penetrable nanogels delivered CD24 selectively to inflamed lung in severe pneumonia. Nebulized CD24-loaded nanogels suppressed DAMP-mediated hyperinflammation and cytokine storm, mitigated lung injury, and raised survival over 3.5-fold versus higher-dose intravenous free CD24. In an H1N1 model they prevented cytokine storm while preserving neutrophil-mediated viral clearance by limiting excessive NET formation, offering inhalable therapy for pulmonary hyperinflammation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">27</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616872/" target="_blank">PMID 42616872</a></span></div>
-    <div class="title">SKI is critical to counter TGF-β signaling to promote T cell function and autoimmunity.</div>
-    <div class="sum">SKI is up-regulated in activated T cells and down-regulated by TGF-beta, with reciprocal control of T cell function. T cell-specific SKI deletion ameliorated lethal autoimmunity from TGF-beta-RII deletion and experimental autoimmune encephalomyelitis. Blocking TGF-beta-R not only loses SMAD-dependent signaling but also gains SKI-dependent activity essential for T cell-mediated autoimmunity; overcoming SKI is central to TGF-beta-mediated immune suppression.</div>
-  </div></div>
-  <div class="paper"><div class="rank">28</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616868/" target="_blank">PMID 42616868</a></span></div>
-    <div class="title">H3.3 chaperone Hira primes the effector program and function of regulatory T cells.</div>
-    <div class="sum">Histone variant H3.3 is enriched in tissue regulatory T cells, and its chaperone HIRA is critical for the Treg effector program. Treg-specific HIRA deletion reduced effector Tregs, impaired suppression, and caused multi-organ inflammation. HIRA-dependent H3.3 deposition enhanced chromatin accessibility and H3K36me3 while preventing H3K27me3 at effector genes; BATF overexpression largely rescued the defects, revealing an epigenetic mechanism for Treg effector differentiation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">29</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616865/" target="_blank">PMID 42616865</a></span></div>
-    <div class="title">A bacterial enzyme enhances both energy metabolism and health across the life span of C. elegans and mice.</div>
-    <div class="sum">Bacterial lipoic acid protein ligase A (LplA) was introduced as an orthologous tool that simultaneously boosts energy metabolism and fosters a low oxidative-stress environment. LplA expression enhanced energy metabolism and health across the life span in C. elegans and mice without compromising maximum longevity, addressing the paradox of metabolism, oxidative damage, and aging and suggesting a strategy to intervene in aging.</div>
-  </div></div>
-  <div class="paper"><div class="rank">30</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616864/" target="_blank">PMID 42616864</a></span></div>
-    <div class="title">Structural basis for target discrimination and activation by Cas13d.</div>
-    <div class="sum">Seven cryo-EM structures of Cas13d bound to matched and mismatched targets revealed active, intermediate, and inactive states. A single proximal mismatch preserved binding rate but abolished nuclease activity by trapping Cas13d inactive. An active-site loop in the HEPN domain regulates substrate accessibility and can be mutated for hypo- and hyperactivated variants, informing engineering of Cas13d specificity and activity.</div>
-  </div></div>
-  <div class="paper"><div class="rank">31</div><div class="body">
-    <div class="meta"><span class="journal">Science advances</span><span class="if">IF 11.7</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42616863/" target="_blank">PMID 42616863</a></span></div>
-    <div class="title">Ptpn2 limits plasma cell fate and antiviral immunity by integrating B cell receptor and IFN-γ signals in B cells.</div>
-    <div class="sum">Ptpn2 was identified as a B cell-intrinsic regulator of plasma cell fate and isotype switching. It restrains B cell receptor and IFN-gamma signaling by dephosphorylating Lyn, STAT1, and STAT3; loss hyperactivates these pathways, promoting plasma cell differentiation and IFN-gamma-driven antibody production. Ptpn2-deficient mice generated enhanced antiviral responses to influenza, identifying Ptpn2 as a checkpoint with vaccine implications.</div>
-  </div></div>
-  <div class="paper"><div class="rank">32</div><div class="body">
-    <div class="meta"><span class="journal">Molecular biology and evolution</span><span class="if">IF 11.0</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42626986/" target="_blank">PMID 42626986</a></span></div>
-    <div class="title">Signatures of nonsense-mediated mRNA decay but no evidence for transcriptional adaptation associated with protein-truncating variants in wild yeast diploids.</div>
-    <div class="sum">In natural yeast populations, protein-truncating variants (PTVs) showed strong reduction of transcript abundance, indicating efficient nonsense-mediated mRNA decay. Despite this surveillance, no clear transcriptional adaptation signature was detected, suggesting dosage-sensitive compensation may occur only in specific contexts. Transcriptional adaptation does not appear to be a general response to loss-of-function variants in yeast; network robustness may buffer their harm.</div>
-  </div></div>
-  <div class="paper"><div class="rank">33</div><div class="body">
-    <div class="meta"><span class="journal">The Journal of cell biology</span><span class="if">IF 7.4</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42627323/" target="_blank">PMID 42627323</a></span></div>
-    <div class="title">Integrins and tetraspanins mediate CD36-actin coupling and regulate CD36 organization and signaling.</div>
-    <div class="sum">The beta1-integrin subunit and tetraspanins CD9, CD81, and CD151 form the molecular link connecting the receptor CD36 to submembrane cortical actin in vascular endothelial cells. A CD36 G12V point mutation altered CD36 surface organization, weakened actin coupling, and abolished thrombospondin-1-induced signaling via Src-family kinase Fyn. Tetraspanins and integrins may provide a general mechanism for plasma membrane-actin coupling.</div>
-  </div></div>
-  <div class="paper"><div class="rank">34</div><div class="body">
-    <div class="meta"><span class="journal">The FEBS journal</span><span class="if">IF 5.5</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42626831/" target="_blank">PMID 42626831</a></span></div>
-    <div class="title">Cellular geometry compensates for Z-ring positioning in MapZ-deficient Streptococcus pneumoniae.</div>
-    <div class="sum">In Streptococcus pneumoniae, fluorescence microscopy and image analysis showed cell geometry compensates for weak Z-ring positioning. In MapZ-deficient cells, the cell elliptic ratio negatively correlated with Z-ring deviation angle, and reducing cell elongation increased large-angle Z-ring misorientation. Nucleoid organization and cellular geometry may together constrain division-plane selection when MapZ-dependent regulation is compromised.</div>
-  </div></div>
-  <div class="paper"><div class="rank">35</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621266/" target="_blank">PMID 42621266</a></span></div>
-    <div class="title">L-asparaginase reversibly suppresses CD40-mediated B cell activation and antigen-presenting function by metabolic restriction.</div>
-    <div class="sum">Even at low, sub-therapeutic concentrations, L-asparaginase induced profound metabolic changes in CD40-activated primary human B cells, reducing glycolytic and mitochondrial respiratory capacity and impairing proliferation and APC function while promoting regulatory B cell phenotypes without increasing death. Asparagine or glutamine supplementation restored function. Asnase reversibly suppresses pro-inflammatory B cell activity and may warrant evaluation as an immunosuppressive agent.</div>
-  </div></div>
-  <div class="paper"><div class="rank">36</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621248/" target="_blank">PMID 42621248</a></span></div>
-    <div class="title">The applicability of DNA methylation-based tools in a low-income, sub-Saharan African population: Malawi longitudinal study of families and health.</div>
-    <div class="sum">DNA methylation-based tools, largely developed in European high-income populations, were evaluated in 49 dried blood spots from adults aged 45+ in the Malawi Longitudinal Study of Families and Health. Field/storage conditions did not significantly affect DNAm; epigenetic clocks and lifestyle biomarkers correlated with self-reported measures, and immune-cell proportions aligned with expected aging/HIV changes, supporting broader use of DNAm tools in sub-Saharan Africa.</div>
-  </div></div>
-  <div class="paper"><div class="rank">37</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621203/" target="_blank">PMID 42621203</a></span></div>
-    <div class="title">Expanding CIRdb, a comprehensive catalog of whole-exome sequencing data of Canary Islanders.</div>
-    <div class="sum">Whole-exome sequencing of Canary Islanders (CIRdb) revealed 387,555 variants, 15.1% previously unreported, with novel putative pathogenic variants enriched for respiratory, cardiovascular, and metabolic disorders. European ancestry enriched around the 17q21.31 inversion, and a candidate selective sweep around PRUNE1 (linked to BMI and metabolic traits) was shared with North Africans. CIRdb is a resource for exome-wide variation in this admixed population.</div>
-  </div></div>
-  <div class="paper"><div class="rank">38</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621195/" target="_blank">PMID 42621195</a></span></div>
-    <div class="title">Transcriptome-wide splicing analysis reveals HuR-regulated post-transcriptional programs in osteocytes.</div>
-    <div class="sum">Combined RNA splicing analysis and RNA-binding-protein motif enrichment in high-glucose-cultured osteocytes identified HuR as a top AS regulator. HuR loss reshaped the transcriptome via expression and splicing changes converging on stress response and translational control, heightening oxidative stress, impairing mitochondrial function, and uncoupling TXNIP mRNA from protein. HuR is key to osteocyte metabolic adaptation under high-glucose stress and hyperglycemic bone fragility.</div>
-  </div></div>
-  <div class="paper"><div class="rank">39</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621185/" target="_blank">PMID 42621185</a></span></div>
-    <div class="title">Periostin drives psoriasis progression through the stimulation of cutaneous nerve fibers.</div>
-    <div class="sum">Periostin (POSTN) was up-regulated in psoriatic epidermis and dermis and promoted cutaneous nerve fiber growth and psoriasis progression. Postn-knockout mice showed alleviated symptoms, reduced nerve fiber density, and impaired nociceptive DRG neurites. Mechanistically POSTN activates PI3K/AKT/mTOR signaling to drive axonal growth, and cilengitide gel improved lesions, highlighting POSTN-cutaneous-nerve signaling as a therapeutic target.</div>
-  </div></div>
-  <div class="paper"><div class="rank">40</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621184/" target="_blank">PMID 42621184</a></span></div>
-    <div class="title">The Y105 phosphosite between the SH3.1 and SH3.2 domains of Nck1 regulates its binding to CD3ϵ.</div>
-    <div class="sum">The Y105 phosphosite between the SH3.1 and SH3.2 domains of Nck1 regulates Nck1-CD3-epsilon association in T cells. Y105 mutation prolonged Nck1-TCR association, impaired phosphorylation of CD3-epsilon, TCR-zeta, ZAP70, and ERK1/2, and abrogated Lck recruitment to the TCR. Y105 acts as a molecular switch controlling assembly/disassembly of Nck1 and CD3-epsilon.</div>
-  </div></div>
-  <div class="paper"><div class="rank">41</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621159/" target="_blank">PMID 42621159</a></span></div>
-    <div class="title">Emergence of neutralizing RBD antibodies following Omicron infection with limited activity against ancestral SARS-CoV-2.</div>
-    <div class="sum">RBD-targeting neutralizing mAbs were isolated from patient B cells using an Omicron KP3.1.1 spike bait. The most potent (1332D4, 1332E5) and broad (1324A10, 1316C10) were characterized by cryo-EM. 1332E5, a knob 498-506-targeting class-1/4 mAb, is pan-Omicron but does not neutralize ancestral Wuhan-1. Class 1/4 vs 4/1 mAbs differ in epitope contacts but specificity of both is altered by knob 498-506 mutations.</div>
-  </div></div>
-  <div class="paper"><div class="rank">42</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621156/" target="_blank">PMID 42621156</a></span></div>
-    <div class="title">RAGE phosphorylation by CK2 in human epithelial cell model: Modulation of connexin 43 expression.</div>
-    <div class="sum">In human epithelial (FL) cells, the RAGE intracellular domain binds protein kinase CK2-alpha, which phosphorylates RAGE at Ser400. The S400A mutation preserves CK2-alpha binding but disrupts downstream signaling, altering CREB (Ser133) and c-Jun (Ser63) phosphorylation after AGE ligand stimulation. In silico analysis identified transcription-factor binding sites in the connexin-43 promoter, linking RAGE Ser400 phosphorylation to connexin-43 transcriptional regulation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">43</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621152/" target="_blank">PMID 42621152</a></span></div>
-    <div class="title">A host-adapted commensal fungus from pet store mice drives type 2 immunity and cross-kingdom protection.</div>
-    <div class="sum">Kazachstania pintolopesii, a dominant gut fungus from pet store mice, stably colonizes laboratory mice independent of bacterial composition. Unlike Candida albicans, it does not expand neutrophils or TH17 cells, and RAG1 knockout does not affect colonization. It selectively drives type 2 mucosal immunity (tuft/goblet cells, TH2 and ILC2) conferring protection against intestinal nematode infection, exemplifying commensal mycobiota-driven tolerance and immune modulation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">44</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621133/" target="_blank">PMID 42621133</a></span></div>
-    <div class="title">Brain circadian clock neurons drive fitness advantages in Drosophila.</div>
-    <div class="sum">Selectively altering circadian period only in Drosophila brain clock neurons revealed fitness consequences without pleiotropy of global null mutants. Multi-generational competition showed clock-disrupted flies had fitness disadvantages under LD12:12 that disappeared under constant light. Paternity assays linked brain-clock timing to male reproductive success, and effects were photoperiod-dependent, with short-period dbt(s) losing under short days, showing the circadian system adapts mating behavior to day length.</div>
-  </div></div>
-  <div class="paper"><div class="rank">45</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42621110/" target="_blank">PMID 42621110</a></span></div>
-    <div class="title">CPS1 promotes colorectal cancer progression by inducing EMT and activating TGF-β/Smad signaling pathway.</div>
-    <div class="sum">CPS1, an urea-cycle mitochondrial enzyme, was up-regulated in colorectal cancer and associated with aggressive features and poor prognosis. Knockdown suppressed CRC proliferation, migration, invasion, and tumorigenicity; overexpression had opposite effects. Mechanistically CPS1 modulated E-cadherin, ZEB1, Slug, N-cadherin, vimentin, MMP2, and p-Smad2/3, implicating it in epithelial-mesenchymal transition and TGF-beta/Smad signaling. CPS1 is a candidate prognostic biomarker and therapeutic target in CRC.</div>
-  </div></div>
-  <div class="paper"><div class="rank">46</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620925/" target="_blank">PMID 42620925</a></span></div>
-    <div class="title">Exome sequencing and metabolite profiling identifies genetic variants associated with altered metabolism in early-onset schizophrenia.</div>
-    <div class="sum">Whole-exome sequencing and serum metabolomics in 28 early-onset schizophrenia patients and 20 controls identified 114 high-risk genes and 117 differentially expressed metabolites. Gene-metabolite network integration linked 19 high-risk genes to 31 dysregulated lipids, 16 of 20 further down-regulated in variant carriers. Many risk variants and lipids correlated with clinical symptoms, providing evidence for genetic-metabolic interaction in EOS pathogenesis.</div>
-  </div></div>
-  <div class="paper"><div class="rank">47</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620891/" target="_blank">PMID 42620891</a></span></div>
-    <div class="title">Astrocytes mobilize a broader repertoire of lysosomal repair mechanisms than neurons.</div>
-    <div class="sum">In a neuron-astrocyte coculture, both cell types showed lysosomal damage after lysosomotropic injury, with galectin-3 recruitment, disrupted pH, and lysophagy receptor engagement. Astrocytes preferentially recruited ESCRT repair machinery and more robustly activated the Rab7-GAP TBC1D15-mediated lysosomal membrane reformation path, while the PITT (ER-lipid transfer) pathway was engaged in both. Divergent lysosomal repair may reflect differential resilience and inform neurodegenerative therapy.</div>
-  </div></div>
-  <div class="paper"><div class="rank">48</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620823/" target="_blank">PMID 42620823</a></span></div>
-    <div class="title">Human iPSC-derived mesenchymal progenitor cell sheets promote tissue formation after xenotransplantation.</div>
-    <div class="sum">Cell sheets from human iPSC-derived mesenchymal progenitor cells (hiPS-MPCs) survived and formed vascularized tissue-like structures after subcutaneous xenotransplantation into immunocompetent mice, comparable to mouse MSC sheets. Fibroblast sheets induced inflammatory responses and persisted poorly. hiPS-MPC-derived tissues showed reduced immune infiltration and higher anti-inflammatory cytokine expression, supporting their potential as a scalable, cross-species regenerative therapy platform.</div>
-  </div></div>
-  <div class="paper"><div class="rank">49</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620799/" target="_blank">PMID 42620799</a></span></div>
-    <div class="title">Molecular heterogeneity and differential metabolic signatures in thymic adipocytes.</div>
-    <div class="sum">Single-nucleus multi-omics of mouse thymic adipocytes revealed two populations: one with transcription/chromatin signatures of beige fat, and another resembling classic white adipose expressing EMT-associated genes. Differentially open chromatin identified FOXN1 and HIF-1alpha/ARNT binding sites in the white-adipose population, and immunofluorescence confirmed UCP1 protein in subcapsular thymic regions. This resource maps thymic adipocyte heterogeneity, ontogeny, and function.</div>
-  </div></div>
-  <div class="paper"><div class="rank">50</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620766/" target="_blank">PMID 42620766</a></span></div>
-    <div class="title">A pan-tissue multi-omics resource atlas of coordinated immune, metabolic, and fibrotic alterations in diet-induced MASH.</div>
-    <div class="sum">A diet-induced MASH mouse model was profiled by integrated transcriptomics, proteomics, and metabolomics across seven metabolic tissues and plasma. Multi-omics revealed coordinated immune, metabolic, and fibrotic changes, widespread lipid and amino-acid pathway alterations, and gut-derived metabolites. Several concordant candidates, especially in liver, were supported by independent human datasets, providing a multi-tissue, multi-omics resource for diet-induced MASH and cross-organ interactions.</div>
-  </div></div>
-  <div class="paper"><div class="rank">51</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620761/" target="_blank">PMID 42620761</a></span></div>
-    <div class="title">Engineered HMGB1 construct with tandem Box B domains promotes tissue regeneration without potential for inflammation.</div>
-    <div class="sum">Fully reduced HMGB1 (FR-HMGB1) binds CXCL12 and signals via CXCR4 to prime stem cells from G0 to G(alert). Its disulfide form drives proinflammatory TLR2/4/RAGE signaling. An engineered construct (DBB12L) with tandem Box B domains and a flexible linker decoupled functions: it retained CXCL12 binding and repair acceleration equivalent to FR-HMGB1 but lacked detectable inflammation, enabling safe tissue-regenerative signaling.</div>
-  </div></div>
-  <div class="paper"><div class="rank">52</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620746/" target="_blank">PMID 42620746</a></span></div>
-    <div class="title">Using the simple telegraph model to decipher transcriptional burst regulation across genome-wide data.</div>
-    <div class="sum">A simple telegraph model framework was applied to genome-wide single-cell RNA-seq to infer transcriptional burst frequency and size. In mouse cells and human heart (including hypertrophic cardiomyopathy), over 70% of genes with altered burst regulation were frequency- or size-dominated; HCM genes show stronger bursting with prolonged inactivity and intense transcription. TATA-initiator synergy is lost in HCM, and frequency-dominated genes were enriched in genome-stability functions.</div>
-  </div></div>
-  <div class="paper"><div class="rank">53</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620741/" target="_blank">PMID 42620741</a></span></div>
-    <div class="title">RASA1 deficiency aggravates the lesion burden of cerebral cavernous malformations via the Ras/Raf/MAPK pathway.</div>
-    <div class="sum">RASA1 deficiency aggravated cerebral cavernous malformation (CCM) pathology: it promoted endothelial proliferation, reduced ZO-1, shifted metabolism from oxidative phosphorylation toward glycolysis, and activated Ras/Raf/MAPK signaling. RASA1 rescue or the Ras inhibitor RMC-7977 partially reversed abnormalities in vitro, and RMC-7977 reduced lesion severity in vivo. RASA1 deficiency aggravates CCM-like lesions through Ras/Raf/MAPK activation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">54</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620731/" target="_blank">PMID 42620731</a></span></div>
-    <div class="title">Stress-induced secretory pathway disruption causes atypical metalloproteinase transport in PMM2-CDG.</div>
-    <div class="sum">In PMM2-CDG, a congenital glycosylation disorder, secretory-pathway disruption altered trafficking of MMP2 and its activator MT1-MMP. Enhanced furin processing caused MT1-MMP to exit the ER directly, bypassing the Golgi, preventing MT1-MMP/MMP2 interaction in chondrocytes and causing pro-MMP2 accumulation. This unconventional route, rather than direct N-glycosylation defects, links MMP dysregulation to cartilage and neuromuscular pathology.</div>
-  </div></div>
-  <div class="paper"><div class="rank">55</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620711/" target="_blank">PMID 42620711</a></span></div>
-    <div class="title">Exemestane increases the number and improves the morphology of cultured pre-antral follicles from transmasculine ovarian cortical tissue.</div>
-    <div class="sum">The CYP19A1 inhibitor exemestane was tested on cryopreserved-thawed ovarian cortical tissue from cisgender and transmasculine individuals. It lowered estrogen in both ovarian types and enhanced follicular morphology of transmasculine tissue. Exemestane decreased STAR expression to regulate local progesterone. Adding exemestane during this initial culture stage may help equalize pre-antral follicle culture between cis and transmasculine ovarian tissue for fertility preservation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">56</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42620708/" target="_blank">PMID 42620708</a></span></div>
-    <div class="title">Early targeting of the YAP/TEAD-PKC-NF-κB axis alleviates post-traumatic osteoarthritis.</div>
-    <div class="sum">In a murine ACL-rupture model of post-traumatic osteoarthritis, joint injury rapidly co-activated YAP and NF-kappaB p65 with a staged transcriptional response from early inflammatory/YAP programs to matrix remodeling. Pharmacologic disruption of Hippo signaling or preventing YAP-TEAD interaction reduced cartilage degeneration and reversed injury-induced inflammatory and remodeling programs, providing preclinical proof for targeting the YAP/TEAD-PKC-NF-kappaB axis early in PTOA.</div>
-  </div></div>
-  <div class="paper"><div class="rank">57</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42604006/" target="_blank">PMID 42604006</a></span></div>
-    <div class="title">The use of multi-species probiotic-derived vesicles to encapsulate luteolin for preventing colitis in a mouse model.</div>
-    <div class="sum">Membrane vesicles from co-cultured multi-species probiotics (m-MVs) showed superior antioxidant capacity versus single-strain vesicles. Luteolin-loaded m-MVs (LUT-MVs) had enhanced water solubility, gastrointestinal stability, and antioxidative capacity. In DSS-induced colitis, LUT-MVs prevented colitis by alleviating oxidative damage, improving intestinal barrier function, reducing inflammation, and regulating colonic microbiota, supporting probiotic-vesicle encapsulation of dietary flavonoids for colitis.</div>
-  </div></div>
-  <div class="paper"><div class="rank">58</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42603969/" target="_blank">PMID 42603969</a></span></div>
-    <div class="title">Spatial biases in visual feature representation of mouse dorsal lateral geniculate nucleus boutons.</div>
-    <div class="sum">In vivo calcium imaging of the mouse retina and dorsal lateral geniculate nucleus (dLGN) boutons revealed modest location-dependent biases in spatial-frequency, orientation, direction, and temporal-frequency feature representation across visual space, stronger in the dLGN than retina. These emerged from functionally and anatomically defined bouton subsets. Ablating cortical feedback modulated but did not eliminate feature biases, clarifying how spatial feature biases evolve through the visual pathway.</div>
-  </div></div>
-  <div class="paper"><div class="rank">59</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42603931/" target="_blank">PMID 42603931</a></span></div>
-    <div class="title">m6A-dependent regulation of DGUOK-AS1 by RBM15 and HNRNPH1 in lung adenocarcinoma.</div>
-    <div class="sum">The long non-coding RNA DGUOK-AS1 was up-regulated in lung adenocarcinoma cells and serum, promoting proliferation and migration partly as a ceRNA for miR-2467-5p to modulate PRMT5. RBM15 enhanced DGUOK-AS1 stability through m6A modification, which enabled HNRNPH1 binding in an m6A-dependent manner via its RRM3 domain, defining an m6A-dependent regulatory axis in LUAD.</div>
-  </div></div>
-  <div class="paper"><div class="rank">60</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42603033/" target="_blank">PMID 42603033</a></span></div>
-    <div class="title">Targeting host lipogenesis with a diarylamide inhibitor disrupts SARS-CoV-2 replication.</div>
-    <div class="sum">A diarylamide compound (compound 10) inhibited SARS-CoV-2 more potently than the parent clofoctol through host-directed suppression of lipogenesis. It down-regulated FASN and SCD1, with partial reversal of antiviral activity by fatty acid supplementation, by binding to and promoting degradation of nuclear receptor coactivator 1 (NCOA1/SRC-1). Intranasal compound 10 reduced pulmonary viral loads and attenuated lung histopathology in hamsters.</div>
-  </div></div>
-  <div class="paper"><div class="rank">61</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42603000/" target="_blank">PMID 42603000</a></span></div>
-    <div class="title">Intermittent fasting promotes remodeling of neural and vascular networks in visceral white adipose tissue.</div>
-    <div class="sum">A 16-week intermittent fasting regimen induced coordinated neurovascular remodeling in visceral white adipose tissue, increasing angiogenesis and sympathetic innervation as shown by tissue clearing and 3D imaging. Transcriptomics revealed up-regulation of neurotrophic factors including neuregulin 4 (NRG4) and browning programs. WAT explants promoted neurite branching via ErbB signaling, and human visceral RNA-seq showed a strong positive correlation, linking intermittent fasting to neurovascular and browning rewiring.</div>
-  </div></div>
-  <div class="paper"><div class="rank">62</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602995/" target="_blank">PMID 42602995</a></span></div>
-    <div class="title">Tetracycline-loaded nanomotors target neutrophil activation and oxidative stress in acute lung injury.</div>
-    <div class="sum">A nitric oxide-driven, ROS-responsive nanomotor (PMA@TH) delivered tetracycline selectively to inflamed lung tissue in acute lung injury. After intratracheal administration it migrated to high-ROS injury sites for precise drug release; generated NO improved tissue penetration. The nanomotor inhibited neutrophil infiltration, suppressed neutrophil activation and caspase-1-mediated IL-1beta/IL-18 release, and promoted macrophage function, targeting the neutrophil-oxidative-stress axis in ALI.</div>
-  </div></div>
-  <div class="paper"><div class="rank">63</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602983/" target="_blank">PMID 42602983</a></span></div>
-    <div class="title">ZEB2 SUMOylation in Cardiac Fibroblast Drives Post-Infarction Cardiac Remodeling through CtBP1-Associated repression of Nr4a1.</div>
-    <div class="sum">ZEB2 was up-regulated in infarcted mouse hearts, activated cardiac fibroblasts, and human fibrotic myocardium, and myofibroblast-specific knockout alleviated post-MI cardiac dysfunction and remodeling. SENP1 regulated SUMOylation of ZEB2 (K462/K479/K611/K774); the SUMO-defective ZEB2-4KR mutant was cardioprotective, weakening CtBP1 binding and reducing pro-fibrotic PI3K/AKT-mTORC1 signaling. ZEB2 SUMOylation drives cardiac fibroblast-to-myofibroblast transition and post-infarction fibrosis.</div>
-  </div></div>
-  <div class="paper"><div class="rank">64</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602977/" target="_blank">PMID 42602977</a></span></div>
-    <div class="title">Plasma metabolomic signatures of migraine in 479,760 adults.</div>
-    <div class="sum">Analysis of 251 NMR-measured plasma metabolites in 479,760 UK Biobank participants, including 6,724 incident hospital-diagnosed migraine cases, replicated a coherent lipid/lipoprotein pattern: HDL measures inversely associated with migraine, while triglyceride-rich and VLDL measures were positively associated. Repeated LASSO prioritized 12 metabolite features, further examined against brain structural imaging phenotypes, migraine polygenic risk, and affective traits.</div>
-  </div></div>
-  <div class="paper"><div class="rank">65</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602968/" target="_blank">PMID 42602968</a></span></div>
-    <div class="title">The Odf2 status contributes to asymmetric inheritance of CD133-positive recycling endosomes during cytokinesis in SK-N-DZ human neuroblastoma cells.</div>
-    <div class="sum">Using SK-N-DZ neuroblastoma cells, asymmetric cell division produced unequal CD133-positive recycling endosome inheritance: daughters with younger mother centrioles received more CD133-recycling endosomes. Depletion of ODF2/Cenexin, which localizes to distal and subdistal centrioles, altered this inheritance, linking centrosome status to asymmetric endosome distribution and the self-renewal/differentiation balance relevant to tumor biology.</div>
-  </div></div>
-  <div class="paper"><div class="rank">66</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602967/" target="_blank">PMID 42602967</a></span></div>
-    <div class="title">TP53 mutation drives unique transcriptional and functional vulnerabilities independent of del(17p) in multiple myeloma.</div>
-    <div class="sum">Integrating ex vivo drug-sensitivity profiling, genomics, transcriptomics, and proteomics across 167 CD138+ multiple myeloma samples, TP53-mutated cells exhibited vulnerabilities in spindle organization, mitotic regulation, DNA synthesis, and transcriptional/metabolic regulation, independent of MDM2. They were more sensitive to chemotherapeutics, HDAC, HSP90, IGF1R, and PI3K/AKT/mTOR inhibitors and plicamycin, with distinct profiles from del(17p) and wild-type TP53, informing TP53-associated therapy.</div>
-  </div></div>
-  <div class="paper"><div class="rank">67</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602965/" target="_blank">PMID 42602965</a></span></div>
-    <div class="title">Immunotherapy Efficacy in SMARC-Altered Cancers: A pan-cancer analysis of clinical outcomes in response to immune checkpoint inhibition.</div>
-    <div class="sum">Retrospective analysis of metastatic SMARC-altered solid tumors at UCSD (53 evaluable of 6,831 patients) compared immune checkpoint inhibitor treatment to non-ICI systemic therapy. ICI-treated patients had higher objective response rate (48% vs 16%) and longer median PFS (10.6 vs 5.8 months) and OS (21.8 vs 10.7 months); ICI independently predicted longer OS. SMARC alteration is rare yet may enhance immunotherapy response.</div>
-  </div></div>
-  <div class="paper"><div class="rank">68</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602712/" target="_blank">PMID 42602712</a></span></div>
-    <div class="title">Blocking L-carnitine synthesis by meldonium prolongs the survival in mice with pancreatic cancer.</div>
-    <div class="sum">Capillary-electrophoresis-MS and mass-spectrometry imaging revealed that O-acetylcarnitine and acetyl-CoA increased during pancreatic cancer progression in mice, with O-acetylcarnitine localized in PDAC cells. BBOX1, which synthesizes carnitine, was overexpressed in PDAC cells. The BBOX1 inhibitor meldonium inhibited PDAC proliferation and cytokine secretion, prolonged survival, and improved muscle atrophy in mice, with BBOX1 elevated in human PDAC resections.</div>
-  </div></div>
-  <div class="paper"><div class="rank">69</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602702/" target="_blank">PMID 42602702</a></span></div>
-    <div class="title">Pathophysiological and translational implications of the dysregulation of molecular machineries controlling RNA metabolism in thyrotropinomas.</div>
-    <div class="sum">In thyrotropin-secreting pituitary tumors (TSHomas), dysregulation of RNA-metabolism machinery (spliceosome, RNA exosome, nonsense-mediated decay) was found, with some alterations associated with tumor size and TSH-beta/FT4 levels. Pharmacological inhibition of these machineries exerted clear antiproliferative action in primary patient-derived TSHoma cells. This highlights spliceosome/exosome/NMD dysregulation as a source of biomarkers and therapeutic targets in TSHomas.</div>
-  </div></div>
-  <div class="paper"><div class="rank">70</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602569/" target="_blank">PMID 42602569</a></span></div>
-    <div class="title">PVT inhibition mitigates neuropathology and cognitive deficits in chronic cerebral hypoperfusion.</div>
-    <div class="sum">In a bilateral common carotid artery stenosis mouse model of chronic cerebral hypoperfusion, immediate-early-gene imaging across 225 brain regions identified the paraventricular thalamus (PVT) as a persistently hyperactive hub. Chemogenetic PVT inhibition early after ischemia attenuated neuronal damage in medial prefrontal cortex, hippocampus, and white matter, and improved cognition and sleep. Early suppression of this central hub may limit distributed injury.</div>
-  </div></div>
-  <div class="paper"><div class="rank">71</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602561/" target="_blank">PMID 42602561</a></span></div>
-    <div class="title">dECM bioinks for 3D bioprinted tumor models: Advances, challenges, and drug screening.</div>
-    <div class="sum">A review of decellularized ECM (dECM) bioinks for 3D bioprinted tumor models covering advances, challenges, and drug-screening applications. dECM-derived bioinks aim to recapitulate the native tumor microenvironment for more faithful in vitro models. The field&#x27;s potential for drug screening is weighed against technical challenges in standardization, reproducibility, and bioink fidelity.</div>
-  </div></div>
-  <div class="paper"><div class="rank">72</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602545/" target="_blank">PMID 42602545</a></span></div>
-    <div class="title">Gut microbiota-derived extracellular vesicles in Parkinson&#x27;s disease.</div>
-    <div class="sum">Review examining gut microbiota-derived extracellular vesicles in Parkinson&#x27;s disease. EVs released by gut microbes are implicated in gut-brain communication and may carry bioactive cargo relevant to neuroinflammation and alpha-synuclein pathology, contributing to PD pathogenesis. The review covers the mechanisms, evidence, and therapeutic/diagnostic potential of microbiota-derived EVs in Parkinson&#x27;s disease.</div>
-  </div></div>
-  <div class="paper"><div class="rank">73</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602342/" target="_blank">PMID 42602342</a></span></div>
-    <div class="title">BUB1 regulates cell proliferation and apoptosis in cervical cancer by AKT signaling and autophagosome-lysosome fusion via ACTN1.</div>
-    <div class="sum">BUB1 promoted cervical cancer progression via a dual mechanism: it interacted with alpha-actinin 1 (ACTN1) and maintained ACTN1 at focal adhesions to sustain AKT activation, while facilitating ACTN1-positive autophagosome trafficking to lysosomes. Autophagosome accumulation raised reactive oxygen species contributing to apoptosis (NAC-rescue confirmed). The kinase-dead mutant and BUB1 inhibitor 2OH-BNPP1 phenocopied effects, identifying a BUB1/ACTN1/ROS axis.</div>
-  </div></div>
-  <div class="paper"><div class="rank">74</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602328/" target="_blank">PMID 42602328</a></span></div>
-    <div class="title">Comprehensive transcriptomic profiling reveals impaired polyamine metabolism as a contributor to age-related muscle decline.</div>
-    <div class="sum">A spatial transcriptomic atlas of skeletal muscle from young and aged mice resolved fiber-type and compartment-specific transcriptional reprogramming, including altered sarcomeric organization, excitation-contraction coupling, oxidative stress, and metabolic rewiring. CAR3 was highlighted as a potential sarcopenia biomarker. Polyamine biosynthetic enzymes and spermidine levels were selectively reduced in aged muscle; limiting polyamine flux in human fibro-adipogenic progenitors induced aging-like features.</div>
-  </div></div>
-  <div class="paper"><div class="rank">75</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602318/" target="_blank">PMID 42602318</a></span></div>
-    <div class="title">Late-pregnancy air pollution exposure and neonatal anthropometry with and without gestational hypertension.</div>
-    <div class="sum">This study assessed gestational hypertension (GH), inflammatory biomarkers, late-pregnancy air pollution, and neonatal anthropometry. Women with GH had higher hs-CRP and delivered neonates with lower birth weight and smaller chest/abdominal circumferences. PM2.5, NO2, SO2, and CO exposures were inversely associated with birth length. Describes relationships among GH, peridelivery inflammation, air pollution, and neonatal outcomes.</div>
-  </div></div>
-  <div class="paper"><div class="rank">76</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42602302/" target="_blank">PMID 42602302</a></span></div>
-    <div class="title">Decoding cytarabine-induced damage in the prepubertal testis: A multi-omics atlas of ecosystem and inheritance.</div>
-    <div class="sum">Multi-omics mapping of cytarabine (Ara-C) injury in prepubertal mouse testes revealed seminiferous-tubule disruption, hormone suppression, sperm loss, spermatogonial depletion linked to ferroptosis and replication arrest, Sertoli/Leydig stress remodeling, and altered signaling. Unexposed F1 offspring retained inflammatory, nucleotide, and energy-metabolism changes, suggesting intergenerational imprinting. Defines cell-type-specific vulnerabilities and nominates redox balance, ferroptosis, and niche signaling as targets to preserve fertility.</div>
-  </div></div>
-  <div class="paper"><div class="rank">77</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42598031/" target="_blank">PMID 42598031</a></span></div>
-    <div class="title">Hydrogen sulfide primes drought tolerance in plants by metabolic control of DNA methylation.</div>
-    <div class="sum">Hydrogen sulfide pretreatment primed rice drought tolerance by coordinated transcriptomic and epigenomic reprogramming. H2S attenuated drought-induced transcriptional changes while promoting dehydrin genes, activated stress transcription factors, and repressed cell-wall genes. Whole-genome bisulfite sequencing revealed global DNA hypomethylation with increased CG methylation in gene bodies, and H2S reduced S-adenosylmethionine levels, linking gasotransmitter priming to metabolic control of DNA methylation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">78</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42597961/" target="_blank">PMID 42597961</a></span></div>
-    <div class="title">Integrative multi-omics reveals a prognostic and therapeutic landscape of synthetic lethality-associated signatures in lung adenocarcinoma.</div>
-    <div class="sum">Integrating single-cell RNA-seq, spatial transcriptomics, and machine learning, synthetic lethality (SL) activity was quantified in lung adenocarcinoma. High-SL cells were enriched in advanced-stage/metastatic samples with reduced differentiation. Thirteen high-SL signature genes were identified, with IFRD2 among top contributors; IFRD2 knockdown modulated niraparib sensitivity, and the predicted compound prostaglandin A1 showed selective activity, mapping a prognostic and therapeutic SL landscape in LUAD.</div>
-  </div></div>
-  <div class="paper"><div class="rank">79</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42597915/" target="_blank">PMID 42597915</a></span></div>
-    <div class="title">3&#x27;UTR-directed, kinase-proximal mRNA decay inhibits C/EBPβ phosphorylation/activation to suppress senescence in tumor cells.</div>
-    <div class="sum">C/EBP-beta activity in tumor cells is suppressed by its 3&#x27;UTR via kinase-proximal mRNA decay. The decay factors UPF1 and STAU1/2 localize to perinuclear endosomes and degrade CEBPB transcripts, preventing phosphorylation/activation by ERK1/2 and CK2. Disruption restores C/EBP-beta activity and induces senescence; deleting the G/U-rich regulatory element (GRE) impaired KRAS-driven lung tumor progression and biased cells toward an AT2-like state.</div>
-  </div></div>
-  <div class="paper"><div class="rank">80</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42597841/" target="_blank">PMID 42597841</a></span></div>
-    <div class="title">Kidney-specific deletion of the BicC family RNA-binding protein 1 triggers an ADPKD-like cystogenic program.</div>
-    <div class="sum">Conditional Bicc1 knockout in mouse kidneys revealed ADPKD-like cystogenic programs. Bicc1-deficient adult kidneys formed few cysts within six months, but distal nephron-specific deletion induced aggressive polycystic kidney disease. A novel machine-learning pipeline (ARTCyQ) quantified cysts from immunofluorescent stainings. Bicc1 loss activates injury-repair, cAMP, and YAP pathways, and segment-specific deletion severity points to distal nephron sensitivity in cyst initiation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">81</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42597664/" target="_blank">PMID 42597664</a></span></div>
-    <div class="title">Across species identification of genes bridging neurological and reproductive functions in mammals.</div>
-    <div class="sum">Proteomic and transcriptomic analyses in Ovis aries and Rattus norvegicus, plus in silico transcriptomic datasets from mouse, macaque, and human, identified 8,464 protein-coding genes shared between brain and sperm/testis and conserved across five species; 8,444 were also shared with rat ovary. Functional annotation classified 3,890 as neurological-and-reproductive and 1,752 as uncharacterized, highlighting candidates bridging brain and reproductive functions across mammals.</div>
-  </div></div>
-  <div class="paper"><div class="rank">82</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42592513/" target="_blank">PMID 42592513</a></span></div>
-    <div class="title">Batrachotoxin-sensitive sodium channels in toxic birds challenge &quot;target mutation&quot; strategy of toxin autoresistance.</div>
-    <div class="sum">Tested whether NaV1.4 substitutions under selection in toxic New Guinean birds confer batrachotoxin autoresistance. Structure-guided mapping showed the substitutions lie outside known inner-cavity BTX receptor sites. Electrophysiology: single and double mutants showed wild-type activation/inactivation and remained BTX-sensitive with comparable toxin-induced shifts and persistent current. These substitutions do not provide BTX autoresistance, challenging the &#x27;target mutation&#x27; autoresistance strategy for toxic birds.</div>
-  </div></div>
-  <div class="paper"><div class="rank">83</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42592151/" target="_blank">PMID 42592151</a></span></div>
-    <div class="title">Effect of glucocorticoid production by the enteric nervous system on neuronal connectivity is blocked during inflammation in a GR-dependent pathway.</div>
-    <div class="sum">In primary rat enteric nervous system (ENS) cultures, enteric glial cells produced glucocorticoids from 11-dehydrocorticosterone via the regeneration pathway. 11dHC treatment increased expression and density of neuronal-connectivity molecules in a glucocorticoid-receptor-dependent manner. Inflammation blocked this 11dHC-induced enhancement, showing local ENS glucocorticoid production regulates neuronal connectivity and is disrupted during inflammation in a GR-dependent manner.</div>
-  </div></div>
-  <div class="paper"><div class="rank">84</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42592083/" target="_blank">PMID 42592083</a></span></div>
-    <div class="title">Tunable universal OR-gated CAR T cells for AML.</div>
-    <div class="sum">Combining FLT3 and CD33 in a combinatorial OR-gate using the split, universal, programmable (SUPRA) CAR platform targets AML antigen heterogeneity. The split platform offers tunable activation and multiplexed targeting. CARs hit both antigens with efficacy equivalent to conventional CARs while reducing engineering burden, and defined dose ranges minimized off-target toxicity against hematopoietic stem/progenitor cells.</div>
-  </div></div>
-  <div class="paper"><div class="rank">85</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42577014/" target="_blank">PMID 42577014</a></span></div>
-    <div class="title">Deep learning-assisted mapping of dendritic spines using sequential 2D two-photon calcium imaging.</div>
-    <div class="sum">Presents a software pipeline for targeted dendritic imaging using sequential 2D scanning on standard two-photon microscopes. ScanneImage-compatible pre-acquisition tool (roipy) generates dendrite-aligned ROIs for depth-specific imaging, and a post-acquisition tool enables spine calcium readout (a software/analysis methods paper for mapping synaptic organization in neurons).</div>
-  </div></div>
-  <div class="paper"><div class="rank">86</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42576916/" target="_blank">PMID 42576916</a></span></div>
-    <div class="title">The ADAP-TRIM21-ZEB2 axis regulates CD8(+) T cell effector expansion and central memory-like differentiation.</div>
-    <div class="sum">ADAP acts as a negative regulator of CD8+ T cell responses. During acute LCMV-Armstrong infection, ADAP deficiency enhanced effector expansion/function (IFN-gamma, granzyme B) and favored central memory-like CD8+ T cells. Mechanistically ADAP interacts with E3 ligase TRIM21 to promote K48-linked polyubiquitination and degradation of ZEB2. The ADAP-TRIM21-ZEB2 axis regulates CD8 effector expansion and central memory differentiation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">87</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42572629/" target="_blank">PMID 42572629</a></span></div>
-    <div class="title">C3aR inhibition alleviates cerebral ischemia-reperfusion injury via STING-mediated ferroptosis through SLC7A11/GPX4.</div>
-    <div class="sum">Examined whether C3aR signaling modulates STING-associated ferroptosis via SLC7A11/GPX4 in cerebral ischemia-reperfusion. In rat MCAO/R and BV2 OGD/R models, C3aR blockade with SB290157 improved neurological outcomes, limited infarction/edema, and preserved mitochondrial membrane. Molecular docking, MD, and MM/GBSA analyses supported C3aR-STING-SLC7A11/GPX4 involvement, indicating C3aR inhibition alleviates ischemia-reperfusion injury through STING-mediated ferroptosis via SLC7A11/GPX4.</div>
-  </div></div>
-  <div class="paper"><div class="rank">88</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42572615/" target="_blank">PMID 42572615</a></span></div>
-    <div class="title">IL-10-producing innate lymphoid cells restrain γδT17-driven psoriatic inflammation.</div>
-    <div class="sum">Imiquimod-induced psoriasis elicited a PD-L1(hi) Sca-1+ ILC2-like subset enriched for IL-10 (ILC2(10)) acting as an innate brake on the gamma/delta T17 axis. Adoptive transfer reduced severity and suppressed gamma/delta T cell IL-17A and CCR2; IL10-deficient ILC2(10) lacked these effects. Human psoriasis single-cell data identified a PD-L1+ IL-10+ ILC population, linking ILC2-derived IL-10 to restraining psoriatic inflammation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">89</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42572611/" target="_blank">PMID 42572611</a></span></div>
-    <div class="title">A trifluoromethyl quinazoline inhibits hepatocellular carcinoma proliferation through HDAC1 binding and multi-target mechanisms.</div>
-    <div class="sum">KZL-064, a 2-trifluoromethyl-4-aminoquinazoline derivative, inhibited HCC proliferation, migration and invasion, induced apoptosis and G2/M arrest, and achieved tumor suppression comparable to sorafenib in MHCC97-H xenografts with no significant toxicity. HDAC1 was identified as a direct binding target (virtual screening, docking, CETSA, BLI). Knockdown partially attenuated pro-apoptotic/cell-cycle effects without impairing anti-migratory/invasive activity, indicating multi-target mechanisms.</div>
-  </div></div>
-  <div class="paper"><div class="rank">90</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42572603/" target="_blank">PMID 42572603</a></span></div>
-    <div class="title">Endogenous phosphatidylcholine 16:0/20:4 increases to promote liver regeneration in hepatectomy.</div>
-    <div class="sum">After 70% partial hepatectomy, liver regeneration peaked earlier in MASH liver than healthy liver. Lipidomics identified phosphatidylcholine (PC 16:0/20:4), which increased in both MASH and non-MASH liver and promoted proliferation of Hepa 1-6, Huh-7, human liver organoids, and mouse PHx models. Endogenous PC(16:0/20:4) promotes liver regeneration and may be elevated in metabolic dysfunction-associated steatotic liver.</div>
-  </div></div>
-  <div class="paper"><div class="rank">91</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42572602/" target="_blank">PMID 42572602</a></span></div>
-    <div class="title">Evolutionarily conserved peptidoglycan recognition proteins mediate antibacterial immunity in planarians.</div>
-    <div class="sum">Seven peptidoglycan recognition proteins (three secreted PGRP-S1-S3, four membrane PGRP-L1-L4) were identified in the planarian Schmidtea mediterranea. Structural modeling confirmed conserved PGRP domains and predicted interactions with peptidoglycan ligands. PGRPs enriched in intestine/epidermis were dynamically regulated after injury; Staphylococcus aureus infection induced route- and tissue-specific responses. RNAi depletion impaired bacterial clearance, with PGRP-S3 loss most severely disrupting immunity.</div>
-  </div></div>
-  <div class="paper"><div class="rank">92</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42572590/" target="_blank">PMID 42572590</a></span></div>
-    <div class="title">Uhrf1 in PDGFRα-lineage cells regulates osteophyte formation in osteoarthritis.</div>
-    <div class="sum">Uhrf1, a DNA-methylation-maintenance regulator, was studied in osteophyte formation. PDGFR-alpha-lineage-specific Uhrf1-knockout mice showed Uhrf1 regulates proliferation and chondrogenic potential of synovial PDGFR-alpha-lineage cells during osteophyte development. In human synovial cells, Uhrf1 maintains DNA methylation and NLK (Nemo-like kinase) was identified as a target, clarifying that Uhrf1 regulates osteoarthritis osteophyte formation.</div>
-  </div></div>
-  <div class="paper"><div class="rank">93</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42572587/" target="_blank">PMID 42572587</a></span></div>
-    <div class="title">Mycoplasma infection drives EGFR-TKI resistance through convergent transcriptomic reprogramming in non-small cell lung cancer.</div>
-    <div class="sum">Mycoplasma infection sustained ERK, AKT, and NF-kappaB signaling, impaired receptor internalization, and reduced osimertinib sensitivity in EGFR-mutant NSCLC cells. Antibiotic clearance partially restored drug sensitivity. Convergent transcriptomic pathways linked infection to resistance, including clathrin down-regulation. Combined mTOR and LDHA inhibition improved growth suppression; mycoplasma infection and higher LDHA expression were clinically associated with resistance.</div>
-  </div></div>
-  <div class="paper"><div class="rank">94</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42572586/" target="_blank">PMID 42572586</a></span></div>
-    <div class="title">Bulk and single-cell RNA-seq analyses characterize a DBP-related circadian signature in ischemic stroke.</div>
-    <div class="sum">Integrating bulk and single-cell RNA-seq from stroke patients and mouse models with machine learning identified a nine-gene circadian signature stratifying stroke patients into three subtypes with distinct immune infiltration. Single-cell analysis highlighted microglia with DBP down-regulation linked to microglial senescence; restoring DBP reduced senescent phenotypes, infarct volume, and improved neurological function. Circadian gene-based stratification informs stroke.</div>
-  </div></div>
-  <div class="paper"><div class="rank">95</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42571425/" target="_blank">PMID 42571425</a></span></div>
-    <div class="title">Increasing usable reads in RNA-seq protocols.</div>
-    <div class="sum">Describes a funnel strategy to optimize usable reads generated by RNA-seq protocols, applied to prime-seq (an early-barcoding bulk protocol) across 1,256 samples in 65 libraries. The optimized prime-seq2 increased usable reads by 60%, improving one of the most cost-efficient bulk RNA-seq protocols. Monitoring usable reads may serve as a valuable quality-control metric for RNA-seq.</div>
-  </div></div>
-  <div class="paper"><div class="rank">96</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42571403/" target="_blank">PMID 42571403</a></span></div>
-    <div class="title">Glycolytic reprogramming and the EMT drive cervical cancer progression via the NQO1/HIF1α-SIX1 axis.</div>
-    <div class="sum">NQO1 was up-regulated in cervical cancer, promoting proliferation, metastasis, and EMT. Mechanistically NQO1 suppresses AMPK phosphorylation to reduce ROS while stabilizing HIF1-alpha by preventing proteasomal degradation; stabilized HIF1-alpha up-regulates SIX1 to enhance glycolytic-enzyme transcription, driving aerobic glycolysis. Defines the NQO1/HIF1alpha-SIX1 axis linking glycolytic reprogramming and EMT to cervical cancer progression.</div>
-  </div></div>
-  <div class="paper"><div class="rank">97</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42571379/" target="_blank">PMID 42571379</a></span></div>
-    <div class="title">Hypoxia-induced immortalization of Helicoverpa armigera pupal ovarian cells.</div>
-    <div class="sum">A hypoxia-induced immortalization method applied to Helicoverpa armigera pupal ovarian cells achieved a 17.8% success rate across four batches, over 3-fold higher than normoxic methods, enabling eight continuous cell lines from pupal ovaries. As proof of concept, the IOZCAS-Ha-8 line shows high susceptibility to both homologous and heterologous viruses, aiding lepidopteran and biopesticide research.</div>
-  </div></div>
-  <div class="paper"><div class="rank">98</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42571371/" target="_blank">PMID 42571371</a></span></div>
-    <div class="title">Acute AKT signaling increases glucose phosphorylation and contribution to glycogen in hepatocytes.</div>
-    <div class="sum">Isotope tracing ([U-13C]- and [U-14C]-glucose) with the AKT inhibitor MK-2206 in primary rat hepatocytes measured acute (minutes-scale) post-translational AKT effects. MK-2206 decreased AKT phosphorylation and glucose contribution to glucose-6-phosphate and UDP-glucose within minutes without affecting pool sizes or glucokinase/G6Pase/PEPCK protein levels. Acute AKT signaling increases glucose phosphorylation and glycogen contribution in hepatocytes.</div>
-  </div></div>
-  <div class="paper"><div class="rank">99</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42571359/" target="_blank">PMID 42571359</a></span></div>
-    <div class="title">Fstl1 determines luminal size of mouse trachea through negative regulation of BMP4 signaling.</div>
-    <div class="sum">Fstl1, a BMP4 antagonist, determines mouse tracheal luminal size. Most tracheal epithelial mitotic angles are ordered and transverse, allowing AP-axis lumen growth. Fstl1 deletion produced wider trachea with enlarged lumen due to increased mitotic cells with spindles nearly vertical to the longitudinal axis. Fstl1 antagonizes p-Smad1/5/8 to regulate BMP4 signaling; reducing BMP4 rescues lumen enlargement and normalizes spindle angles.</div>
-  </div></div>
-  <div class="paper"><div class="rank">100</div><div class="body">
-    <div class="meta"><span class="journal">iScience</span><span class="if">IF 4.6</span><span class="pmid"><a href="https://pubmed.ncbi.nlm.nih.gov/42571355/" target="_blank">PMID 42571355</a></span></div>
-    <div class="title">Adelmidrol: A novel osteogenic mineralization regulator for bone defect repair via activating the Notch pathway with drug-loaded hydrogel.</div>
-    <div class="sum">High-throughput screening identified adelmidrol as a promoter of osteogenic mineralization. In vitro it up-regulated RUNX2 and OSX, enhancing osteoblast osteogenic mineralization by activating Notch signaling. In vivo, a methacrylated silk fibroin hydrogel loaded with aminated bioactive glass and adelmidrol (SFMA/GelMA/MBG-NH2-Ad) promoted osteogenic mineralization, reduced bone defect area, and repaired mouse critical calvarial defects. Adelmidrol is a novel osteogenic mineralization regulator for bone repair.</div>
-  </div></div>
+  <div class="controls">
+    <select id="date-select" aria-label="Pick a date"></select>
+    <input type="search" id="search" placeholder="Search title, journal, summary, tags…" aria-label="Search">
+  </div>
+  <div class="result-count" id="count"></div>
+  <div id="papers"></div>
   <footer>
     Method: PubMed esearch for publication date → ISSN match against JCR 2024 impact-factor table → abstract-topic filter → ranked by journal IF.<br>
     Generated automatically by an agent pipeline from PubMed + Clarivate JCR data.
   </footer>
 </div>
+<script>
+const DATA_DIR = 'data';
+let INDEX = [], CURRENT = null;
+
+function el(id){ return document.getElementById(id); }
+
+async function init(){
+  try {
+    const r = await fetch(`${DATA_DIR}/index.json`, {cache:'no-store'});
+    INDEX = await r.json();
+    INDEX.sort((a,b)=> b.date.localeCompare(a.date)); // newest first
+    const sel = el('date-select');
+    sel.innerHTML = INDEX.map(e=>`<option value="${e.date}">${e.label}</option>`).join('');
+    sel.value = INDEX[0].date;
+    sel.addEventListener('change', ()=> loadDate(sel.value));
+    el('search').addEventListener('input', render);
+    await loadDate(INDEX[0].date);
+  } catch(err){
+    el('papers').innerHTML = '<div class="paper"><div class="body">Failed to load data index.</div></div>';
+  }
+}
+
+async function loadDate(date){
+  el('papers').innerHTML = '';
+  el('count').textContent = 'Loading…';
+  const entry = INDEX.find(e=>e.date===date);
+  el('date-badge').innerHTML = `<b>${entry ? entry.label : date}</b>`;
+  try {
+    const r = await fetch(`${DATA_DIR}/${date}.json`, {cache:'no-store'});
+    CURRENT = await r.json();
+  } catch(err){ CURRENT = null; }
+  render();
+}
+
+function matches(p, q){
+  q = q.toLowerCase();
+  return p.title.toLowerCase().includes(q) || p.journal.toLowerCase().includes(q)
+      || (p.summary||'').toLowerCase().includes(q) || p.tags.join(' ').toLowerCase().includes(q);
+}
+
+function render(){
+  if(!CURRENT){ el('papers').innerHTML=''; return; }
+  const q = el('search').value.trim();
+  const shown = q ? CURRENT.papers.filter(p=>matches(p,q)) : CURRENT.papers;
+  el('count').textContent = q ? `${shown.length} of ${CURRENT.papers.length} papers match “${q}”` : '';
+  el('papers').innerHTML = shown.map(p=>{
+    const sumHtml = p.summary
+      ? `<div class="sum">${escapeHtml(p.summary)}</div>`
+      : '<div class="sum"><em>Summary pending.</em></div>';
+    return `<div class="paper"><div class="rank">${p.rank}</div><div class="body">
+      <div class="meta"><span class="journal">${escapeHtml(p.journal)}</span><span class="if">IF ${p.jif}</span><span class="pmid"><a href="${p.url}" target="_blank">PMID ${p.pmid}</a></span></div>
+      <div class="title">${escapeHtml(p.title)}</div>
+      ${sumHtml}
+      <div class="tags">${p.tags.map(t=>`<span class="tag" onclick="searchTag(this)">${escapeHtml(t)}</span>`).join('')}</div>
+    </div></div>`;
+  }).join('') || '<div class="result-count">No matching papers.</div>';
+}
+
+function searchTag(t){ el('search').value = t.textContent; render(); }
+
+function escapeHtml(s){
+  return String(s??'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+init();
+</script>
 </body>
 </html>
