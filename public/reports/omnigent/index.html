@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omnigent: Analysis & Evaluation — mswy.xyz</title>
+<meta name="description" content="Independent analysis of Omnigent (omnigent-ai/omnigent): what it is, how it works, supported harnesses, quality signals, and known gaps.">
+<style>
+  :root {
+    --bg: #0e1116; --panel: #161b23; --border: #2a3140;
+    --text: #d7dde6; --muted: #8b94a3;
+    --accent: #4da3ff; --green: #3fb968; --amber: #d29922; --red: #f85149;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 48px 24px 96px; }
+  h1 { font-size: 1.9rem; line-height:1.25; margin:.2em 0; }
+  h2 { font-size: 1.35rem; margin-top: 2.4em; border-bottom:1px solid var(--border); padding-bottom:.35em; }
+  h3 { font-size: 1.05rem; margin-top:1.8em; color:#c3cbd7;}
+  a { color: var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+  code { background:#1d232e; border:1px solid var(--border); border-radius:5px; padding:.1em .4em; font-size:.88em; }
+  pre { background:#12161d; border:1px solid var(--border); border-radius:8px; padding:16px; overflow-x:auto; }
+  pre code { background:none; border:none; padding:0; font-size:.85rem; line-height:1.55; }
+  blockquote { border-left:3px solid var(--accent); margin:1em 0; padding:.2em 1em; color:#b9c2ce; font-style:italic; background:rgba(77,163,255,.05);}
+  table { border-collapse:collapse; width:100%; margin:1.2em 0; font-size:.92rem;}
+  th,td { border:1px solid var(--border); padding:8px 12px; text-align:left; vertical-align:top;}
+  th { background:#1a2029; font-weight:600; }
+  tr:nth-child(even) td { background:#131820; }
+  .meta { color:var(--muted); font-size:.9rem; margin-bottom: 2.5em; }
+  .tag { display:inline-block; font-size:.72rem; font-weight:600; letter-spacing:.04em; padding:.18em .6em; border-radius:999px; vertical-align:middle; }
+  .t-first { background:rgba(63,185,104,.15); color:var(--green); border:1px solid rgba(63,185,104,.4);}
+  .t-acp   { background:rgba(210,153,34,.13); color:var(--amber); border:1px solid rgba(210,153,34,.4);}
+  .t-native{ background:rgba(77,163,255,.12); color:var(--accent); border:1px solid rgba(77,163,255,.35);}
+  .callout { border:1px solid var(--border); border-left-width:4px; border-radius:8px; padding:14px 18px; margin:1.4em 0; font-size:.95rem;}
+  .warn { border-left-color: var(--red); background:rgba(248,81,73,.06);}
+  .note { border-left-color: var(--amber); background:rgba(210,153,34,.06);}
+  .good { border-left-color: var(--green); background:rgba(63,185,104,.06);}
+  .bar-row { display:flex; align-items:center; gap:10px; margin:6px 0; font-size:.88rem;}
+  .bar-label { width:150px; flex-shrink:0; text-align:right; color:#c3cbd7;}
+  .bar-track { flex:1; height:20px; background:#1a2029; border-radius:4px; overflow:hidden;}
+  .bar-fill-first { height:100%; background:linear-gradient(90deg,#2ea043,#3fb968); }
+  .bar-fill-acp { height:100%; background:linear-gradient(90deg,#9e6a03,#d29922); }
+  footer { margin-top:4em; padding-top:1.5em; border-top:1px solid var(--border); color:var(--muted); font-size:.85rem;}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Omnigent: Analysis &amp; Evaluation</h1>
+<p class="meta">Report date 26/08/23 · Repo data verified via GitHub API on 26/08/23 · Subject: <a href="https://github.com/omnigent-ai/omnigent">github.com/omnigent-ai/omnigent</a> · Status as evaluated: <strong>v0.10.0 (alpha)</strong></p>
+
+<h2>What it is</h2>
+<p><strong>Omnigent</strong> is an open-source <em>meta-harness</em> — an orchestration layer that sits <em>above</em> AI coding-agent harnesses rather than replacing them. It wraps terminal-based agents (Claude Code, Codex, Cursor, Pi, …) and SDK-based agents behind one uniform interface, then adds the things a single harness can't do: swapping harnesses without rewriting agent definitions, enforcing governance policies and OS sandboxing across all of them, real-time multi-user collaboration on live sessions, and access from terminal, web, phone, or desktop app.</p>
+<blockquote>"Omnigent is an open-source meta-harness that gives you a common orchestration layer over Claude Code, Codex, Cursor, OpenCode, Hermes, Pi, and the agents you write yourself: swap or combine harnesses without rewriting, enforce policies and sandboxing, and collaborate in real time from any device."</blockquote>
+<p style="font-size:.85rem;color:var(--muted)">— README, <a href="https://github.com/omnigent-ai/omnigent">omnigent-ai/omnigent</a>, retrieved 26/08/23</p>
+<p>The pitch, per the launch post by Matei Zaharia et&nbsp;al., is that frontier work has moved up a level: multi-model, multi-agent patterns (Harvey's worker+advisor split, Anthropic's lead-agent-with-subagents, Databricks' Genie) span harnesses, but each harness is its own silo. Omnigent provides three pillars — <strong>Composition</strong>, <strong>Control</strong>, <strong>Collaboration</strong>.</p>
+
+<h2>Who made it</h2>
+<p>Built and maintained by <strong>Databricks</strong>. Announced at Data + AI Summit and <a href="https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents">open-sourced under Apache-2.0 on 26/06/13</a>; the GitHub repo was created 26/06/11. The launch post credits <strong>Matei Zaharia</strong> (Databricks CTO/co-founder, also creator of Apache Spark), <strong>Kasey Uhlenhuth</strong>, and <strong>Corey Zumar</strong>.</p>
+<p>Development remains heavily Databricks-core: the top five contributors (<a href="https://github.com/PattaraS">PattaraS</a> ~630 commits, TomeHirata ~350, serena-ruan ~320, dbczumar ~170, fanzeyi ~160 as of 26/08/23) account for most of the ~2,700 commits, though the contributor list exceeds 100 accounts overall. There is also a commercial sibling: "Omnigent on Databricks," a managed deployment covered by <a href="https://docs.databricks.com/aws/en/omnigent/">official Databricks documentation</a>.</p>
+
+<h2>How it works</h2>
+<p>Four moving pieces:</p>
+<ul>
+<li><strong>Runner</strong> — wraps any agent in a sandboxed session exposing a uniform API ("messages and files in, text streams and tool calls out"). Each harness gets an adapter module (<code>omnigent/inner/&lt;name&gt;_harness.py</code>).</li>
+<li><strong>Server</strong> — persists sessions (SQL DB + Alembic migrations), enforces policies, handles auth/multi-user accounts, and exposes every session over terminal CLI, web UI, mobile app, and REST APIs.</li>
+<li><strong>Host</strong> — registers your machine (or a cloud sandbox) as an execution target the server can schedule onto.</li>
+<li><strong>Sandbox layer</strong> — per-platform OS isolation: bubblewrap on Linux, Seatbelt on macOS, Windows Job Objects (containment only — no filesystem/network isolation), plus disposable cloud sandboxes (Modal, Daytona, E2B, Kubernetes, Boxlite, CoreWeave, Databricks, and more).</li>
+</ul>
+<h3>Policies (the governance core)</h3>
+<p>Declarative gates evaluated at enforcement points, returning <strong>ALLOW / DENY / ASK</strong>. Multiple policies compose; a DENY short-circuits everything else. They stack across three levels — server-wide (admin) → agent spec (developer) → session (end user) — with session-level checked first.</p>
+<pre><code>policies:
+  budget:
+    type: function
+    handler: omnigent.policies.builtins.cost.cost_budget
+    factory_params:
+      max_cost_usd: 5.00           # hard spend cap...
+      ask_thresholds_usd: [3.00]   # ...with a soft warning on the way</code></pre>
+<p>Unlike prompt-based guardrails, policies are stateful and contextual — e.g., "after an agent runs <code>npm install</code>, require human approval before <code>git push</code>" or "only write to files it created." Full catalog in <a href="https://github.com/omnigent-ai/omnigent/blob/main/docs/POLICIES.md">docs/POLICIES.md</a>.</p>
+<h3>Agent definition</h3>
+<p>An agent is a short YAML file — prompt, tools (local Python functions, MCP servers, sub-agents), executor harness, policies. Swapping Claude Code for OpenCode or Codex is a one-line change to <code>executor.harness</code>. Example agents ship with the repo: <strong>Polly</strong> (multi-vendor orchestrator: plans, delegates to parallel coding sub-agents in git worktrees, cross-reviews each diff with a different vendor) and <strong>Debby</strong> (Claude-vs-GPT dual-head brainstormer with a <code>/debate</code> mode).</p>
+
+<h2>How to use it</h2>
+<p>Python 3.12+, macOS/Linux fully supported; Windows runs degraded via <code>uv</code> (no native sandboxing). Install and start:</p>
+<pre><code>curl -fsSL https://raw.githubusercontent.com/omnigent-ai/omnigent/main/scripts/install_oss.sh | sh
+
+omnigent            # interactive session + local web UI on :6767
+omnigent claude     # Claude Code in a shareable session
+omnigent codex | cursor | opencode | hermes | pi
+omnigent run examples/polly/          # multi-agent orchestrator demo
+omnigent setup      # credentials: API keys, subscriptions, gateways (OpenRouter/LiteLLM/Ollama)
+
+# team / remote use
+OMNIGENT_AUTH_ENABLED=1 omnigent server --background
+omnigent host https://your-server   # register this machine as a runner
+omnigent attach &lt;session_id&gt;        # co-drive someone's live session</code></pre>
+<p>A local server is reachable on your LAN (phone included); Docker deploys cover VPS/cloud targets, with one-click recipes for Render/Railway/Fly.io/HF Spaces/Cloudflare. Model credentials come from vendor API keys, existing Claude/OpenAI subscriptions via official CLIs, or any OpenAI-/Anthropic-compatible gateway.</p>
+
+<h2>Supported harnesses</h2>
+<p>First-class = dedicated adapter modules shipped in the repo (<code>omnigent/inner/</code>, enumerated from the tree on 26/08/23). "-native" variants drive each tool through its own native protocol instead of the SDK, preserving tool-specific features (approvals, cost tracking, elicitation). Anything speaking <strong>ACP (Agent Client Protocol)</strong> can be attached as a configured external agent.</p>
+
+<div class="bar-row"><div class="bar-label"><strong>First-class adapters</strong></div><div class="bar-track"><div class="bar-fill-first" style="width:100%"></div></div></div>
+<table>
+<tr><th>Harness</th><th>Type</th><th>Notes</th></tr>
+<tr><td>Claude Code (Anthropic)</td><td><span class="tag t-first">First-class</span></td><td>SDK (<code>claude-sdk</code>) + native TUI bridge; gateway support incl. OpenRouter Anthropic-compatible endpoint</td></tr>
+<tr><td>Codex (OpenAI)</td><td><span class="tag t-first">First-class</span></td><td>CLI + native variants; subscription auth via official CLI</td></tr>
+<tr><td>Cursor</td><td><span class="tag t-first">First-class</span></td><td>SDK + native bridge with permissions/cost tracking</td></tr>
+<tr><td>OpenCode</td><td><span class="tag t-first">First-class</span></td><td>SDK + native; see gaps below (open 60s-timeout issue as of 26/08/22)</td></tr>
+<tr><td>Pi</td><td><span class="tag t-first">First-class</span></td><td>CLI + native; mandatory bwrap sandbox on Linux</td></tr>
+<tr><td>Hermes Agent (Nous Research)</td><td><span class="tag t-first">First-class</span></td><td>CLI + native harness + policy hook</td></tr>
+<tr><td>Goose</td><td><span class="tag t-first">First-class</span></td><td>CLI + native</td></tr>
+<tr><td>Kimi</td><td><span class="tag t-first">First-class</span></td><td>CLI + native</td></tr>
+<tr><td>Qwen Code</td><td><span class="tag t-first">First-class</span></td><td>CLI + native (design docs present)</td></tr>
+<tr><td>Antigravity</td><td><span class="tag t-first">First-class</span></td><td>SDK/native + RPC bridge</td></tr>
+<tr><td>GitHub Copilot</td><td><span class="tag t-first">First-class</span></td><td>v0.10: authenticates with existing <code>gh auth login</code>, incl. GH Enterprise</td></tr>
+<tr><td>Kiro</td><td><span class="tag t-first">First-class</span></td><td>Native; approvals surfaced in embedded terminal/chat cards</td></tr>
+<tr><td>OpenAI Agents SDK</td><td><span class="tag t-first">First-class</span></td><td>SDK harness</td></tr>
+<tr><td>ACP generic</td><td><span class="tag t-first">First-class</span></td><td>Adapter for any Agent Client Protocol agent</td></tr>
+<tr><td>Blaxel</td><td><span class="tag t-first">First-class</span></td><td>Sandbox provider added in v0.10.0</td></tr>
+</table>
+
+<div class="bar-row" style="margin-top:1.6em"><div class="bar-label"><strong>Via ACP config</strong></div><div class="bar-track"><div class="bar-fill-acp" style="width:40%"></div></div></div>
+<table>
+<tr><th>Agent</th><th>Status</th><th>Evidence</th></tr>
+<tr><td>Devin (Cognition)</td><td><span class="tag t-acp">Built-in ACP config</span></td><td>"Devin is now a built-in harness, configured ACP agents (Devin, Grok Build, …) show up in <code>omni setup</code>" — v0.10.0 release notes (26/08/19)</td></tr>
+<tr><td>Grok Build (xAI)</td><td><span class="tag t-acp">Built-in ACP config</span></td><td>"Grok Build (xAI) joins as a first-class ACP harness (#3075)" — v0.9.0 release notes (26/08/11)</td></tr>
+<tr><td>Any ACP-speaking agent</td><td><span class="tag t-acp">Community/config</span></td><td>ACP adapter + community registry (<code>omnigent/community/harness/</code>)</td></tr>
+</table>
+<p style="font-size:.85rem;color:var(--muted)">⚠️ Third-party "works with Omnigent" reports beyond the above could not be independently verified; treat unlisted combinations as untested. The maintainers publish a <a href="https://github.com/omnigent-ai/omnigent/tree/main/tests/harness_bench">harness capability test bench</a> so contributors can validate new adapters against observed behavior — a good sign the compatibility matrix is measured, not just claimed.</p>
+
+<h2>Quality signals</h2>
+<h3>Growth (verified via GitHub API)</h3>
+<table>
+<tr><th>Metric</th><th>26/08/02</th><th>26/08/23</th><th>Δ</th></tr>
+<tr><td>Stars</td><td>8,041</td><td>9,177</td><td>+1,136 (~14%) in 3 weeks</td></tr>
+<tr><td>Forks</td><td>1,198</td><td>1,406</td><td>+208</td></tr>
+<tr><td>Latest release</td><td>v0.8.x</td><td><a href="https://github.com/omnigent-ai/omnigent/releases/tag/v0.10.0">v0.10.0</a></td><td>two minors (~weekly cadence since July)</td></tr>
+<tr><td>Commits</td><td colspan="2">400 commits between 26/08/05–26/08/23 alone; multiple maintainers active daily</td><td>very high velocity</td></tr>
+</table>
+<h3>Engineering hygiene (from repo inspection)</h3>
+<ul>
+<li>~2,120 Python files plus a React/TypeScript web UI, iOS/Android apps, Electron desktop shell, and a Rust dev supervisor — a large, actively-typed codebase with an ongoing mypy cleanup tracked publicly.</li>
+<li>Unusually strong CI security posture for an alpha project: a deterministic PR security scan gates all CI for untrusted contributions (<a href="https://github.com/omnigent-ai/omnigent/blob/main/SECURITY.md">SECURITY.md</a>), scanning for secret exfiltration shapes, reverse shells, and CI-workflow misuse.</li>
+<li>Structured design docs, deprecation-version conventions, pre-commit + ruff, e2e test suites including PTY timing tests.</li>
+</ul>
+<h3>Community reception — thinner than the stars suggest</h3>
+<ul>
+<li>The strongest organic signal: r/databricks announcement, ~226 votes / 52 comments (26/07). Representative comment: <em>"Omnigent is definitely leading on governance etc."</em> alongside questions comparing it to OpenCode. On r/AI_Agents, one user: <em>"That's why I'm also quite excited about omnigent. It helps me to switch between them easily. It's still in early stage but looks super promising."</em></li>
+<li>Hacker News traction is weak: best submission 15 points / 4 comments (26/06/13); nothing above single digits since. ⚠️ Below typical thresholds for high-signal HN validation.</li>
+<li><strong>No independent benchmarks exist.</strong> All performance claims (e.g., keystroke echo cut "~250 ms → under 10 ms" in v0.10.0) are project-sourced. Coverage elsewhere (MarkTechPost 26/06/13, Addepto, Developers Digest 26/06/16) is derivative of the launch post.</li>
+</ul>
+
+<h2>Issues &amp; gaps</h2>
+<div class="callout warn"><strong>Alpha software, explicitly.</strong> The repo badges itself <code>status: alpha</code>. Open issues+PRs grew from 825 → 1,188 over three weeks — mostly fast-turning polish bugs, but expect breakage between weekly minors.</div>
+<ul>
+<li><strong>OpenCode path is the least mature.</strong> Internal gap-tracker docs exist (<code>designs/opencode-native-gaps.md</code>), and as of 26/08/22 an open issue reports every relayed Omnigent tool call killed at 60s in opencode-native (<a href="https://github.com/omnigent-ai/omnigent/issues/5265">#5265</a>). Long-running tool calls through OpenCode will bite until fixed.</li>
+<li><strong>Governance regression in v0.10.0.</strong> Shared-session approval-authority restrictions were reverted: "session approvals are once again available to any shared editor, not just the session owner" (#4318). If you expose sessions to teammates, approval gating is weaker than it was in v0.8–v0.9.</li>
+<li><strong>Telemetry on by default.</strong> Anonymized usage collection ships enabled; opting out requires following separate instructions. Worth knowing before adopting in any sensitive environment.</li>
+<li><strong>Databricks gravity.</strong> Development direction, smart-routing defaults, and managed offering all orbit Databricks infrastructure. The OSS version keeps LLM-classifier routing, but roadmap items (AI Gateway routing, Lakebase-backed deploys) assume their ecosystem. Vendor lock-in risk is moderate, not severe — Apache-2.0 and one-line harness swaps limit blast radius.</li>
+<li><strong>Windows second-class.</strong> Native sandboxing absent (Job Objects only contain process trees), POSIX bootstrap script, dev unsupported natively.</li>
+<li><strong>Contribution concentration.</strong> Effectively a corporate-maintained single-org project so far; bus factor is fine while Databricks stays committed, but community ownership hasn't formed yet.</li>
+</ul>
+
+<h2>Verdict</h2>
+<div class="callout note"><strong>✅ Try limited.</strong> Legitimate and unusually well-engineered for an alpha. Best fit: teams running <em>more than one</em> agent harness who want swappability, spend caps, and OS-sandboxed sessions under one roof. Skip if you run exactly one harness and already trust its own guardrails — the meta-layer adds operational surface without unique value there.</div>
+<p>Practical guidance: pin to the latest minor (v0.10.0+), avoid <code>opencode-native</code> for anything with long tool calls until #5265 closes, review the shared-session approval default before collaborating, and disable telemetry if that matters to you. For a pure "does harness X handle our tasks" experiment, running X standalone is still simpler — Omnigent earns its keep when the same governed session must move between harnesses.</p>
+
+<footer>
+Sources: <a href="https://github.com/omnigent-ai/omnigent">omnigent-ai/omnigent</a> (README, SECURITY.md, POLICIES.md, CONTRIBUTING.md, release notes v0.9.0/v0.10.0, repo tree — all retrieved 26/08/23) · <a href="https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents">Databricks blog, 26/06/13</a> · <a href="https://docs.databricks.com/aws/en/omnigent/">Databricks docs</a> · Reddit r/databricks &amp; r/AI_Agents threads (26/06–07/2026) · Hacker News Algolia search 26/08/23.<br>
+Part of <a href="/">mswy.xyz</a> · Independent analysis; not affiliated with Databricks.
+</footer>
+
+</main>
+</body>
+</html>
