@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T20:05:12.685157+00:00",
+  "generated_at": "2026-08-23T22:05:20.715719+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -6462,7 +6462,7 @@
       "short_date": "8/23",
       "readiness": 100.0,
       "readiness_hrv_delta": 53.225806451612875,
-      "readiness_rhr_delta": -8.07142857142857,
+      "readiness_rhr_delta": -7.071428571428569,
       "readiness_sleep_eff": 98.46449136276392,
       "readiness_training_load": 0.0,
       "readiness_contrib_hrv": 20.0,
