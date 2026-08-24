@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T16:05:31.950862+00:00",
+  "generated_at": "2026-08-24T22:05:54.850872+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -6578,15 +6578,15 @@
       "date": "2026-08-25",
       "day_name": "Tue",
       "short_date": "8/25",
-      "readiness": null,
+      "readiness": 15.0,
       "readiness_hrv_delta": null,
       "readiness_rhr_delta": null,
       "readiness_sleep_eff": null,
-      "readiness_training_load": null,
+      "readiness_training_load": 0.0,
       "readiness_contrib_hrv": null,
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": null,
-      "readiness_contrib_load": null,
+      "readiness_contrib_load": 0.0,
       "sleep_hours": null,
       "sleep_efficiency": null,
       "sleep_deep_min": null,
@@ -6626,8 +6626,8 @@
     "rhr_min": 72.0,
     "rhr_max": 90.0,
     "sleep_avg": 7.0,
-    "readiness_avg": 80.5,
-    "readiness_min": 40.0,
+    "readiness_avg": 78.3,
+    "readiness_min": 15.0,
     "readiness_max": 100.0,
     "steps_avg": 8899,
     "cardio_avg": 38
