@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T09:05:10.808545+00:00",
+  "generated_at": "2026-08-25T11:30:22.872755+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -7153,7 +7153,7 @@
         "rem": 125.5
       },
       "data_quality": null,
-      "hrv": 0.0,
+      "hrv": null,
       "rhr": 72.0,
       "spo2_avg": 95.7,
       "spo2_min": 92.4,
@@ -7178,8 +7178,8 @@
     }
   ],
   "baselines": {
-    "hrv_avg": 18.5,
-    "hrv_min": 0.0,
+    "hrv_avg": 19.3,
+    "hrv_min": 9.55,
     "hrv_max": 39.9,
     "rhr_avg": 80.9,
     "rhr_min": 72.0,
