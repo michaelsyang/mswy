@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T07:05:44.493493+00:00",
+  "generated_at": "2026-08-28T11:05:01.880645+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -7268,10 +7268,21 @@
       "active_kcal": 741.202412,
       "cardio_min": 8.0,
       "fat_burn_min": 31.0,
-      "distance_km": 6.26,
+      "distance_km": 6.29,
       "floors": 0,
-      "exercises": [],
-      "exercise_count": 0,
+      "exercises": [
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": null
+        },
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": null
+        }
+      ],
+      "exercise_count": 2,
       "hrv_cv": 15.5,
       "hrv_range_low": 0.0,
       "hrv_range_high": 39.9
@@ -7289,18 +7300,23 @@
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": null,
       "readiness_contrib_load": null,
-      "sleep_hours": null,
-      "sleep_efficiency": null,
-      "sleep_deep_min": null,
-      "sleep_rem_min": null,
-      "sleep_light_min": null,
-      "sleep_awake_min": null,
-      "sleep_start_pt": null,
-      "sleep_end_pt": null,
-      "sleep_start_utc": null,
-      "sleep_end_utc": null,
-      "sleep_duration_min": null,
-      "stage_summary": {},
+      "sleep_hours": 3.2,
+      "sleep_efficiency": 88.5,
+      "sleep_deep_min": 28.275,
+      "sleep_rem_min": 63.7518,
+      "sleep_light_min": 101.3064,
+      "sleep_awake_min": 25.0248,
+      "sleep_start_pt": "22:49",
+      "sleep_end_pt": "02:27",
+      "sleep_start_utc": "2026-08-28T05:49:34.115Z",
+      "sleep_end_utc": "2026-08-28T09:27:55.151Z",
+      "sleep_duration_min": 193.3332,
+      "stage_summary": {
+        "awake": 25.0248,
+        "light": 101.3064,
+        "deep": 28.275,
+        "rem": 63.7518
+      },
       "data_quality": null,
       "hrv": null,
       "rhr": null,
@@ -7327,7 +7343,7 @@
     "rhr_avg": 79.3,
     "rhr_min": 68.0,
     "rhr_max": 87.0,
-    "sleep_avg": 6.8,
+    "sleep_avg": 6.7,
     "readiness_avg": 82.4,
     "readiness_min": 41.0,
     "readiness_max": 100.0,
