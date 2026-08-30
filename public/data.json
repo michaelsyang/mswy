@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T19:05:44.211382+00:00",
+  "generated_at": "2026-08-30T20:05:52.845766+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -7394,11 +7394,11 @@
       "day_name": "Sun",
       "short_date": "8/30",
       "readiness": 60.0,
-      "readiness_hrv_delta": null,
+      "readiness_hrv_delta": -52.24087212320471,
       "readiness_rhr_delta": 0.0,
-      "readiness_sleep_eff": 91.44736842105263,
+      "readiness_sleep_eff": 97.16088328075709,
       "readiness_training_load": 277.0,
-      "readiness_contrib_hrv": null,
+      "readiness_contrib_hrv": -20.0,
       "readiness_contrib_rhr": 0.0,
       "readiness_contrib_sleep": 0.0,
       "readiness_contrib_load": 0.0,
@@ -7425,7 +7425,7 @@
       "spo2_avg": 96.0,
       "spo2_min": 93.5,
       "spo2_max": 97.6,
-      "steps": 625,
+      "steps": 778,
       "active_kcal": 157.97787799999998,
       "cardio_min": 0,
       "fat_burn_min": 18.0,
@@ -7449,7 +7449,7 @@
     "readiness_avg": 82.2,
     "readiness_min": 41.0,
     "readiness_max": 100.0,
-    "steps_avg": 8270,
+    "steps_avg": 8275,
     "cardio_avg": 40
   },
   "anomalies": [
