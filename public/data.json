@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T03:05:34.058372+00:00",
+  "generated_at": "2026-08-31T04:05:38.867281+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -7426,9 +7426,9 @@
       "spo2_min": 93.5,
       "spo2_max": 97.6,
       "steps": 9203,
-      "active_kcal": 397.82420599999995,
+      "active_kcal": 451.9138439999999,
       "cardio_min": 0,
-      "fat_burn_min": 22.0,
+      "fat_burn_min": 35.0,
       "distance_km": 4.6,
       "floors": 0,
       "exercises": [
@@ -7440,7 +7440,7 @@
         {
           "type": "WALKING",
           "name": "Walk",
-          "calories": null
+          "calories": 131.0
         }
       ],
       "exercise_count": 2,
