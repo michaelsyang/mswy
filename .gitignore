@@ -29,3 +29,6 @@ npm-debug.log*
 # Vite generated
 vite.config.d.ts
 vite.config.js
+
+# Health-coach narrative (generated locally, not for the public site)
+public/coach.json
