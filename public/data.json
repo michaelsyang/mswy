@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T09:28:01.570764+00:00",
+  "generated_at": "2026-08-31T11:06:51.989547+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -7492,8 +7492,8 @@
       "steps": 653,
       "active_kcal": 98.46798399999999,
       "cardio_min": 0,
-      "fat_burn_min": 20.0,
-      "distance_km": 0.4,
+      "fat_burn_min": 30.0,
+      "distance_km": 0.46,
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
