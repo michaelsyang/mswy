@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T15:05:23.700043+00:00",
+  "generated_at": "2026-09-01T16:05:28.380485+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -7512,7 +7512,7 @@
       "cardio_min": 32.0,
       "fat_burn_min": 49.0,
       "distance_km": 4.84,
-      "floors": 0,
+      "floors": 1.0,
       "exercises": [
         {
           "type": "WORKOUT",
@@ -7535,46 +7535,52 @@
       "day_name": "Tue",
       "short_date": "9/1",
       "readiness": 98.0,
-      "readiness_hrv_delta": 12.796034514411595,
+      "readiness_hrv_delta": 17.202129612630795,
       "readiness_rhr_delta": 1.0714285714285694,
-      "readiness_sleep_eff": 98.12206572769952,
+      "readiness_sleep_eff": 98.28326180257511,
       "readiness_training_load": 281.0,
       "readiness_contrib_hrv": 20.0,
       "readiness_contrib_rhr": -2.142857142857139,
       "readiness_contrib_sleep": 0.0,
       "readiness_contrib_load": 0.0,
-      "sleep_hours": 7.0,
-      "sleep_efficiency": 98.1,
-      "sleep_deep_min": 78.0,
-      "sleep_rem_min": 90.0,
-      "sleep_light_min": 250.0,
+      "sleep_hours": 7.6,
+      "sleep_efficiency": 98.3,
+      "sleep_deep_min": 79.5,
+      "sleep_rem_min": 91.0,
+      "sleep_light_min": 287.5,
       "sleep_awake_min": 8.0,
       "sleep_start_pt": "00:17",
-      "sleep_end_pt": "07:23",
+      "sleep_end_pt": "08:03",
       "sleep_start_utc": "2026-09-01T07:17:00Z",
-      "sleep_end_utc": "2026-09-01T14:23:00Z",
-      "sleep_duration_min": 418.0,
+      "sleep_end_utc": "2026-09-01T15:03:00Z",
+      "sleep_duration_min": 458.0,
       "stage_summary": {
         "awake": 8.0,
-        "light": 250.0,
-        "deep": 78.0,
-        "rem": 90.0
+        "light": 287.5,
+        "deep": 79.5,
+        "rem": 91.0
       },
       "data_quality": null,
-      "hrv": 25.6,
+      "hrv": 26.6,
       "rhr": 73.0,
-      "spo2_avg": null,
-      "spo2_min": null,
-      "spo2_max": null,
-      "steps": 27,
-      "active_kcal": 1.57605,
-      "cardio_min": 0,
-      "fat_burn_min": 0,
-      "distance_km": 0.02,
+      "spo2_avg": 94.7,
+      "spo2_min": 91.6,
+      "spo2_max": 96.3,
+      "steps": 355,
+      "active_kcal": 93.88755,
+      "cardio_min": 20.0,
+      "fat_burn_min": 8.0,
+      "distance_km": 0.3,
       "floors": 0,
-      "exercises": [],
-      "exercise_count": 0,
-      "hrv_cv": 15.5,
+      "exercises": [
+        {
+          "type": "SPINNING",
+          "name": "Spinning",
+          "calories": 101.0
+        }
+      ],
+      "exercise_count": 1,
+      "hrv_cv": 15.6,
       "hrv_range_low": 0.0,
       "hrv_range_high": 39.9
     }
@@ -7586,12 +7592,12 @@
     "rhr_avg": 77.2,
     "rhr_min": 68.0,
     "rhr_max": 86.0,
-    "sleep_avg": 6.8,
+    "sleep_avg": 6.9,
     "readiness_avg": 82.1,
     "readiness_min": 41.0,
     "readiness_max": 100.0,
-    "steps_avg": 7368,
-    "cardio_avg": 28
+    "steps_avg": 7379,
+    "cardio_avg": 27
   },
   "anomalies": [
     {
