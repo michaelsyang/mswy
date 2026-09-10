@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T15:05:44.495491+00:00",
+  "generated_at": "2026-09-10T16:05:50.526944+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -8049,37 +8049,43 @@
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": -20.0,
       "readiness_contrib_load": 0.0,
-      "sleep_hours": 5.2,
-      "sleep_efficiency": 98.1,
-      "sleep_deep_min": 71.5,
-      "sleep_rem_min": 64.0,
-      "sleep_light_min": 178.5,
-      "sleep_awake_min": 6.0,
+      "sleep_hours": 5.6,
+      "sleep_efficiency": 98.7,
+      "sleep_deep_min": 74.5,
+      "sleep_rem_min": 83.5,
+      "sleep_light_min": 176.5,
+      "sleep_awake_min": 4.5,
       "sleep_start_pt": "02:10",
-      "sleep_end_pt": "07:30",
+      "sleep_end_pt": "07:49",
       "sleep_start_utc": "2026-09-10T09:10:00Z",
-      "sleep_end_utc": "2026-09-10T14:30:00Z",
-      "sleep_duration_min": 314.0,
+      "sleep_end_utc": "2026-09-10T14:49:00Z",
+      "sleep_duration_min": 334.5,
       "stage_summary": {
-        "awake": 6.0,
-        "light": 178.5,
-        "deep": 71.5,
-        "rem": 64.0
+        "awake": 4.5,
+        "light": 176.5,
+        "deep": 74.5,
+        "rem": 83.5
       },
       "data_quality": null,
       "hrv": 21.7,
       "rhr": 79.0,
-      "spo2_avg": null,
-      "spo2_min": null,
-      "spo2_max": null,
-      "steps": 26,
-      "active_kcal": 6.2731200000000005,
+      "spo2_avg": 95.1,
+      "spo2_min": 91.2,
+      "spo2_max": 98.1,
+      "steps": 120,
+      "active_kcal": 31.352238,
       "cardio_min": 0,
-      "fat_burn_min": 0,
-      "distance_km": 0.07,
+      "fat_burn_min": 4.0,
+      "distance_km": 0.13,
       "floors": 0,
-      "exercises": [],
-      "exercise_count": 0,
+      "exercises": [
+        {
+          "type": "WORKOUT",
+          "name": "Workout",
+          "calories": 56.0
+        }
+      ],
+      "exercise_count": 1,
       "hrv_cv": null,
       "hrv_range_low": 11.5,
       "hrv_range_high": 39.1
@@ -8096,7 +8102,7 @@
     "readiness_avg": 73.1,
     "readiness_min": 15.0,
     "readiness_max": 100.0,
-    "steps_avg": 7542,
+    "steps_avg": 7545,
     "cardio_avg": 32
   },
   "anomalies": [
