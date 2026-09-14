@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T01:05:11.278273+00:00",
+  "generated_at": "2026-09-14T02:05:17.378594+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -8239,11 +8239,11 @@
       "spo2_avg": 95.2,
       "spo2_min": 93.8,
       "spo2_max": 96.3,
-      "steps": 4286,
-      "active_kcal": 185.863737,
+      "steps": 4988,
+      "active_kcal": 210.435171,
       "cardio_min": 0,
       "fat_burn_min": 13.0,
-      "distance_km": 2.43,
+      "distance_km": 2.76,
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
@@ -8263,12 +8263,12 @@
     "readiness_avg": 73.9,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 7508,
+    "steps_avg": 7531,
     "cardio_avg": 31
   },
   "anomalies": [
     {
-      "id": 720,
+      "id": 724,
       "date": "2026-09-13",
       "metric": "hrv",
       "value": 9.5,
@@ -8276,7 +8276,7 @@
       "deviation_pct": 17.391304347826086,
       "severity": "warning",
       "acknowledged": 0,
-      "detected_at": "2026-09-14T00:59:22.415387+00:00"
+      "detected_at": "2026-09-14T02:03:27.020297+00:00"
     },
     {
       "id": 695,
