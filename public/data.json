@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T19:05:02.863008+00:00",
+  "generated_at": "2026-09-14T20:05:09.119307+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -8244,7 +8244,7 @@
       "cardio_min": 0,
       "fat_burn_min": 13.0,
       "distance_km": 5.6,
-      "floors": 4.0,
+      "floors": 8.0,
       "exercises": [
         {
           "type": "WALKING",
@@ -8261,12 +8261,12 @@
       "date": "2026-09-14",
       "day_name": "Mon",
       "short_date": "9/14",
-      "readiness": 81.0,
-      "readiness_hrv_delta": 2.2367429002262,
+      "readiness": 97.0,
+      "readiness_hrv_delta": 15.129429504900733,
       "readiness_rhr_delta": 1.5,
-      "readiness_sleep_eff": 97.82608695652173,
+      "readiness_sleep_eff": 98.60759493670886,
       "readiness_training_load": 0.0,
-      "readiness_contrib_hrv": 4.473485800452401,
+      "readiness_contrib_hrv": 20.0,
       "readiness_contrib_rhr": -3.0,
       "readiness_contrib_sleep": 0.0,
       "readiness_contrib_load": 0.0,
@@ -8293,11 +8293,11 @@
       "spo2_avg": 95.5,
       "spo2_min": 93.0,
       "spo2_max": 97.7,
-      "steps": 1775,
-      "active_kcal": 101.4417,
+      "steps": 1874,
+      "active_kcal": 127.816542,
       "cardio_min": 0,
-      "fat_burn_min": 0,
-      "distance_km": 1.23,
+      "fat_burn_min": 3.0,
+      "distance_km": 1.54,
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
@@ -8314,10 +8314,10 @@
     "rhr_min": 68.0,
     "rhr_max": 82.0,
     "sleep_avg": 6.3,
-    "readiness_avg": 74.7,
+    "readiness_avg": 75.2,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 7536,
+    "steps_avg": 7540,
     "cardio_avg": 31
   },
   "anomalies": [
