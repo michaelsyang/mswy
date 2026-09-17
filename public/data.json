@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T09:05:40.140208+00:00",
+  "generated_at": "2026-09-17T15:05:16.253616+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -8442,19 +8442,24 @@
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": null,
       "readiness_contrib_load": null,
-      "sleep_hours": null,
-      "sleep_efficiency": null,
-      "sleep_deep_min": null,
-      "sleep_rem_min": null,
-      "sleep_light_min": null,
-      "sleep_awake_min": null,
-      "sleep_start_pt": null,
-      "sleep_end_pt": null,
-      "sleep_start_utc": null,
-      "sleep_end_utc": null,
-      "sleep_duration_min": null,
-      "stage_summary": {},
-      "data_quality": null,
+      "sleep_hours": 2.4,
+      "sleep_efficiency": 81.6,
+      "sleep_deep_min": 29.6438,
+      "sleep_rem_min": 44.1328,
+      "sleep_light_min": 68.3506,
+      "sleep_awake_min": 32.0324,
+      "sleep_start_pt": "01:26",
+      "sleep_end_pt": "04:21",
+      "sleep_start_utc": "2026-09-17T08:26:53.549Z",
+      "sleep_end_utc": "2026-09-17T11:21:02.817Z",
+      "sleep_duration_min": 142.1272,
+      "stage_summary": {
+        "awake": 32.0324,
+        "light": 68.3506,
+        "deep": 29.6438,
+        "rem": 44.1328
+      },
+      "data_quality": "short_no_hr_only_session",
       "hrv": null,
       "rhr": null,
       "spo2_avg": null,
@@ -8488,6 +8493,17 @@
     "cardio_avg": 32
   },
   "anomalies": [
+    {
+      "id": 743,
+      "date": "2026-09-17",
+      "metric": "sleep_quality",
+      "value": 142.1272,
+      "baseline": null,
+      "deviation_pct": 100.0,
+      "severity": "warning",
+      "acknowledged": 0,
+      "detected_at": "2026-09-17T15:03:26.948660+00:00"
+    },
     {
       "id": 742,
       "date": "2026-09-13",
