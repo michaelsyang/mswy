@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T03:05:45.175323+00:00",
+  "generated_at": "2026-09-20T04:05:51.384847+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -8581,14 +8581,14 @@
       "date": "2026-09-19",
       "day_name": "Sat",
       "short_date": "9/19",
-      "readiness": 49.0,
-      "readiness_hrv_delta": null,
-      "readiness_rhr_delta": -1.882352941176464,
-      "readiness_sleep_eff": 73.6325047199775,
+      "readiness": 52.0,
+      "readiness_hrv_delta": -40.18654494939472,
+      "readiness_rhr_delta": -0.8823529411764639,
+      "readiness_sleep_eff": 77.41373041390875,
       "readiness_training_load": 0.0,
-      "readiness_contrib_hrv": null,
-      "readiness_contrib_rhr": 3.764705882352928,
-      "readiness_contrib_sleep": -15.156660373363326,
+      "readiness_contrib_hrv": -20.0,
+      "readiness_contrib_rhr": 1.7647058823529278,
+      "readiness_contrib_sleep": -10.115026114788332,
       "readiness_contrib_load": 0.0,
       "sleep_hours": 5.6,
       "sleep_efficiency": 77.4,
@@ -8613,11 +8613,11 @@
       "spo2_avg": 96.4,
       "spo2_min": 95.1,
       "spo2_max": 98.0,
-      "steps": 7450,
-      "active_kcal": 471.25305299999997,
-      "cardio_min": 48.0,
-      "fat_burn_min": 2.0,
-      "distance_km": 5.88,
+      "steps": 8179,
+      "active_kcal": 609.890043,
+      "cardio_min": 50.0,
+      "fat_burn_min": 28.0,
+      "distance_km": 6.45,
       "floors": 0,
       "exercises": [
         {
@@ -8634,9 +8634,14 @@
           "type": "TREADMILL",
           "name": "Treadmill run",
           "calories": 283.0
+        },
+        {
+          "type": "WORKOUT",
+          "name": "Workout",
+          "calories": 105.0
         }
       ],
-      "exercise_count": 3,
+      "exercise_count": 4,
       "hrv_cv": 12.8,
       "hrv_range_low": 9.5,
       "hrv_range_high": 31.2
@@ -8650,10 +8655,10 @@
     "rhr_min": 68.0,
     "rhr_max": 82.0,
     "sleep_avg": 6.1,
-    "readiness_avg": 72.6,
+    "readiness_avg": 72.7,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 7551,
+    "steps_avg": 7575,
     "cardio_avg": 32
   },
   "anomalies": [
