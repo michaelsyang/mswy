@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T00:05:59.284829+00:00",
+  "generated_at": "2026-09-21T01:05:04.990461+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -8650,14 +8650,14 @@
       "date": "2026-09-20",
       "day_name": "Sun",
       "short_date": "9/20",
-      "readiness": 100.0,
+      "readiness": 93.0,
       "readiness_hrv_delta": 9.994353472614351,
       "readiness_rhr_delta": -0.705882352941174,
-      "readiness_sleep_eff": 87.13733075435202,
+      "readiness_sleep_eff": 78.92703411817014,
       "readiness_training_load": 388.0,
       "readiness_contrib_hrv": 19.9887069452287,
       "readiness_contrib_rhr": 1.411764705882348,
-      "readiness_contrib_sleep": 0.0,
+      "readiness_contrib_sleep": -8.097287842439812,
       "readiness_contrib_load": 0.0,
       "sleep_hours": 7.5,
       "sleep_efficiency": 78.9,
@@ -8682,14 +8682,20 @@
       "spo2_avg": 95.5,
       "spo2_min": 92.6,
       "spo2_max": 98.1,
-      "steps": 1191,
-      "active_kcal": 79.68809099999999,
-      "cardio_min": 0,
-      "fat_burn_min": 0,
-      "distance_km": 1.05,
+      "steps": 1775,
+      "active_kcal": 272.540034,
+      "cardio_min": 12.0,
+      "fat_burn_min": 23.0,
+      "distance_km": 1.69,
       "floors": 0,
-      "exercises": [],
-      "exercise_count": 0,
+      "exercises": [
+        {
+          "type": "WEIGHTLIFTING",
+          "name": "Weightlifting",
+          "calories": 339.0
+        }
+      ],
+      "exercise_count": 1,
       "hrv_cv": 12.9,
       "hrv_range_low": 9.5,
       "hrv_range_high": 31.2
@@ -8703,11 +8709,11 @@
     "rhr_min": 68.0,
     "rhr_max": 82.0,
     "sleep_avg": 6.2,
-    "readiness_avg": 72.7,
+    "readiness_avg": 72.5,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 7326,
-    "cardio_avg": 32
+    "steps_avg": 7346,
+    "cardio_avg": 31
   },
   "anomalies": [
     {
