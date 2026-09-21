@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T01:05:04.990461+00:00",
+  "generated_at": "2026-09-21T02:05:11.126265+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -8618,7 +8618,7 @@
       "cardio_min": 50.0,
       "fat_burn_min": 30.0,
       "distance_km": 6.89,
-      "floors": 0,
+      "floors": 1.0,
       "exercises": [
         {
           "type": "WALKING",
@@ -8682,20 +8682,25 @@
       "spo2_avg": 95.5,
       "spo2_min": 92.6,
       "spo2_max": 98.1,
-      "steps": 1775,
-      "active_kcal": 272.540034,
+      "steps": 2826,
+      "active_kcal": 341.294964,
       "cardio_min": 12.0,
-      "fat_burn_min": 23.0,
-      "distance_km": 1.69,
+      "fat_burn_min": 27.0,
+      "distance_km": 2.44,
       "floors": 0,
       "exercises": [
         {
           "type": "WEIGHTLIFTING",
           "name": "Weightlifting",
           "calories": 339.0
+        },
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": null
         }
       ],
-      "exercise_count": 1,
+      "exercise_count": 2,
       "hrv_cv": 12.9,
       "hrv_range_low": 9.5,
       "hrv_range_high": 31.2
@@ -8712,7 +8717,7 @@
     "readiness_avg": 72.5,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 7346,
+    "steps_avg": 7381,
     "cardio_avg": 31
   },
   "anomalies": [
