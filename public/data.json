@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T17:05:07.832383+00:00",
+  "generated_at": "2026-09-23T18:05:14.140109+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -8810,7 +8810,7 @@
       "cardio_min": 0,
       "fat_burn_min": 10.0,
       "distance_km": 4.89,
-      "floors": 0,
+      "floors": 3.0,
       "exercises": [
         {
           "type": "WALKING",
@@ -8841,22 +8841,22 @@
       "readiness_contrib_rhr": -0.470588235294116,
       "readiness_contrib_sleep": 0.0,
       "readiness_contrib_load": 0.0,
-      "sleep_hours": 5.0,
-      "sleep_efficiency": 96.1,
-      "sleep_deep_min": 56.0,
-      "sleep_rem_min": 83.0,
-      "sleep_light_min": 160.0,
-      "sleep_awake_min": 12.0,
+      "sleep_hours": 5.7,
+      "sleep_efficiency": 85.5,
+      "sleep_deep_min": 57.0,
+      "sleep_rem_min": 80.0,
+      "sleep_light_min": 205.0,
+      "sleep_awake_min": 58.0,
       "sleep_start_pt": "02:48",
-      "sleep_end_pt": "07:59",
+      "sleep_end_pt": "09:28",
       "sleep_start_utc": "2026-09-23T09:48:00Z",
-      "sleep_end_utc": "2026-09-23T14:59:00Z",
-      "sleep_duration_min": 299.0,
+      "sleep_end_utc": "2026-09-23T16:28:00Z",
+      "sleep_duration_min": 342.0,
       "stage_summary": {
-        "awake": 12.0,
-        "light": 160.0,
-        "deep": 56.0,
-        "rem": 83.0
+        "awake": 58.0,
+        "light": 205.0,
+        "deep": 57.0,
+        "rem": 80.0
       },
       "data_quality": null,
       "hrv": 21.8,
@@ -8864,11 +8864,11 @@
       "spo2_avg": 96.3,
       "spo2_min": 93.6,
       "spo2_max": 98.3,
-      "steps": 1116,
-      "active_kcal": 52.749683999999995,
+      "steps": 1665,
+      "active_kcal": 105.27394199999999,
       "cardio_min": 0,
       "fat_burn_min": 0,
-      "distance_km": 1.04,
+      "distance_km": 1.51,
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
@@ -8888,7 +8888,7 @@
     "readiness_avg": 74.2,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 7061,
+    "steps_avg": 7080,
     "cardio_avg": 32
   },
   "anomalies": [
