@@ -1,0 +1,64 @@
+{
+ "updated_at": "2026-09-24T01:31:35Z",
+ "official": [
+  {
+   "label": "Official \u2014 Sunday GA",
+   "price": 299.5,
+   "url": "https://portolamusicfestival.com/passes/",
+   "detail": "base price; fees added at checkout"
+  },
+  {
+   "label": "Official \u2014 Sunday VIP",
+   "price": 459.95,
+   "url": "https://portolamusicfestival.com/passes/",
+   "detail": "base price; fees added at checkout"
+  }
+ ],
+ "rows": [
+  {
+   "label": "Vivid Seats",
+   "price": 288.0,
+   "url": "https://www.vividseats.com/portola-music-festival-tickets-san-francisco-pier-80-9-27-2026--concerts-music-festivals/production/7093077",
+   "detail": "all-in $288 (base $212)",
+   "change": null,
+   "prev_at": null
+  },
+  {
+   "label": "TicketSmarter",
+   "price": 359.1,
+   "url": "https://www.ticketsmarter.com/p/portola-festival-tickets",
+   "detail": "ld+json lowPrice \u2014 cached ETL, indicative only",
+   "change": null,
+   "prev_at": null
+  },
+  {
+   "label": "Gametime",
+   "price": 353.0,
+   "url": "https://gametime.co/concert/2026-portola-music-festival-sunday-swedish-house-mafia-tiesto-zara-larsson-tickets/9-27-2026-san-francisco-ca-pier-80/events/6a196de1ce94899e8d8d728d",
+   "detail": "1 listing group(s), cheapest",
+   "change": null,
+   "prev_at": null
+  },
+  {
+   "label": "TickPick",
+   "price": 329.0,
+   "url": "https://www.tickpick.com/concerts/portola-music-festival-tickets/",
+   "detail": "sunday event offer, all-in (no fees)",
+   "change": null,
+   "prev_at": null
+  },
+  {
+   "label": "StubHub GA",
+   "price": null,
+   "err": "stubhub 'General Admission' tier row not found in DOM"
+  },
+  {
+   "label": "StubHub VIP",
+   "price": 527.0,
+   "url": "https://www.stubhub.com/portola-festival-san-francisco-tickets-9-27-2026/event/161249522/",
+   "detail": "DOM tier row, incl. fees",
+   "change": null,
+   "prev_at": null
+  }
+ ]
+}
