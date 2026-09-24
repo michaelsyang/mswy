@@ -32,3 +32,6 @@ vite.config.js
 
 # Health-coach narrative (generated locally, not for the public site)
 public/coach.json
+
+# portola tracker: generated hourly by portola_scan cron
+public/Portola/data/
