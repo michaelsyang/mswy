@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T15:05:03.392383+00:00",
+  "generated_at": "2026-09-25T16:05:09.764141+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -8969,25 +8969,25 @@
       "readiness_contrib_rhr": -8.823529411764696,
       "readiness_contrib_sleep": 0.0,
       "readiness_contrib_load": 0.0,
-      "sleep_hours": 4.3,
-      "sleep_efficiency": 95.9,
-      "sleep_deep_min": 75.0,
-      "sleep_rem_min": 51.0,
-      "sleep_light_min": 131.0,
-      "sleep_awake_min": 11.0,
+      "sleep_hours": 5.4,
+      "sleep_efficiency": 98.2,
+      "sleep_deep_min": 89.0,
+      "sleep_rem_min": 65.0,
+      "sleep_light_min": 171.0,
+      "sleep_awake_min": 6.0,
       "sleep_start_pt": "03:02",
-      "sleep_end_pt": "07:30",
+      "sleep_end_pt": "08:33",
       "sleep_start_utc": "2026-09-25T10:02:00Z",
-      "sleep_end_utc": "2026-09-25T14:30:00Z",
-      "sleep_duration_min": 257.0,
+      "sleep_end_utc": "2026-09-25T15:33:00Z",
+      "sleep_duration_min": 325.0,
       "stage_summary": {
-        "awake": 11.0,
-        "light": 131.0,
-        "deep": 75.0,
-        "rem": 51.0
+        "awake": 6.0,
+        "light": 171.0,
+        "deep": 89.0,
+        "rem": 65.0
       },
       "data_quality": null,
-      "hrv": 18.5,
+      "hrv": 20.05,
       "rhr": 80.0,
       "spo2_avg": null,
       "spo2_min": null,
@@ -9000,7 +9000,7 @@
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
-      "hrv_cv": 9.0,
+      "hrv_cv": 8.8,
       "hrv_range_low": 9.5,
       "hrv_range_high": 30.9
     }
