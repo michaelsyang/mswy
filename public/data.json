@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T16:05:12.782489+00:00",
+  "generated_at": "2026-09-28T17:05:18.544603+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9176,34 +9176,34 @@
       "readiness_contrib_rhr": -12.0,
       "readiness_contrib_sleep": 0.0,
       "readiness_contrib_load": -1.75,
-      "sleep_hours": 6.2,
-      "sleep_efficiency": 97.6,
-      "sleep_deep_min": 82.0,
-      "sleep_rem_min": 64.0,
-      "sleep_light_min": 224.0,
-      "sleep_awake_min": 9.0,
+      "sleep_hours": 7.1,
+      "sleep_efficiency": 98.4,
+      "sleep_deep_min": 81.0,
+      "sleep_rem_min": 95.0,
+      "sleep_light_min": 249.0,
+      "sleep_awake_min": 7.0,
       "sleep_start_pt": "02:22",
-      "sleep_end_pt": "08:41",
+      "sleep_end_pt": "09:34",
       "sleep_start_utc": "2026-09-28T09:22:00Z",
-      "sleep_end_utc": "2026-09-28T15:41:00Z",
-      "sleep_duration_min": 370.0,
+      "sleep_end_utc": "2026-09-28T16:34:00Z",
+      "sleep_duration_min": 425.0,
       "stage_summary": {
-        "awake": 9.0,
-        "light": 224.0,
-        "deep": 82.0,
-        "rem": 64.0
+        "awake": 7.0,
+        "light": 249.0,
+        "deep": 81.0,
+        "rem": 95.0
       },
       "data_quality": null,
-      "hrv": 15.25,
-      "rhr": 81.0,
+      "hrv": 17.05,
+      "rhr": 80.0,
       "spo2_avg": null,
       "spo2_min": null,
       "spo2_max": null,
-      "steps": 1616,
-      "active_kcal": 110.233314,
+      "steps": 1709,
+      "active_kcal": 112.487574,
       "cardio_min": 2.0,
       "fat_burn_min": 13.0,
-      "distance_km": 1.18,
+      "distance_km": 1.2,
       "floors": 0,
       "exercises": [
         {
@@ -9213,7 +9213,7 @@
         }
       ],
       "exercise_count": 1,
-      "hrv_cv": 11.1,
+      "hrv_cv": 10.8,
       "hrv_range_low": 11.1,
       "hrv_range_high": 30.9
     }
@@ -9229,7 +9229,7 @@
     "readiness_avg": 69.2,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 8130,
+    "steps_avg": 8133,
     "cardio_avg": 29
   },
   "anomalies": [
