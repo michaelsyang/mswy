@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T03:05:19.646637+00:00",
+  "generated_at": "2026-09-29T04:05:25.998525+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9091,11 +9091,11 @@
       "readiness": 47.0,
       "readiness_hrv_delta": -49.73313925278992,
       "readiness_rhr_delta": 5.4375,
-      "readiness_sleep_eff": 96.49532710280374,
+      "readiness_sleep_eff": 84.61253751107148,
       "readiness_training_load": 680.0,
       "readiness_contrib_hrv": -20.0,
       "readiness_contrib_rhr": -10.875,
-      "readiness_contrib_sleep": 0.0,
+      "readiness_contrib_sleep": -0.5166166519046946,
       "readiness_contrib_load": -1.8,
       "sleep_hours": 6.9,
       "sleep_efficiency": 84.6,
@@ -9125,7 +9125,7 @@
       "cardio_min": 16.0,
       "fat_burn_min": 260.0,
       "distance_km": 24.8,
-      "floors": 18.0,
+      "floors": 19.0,
       "exercises": [
         {
           "type": "WALKING",
@@ -9170,7 +9170,7 @@
       "readiness": 52.0,
       "readiness_hrv_delta": -23.1858407079646,
       "readiness_rhr_delta": 3.0,
-      "readiness_sleep_eff": 98.37962962962963,
+      "readiness_sleep_eff": 94.32272620642651,
       "readiness_training_load": 675.0,
       "readiness_contrib_hrv": -20.0,
       "readiness_contrib_rhr": -6.0,
@@ -9199,11 +9199,11 @@
       "spo2_avg": 96.4,
       "spo2_min": 94.0,
       "spo2_max": 99.4,
-      "steps": 5993,
-      "active_kcal": 301.619988,
+      "steps": 8749,
+      "active_kcal": 427.63312199999996,
       "cardio_min": 2.0,
       "fat_burn_min": 14.0,
-      "distance_km": 4.38,
+      "distance_km": 7.08,
       "floors": 0,
       "exercises": [
         {
@@ -9220,9 +9220,19 @@
           "type": "WALKING",
           "name": "Walk",
           "calories": null
+        },
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": 160.0
+        },
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": null
         }
       ],
-      "exercise_count": 3,
+      "exercise_count": 5,
       "hrv_cv": 10.8,
       "hrv_range_low": 11.1,
       "hrv_range_high": 30.9
@@ -9239,7 +9249,7 @@
     "readiness_avg": 69.4,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 8276,
+    "steps_avg": 8367,
     "cardio_avg": 29
   },
   "anomalies": [
