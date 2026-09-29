@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T20:05:07.776936+00:00",
+  "generated_at": "2026-09-29T21:05:13.900226+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9284,10 +9284,10 @@
       "spo2_min": 93.8,
       "spo2_max": 98.0,
       "steps": 2761,
-      "active_kcal": 110.233314,
+      "active_kcal": 128.943672,
       "cardio_min": 0,
       "fat_burn_min": 2.0,
-      "distance_km": 1.88,
+      "distance_km": 2.13,
       "floors": 0,
       "exercises": [
         {
