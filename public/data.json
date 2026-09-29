@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T15:05:36.405298+00:00",
+  "generated_at": "2026-09-29T16:05:42.608582+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9235,9 +9235,14 @@
           "type": "WALKING",
           "name": "Walk",
           "calories": null
+        },
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": 128.0
         }
       ],
-      "exercise_count": 6,
+      "exercise_count": 7,
       "hrv_cv": 10.8,
       "hrv_range_low": 11.1,
       "hrv_range_high": 30.9
@@ -9255,34 +9260,34 @@
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": null,
       "readiness_contrib_load": 0.0,
-      "sleep_hours": 3.0,
-      "sleep_efficiency": null,
-      "sleep_deep_min": null,
-      "sleep_rem_min": null,
-      "sleep_light_min": null,
-      "sleep_awake_min": null,
+      "sleep_hours": 6.3,
+      "sleep_efficiency": 91.9,
+      "sleep_deep_min": 65.1015,
+      "sleep_rem_min": 84.785,
+      "sleep_light_min": 227.0809,
+      "sleep_awake_min": 33.0329,
       "sleep_start_pt": "01:31",
-      "sleep_end_pt": "04:31",
+      "sleep_end_pt": "08:21",
       "sleep_start_utc": "2026-09-29T08:31:24.996Z",
-      "sleep_end_utc": "2026-09-29T11:31:24.840Z",
-      "sleep_duration_min": 179.9974,
+      "sleep_end_utc": "2026-09-29T15:21:24.329Z",
+      "sleep_duration_min": 376.9674,
       "stage_summary": {
-        "awake": null,
-        "light": null,
-        "deep": null,
-        "rem": null
+        "awake": 33.0329,
+        "light": 227.0809,
+        "deep": 65.1015,
+        "rem": 84.785
       },
-      "data_quality": "short_no_hr_only_session",
+      "data_quality": null,
       "hrv": null,
       "rhr": null,
       "spo2_avg": null,
       "spo2_min": null,
       "spo2_max": null,
-      "steps": 623,
-      "active_kcal": 31.108787999999997,
+      "steps": 630,
+      "active_kcal": 32.235918,
       "cardio_min": 0,
       "fat_burn_min": 0,
-      "distance_km": 0.56,
+      "distance_km": 0.57,
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
@@ -9302,7 +9307,7 @@
     "readiness_avg": 67.9,
     "readiness_min": 15.0,
     "readiness_max": 100.0,
-    "steps_avg": 8276,
+    "steps_avg": 8277,
     "cardio_avg": 29
   },
   "anomalies": [
