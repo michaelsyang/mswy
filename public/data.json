@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T09:05:58.304913+00:00",
+  "generated_at": "2026-09-29T15:05:36.405298+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9230,9 +9230,14 @@
           "type": "WALKING",
           "name": "Walk",
           "calories": null
+        },
+        {
+          "type": "WALKING",
+          "name": "Walk",
+          "calories": null
         }
       ],
-      "exercise_count": 5,
+      "exercise_count": 6,
       "hrv_cv": 10.8,
       "hrv_range_low": 11.1,
       "hrv_range_high": 30.9
@@ -9241,28 +9246,33 @@
       "date": "2026-09-29",
       "day_name": "Tue",
       "short_date": "9/29",
-      "readiness": null,
+      "readiness": 15.0,
       "readiness_hrv_delta": null,
       "readiness_rhr_delta": null,
       "readiness_sleep_eff": null,
-      "readiness_training_load": null,
+      "readiness_training_load": 160.0,
       "readiness_contrib_hrv": null,
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": null,
-      "readiness_contrib_load": null,
-      "sleep_hours": null,
+      "readiness_contrib_load": 0.0,
+      "sleep_hours": 3.0,
       "sleep_efficiency": null,
       "sleep_deep_min": null,
       "sleep_rem_min": null,
       "sleep_light_min": null,
       "sleep_awake_min": null,
-      "sleep_start_pt": null,
-      "sleep_end_pt": null,
-      "sleep_start_utc": null,
-      "sleep_end_utc": null,
-      "sleep_duration_min": null,
-      "stage_summary": {},
-      "data_quality": null,
+      "sleep_start_pt": "01:31",
+      "sleep_end_pt": "04:31",
+      "sleep_start_utc": "2026-09-29T08:31:24.996Z",
+      "sleep_end_utc": "2026-09-29T11:31:24.840Z",
+      "sleep_duration_min": 179.9974,
+      "stage_summary": {
+        "awake": null,
+        "light": null,
+        "deep": null,
+        "rem": null
+      },
+      "data_quality": "short_no_hr_only_session",
       "hrv": null,
       "rhr": null,
       "spo2_avg": null,
@@ -9289,13 +9299,24 @@
     "rhr_min": 72.0,
     "rhr_max": 82.0,
     "sleep_avg": 6.2,
-    "readiness_avg": 69.7,
-    "readiness_min": 26.0,
+    "readiness_avg": 67.9,
+    "readiness_min": 15.0,
     "readiness_max": 100.0,
     "steps_avg": 8276,
     "cardio_avg": 29
   },
   "anomalies": [
+    {
+      "id": 772,
+      "date": "2026-09-29",
+      "metric": "sleep_quality",
+      "value": 179.9974,
+      "baseline": null,
+      "deviation_pct": 100.0,
+      "severity": "warning",
+      "acknowledged": 0,
+      "detected_at": "2026-09-29T14:56:49.243416+00:00"
+    },
     {
       "id": 769,
       "date": "2026-09-28",
@@ -9502,17 +9523,6 @@
       "baseline": 8.9,
       "deviation_pct": 7.303370786516858,
       "severity": "warning",
-      "acknowledged": 0,
-      "detected_at": "2026-07-26T13:50:17.156585+00:00"
-    },
-    {
-      "id": 271,
-      "date": "2026-07-25",
-      "metric": "resting_hr",
-      "value": 92.0,
-      "baseline": 81.57142857142857,
-      "deviation_pct": 12.784588441331001,
-      "severity": "critical",
       "acknowledged": 0,
       "detected_at": "2026-07-26T13:50:17.156585+00:00"
     }
