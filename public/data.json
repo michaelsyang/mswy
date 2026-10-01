@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T09:05:06.104136+00:00",
+  "generated_at": "2026-10-01T11:05:20.033762+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9388,19 +9388,24 @@
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": null,
       "readiness_contrib_load": null,
-      "sleep_hours": null,
-      "sleep_efficiency": null,
-      "sleep_deep_min": null,
-      "sleep_rem_min": null,
-      "sleep_light_min": null,
-      "sleep_awake_min": null,
-      "sleep_start_pt": null,
-      "sleep_end_pt": null,
-      "sleep_start_utc": null,
-      "sleep_end_utc": null,
-      "sleep_duration_min": null,
-      "stage_summary": {},
-      "data_quality": null,
+      "sleep_hours": 0.9,
+      "sleep_efficiency": 42.9,
+      "sleep_deep_min": 33.1996,
+      "sleep_rem_min": 10.3436,
+      "sleep_light_min": 10.663,
+      "sleep_awake_min": 72.0718,
+      "sleep_start_pt": "00:47",
+      "sleep_end_pt": "02:53",
+      "sleep_start_utc": "2026-10-01T07:47:08.270Z",
+      "sleep_end_utc": "2026-10-01T09:53:24.668Z",
+      "sleep_duration_min": 54.2062,
+      "stage_summary": {
+        "awake": 72.0718,
+        "light": 10.663,
+        "deep": 33.1996,
+        "rem": 10.3436
+      },
+      "data_quality": "statistical_outlier",
       "hrv": null,
       "rhr": null,
       "spo2_avg": null,
@@ -9434,6 +9439,17 @@
     "cardio_avg": 28
   },
   "anomalies": [
+    {
+      "id": 777,
+      "date": "2026-10-01",
+      "metric": "sleep_quality",
+      "value": 54.2062,
+      "baseline": null,
+      "deviation_pct": 100.0,
+      "severity": "warning",
+      "acknowledged": 0,
+      "detected_at": "2026-10-01T10:49:34.002071+00:00"
+    },
     {
       "id": 775,
       "date": "2026-09-30",
@@ -9642,17 +9658,6 @@
       "severity": "warning",
       "acknowledged": 0,
       "detected_at": "2026-08-09T13:54:03.132783+00:00"
-    },
-    {
-      "id": 364,
-      "date": "2026-07-26",
-      "metric": "resting_hr",
-      "value": 91.0,
-      "baseline": 82.5,
-      "deviation_pct": 10.303030303030303,
-      "severity": "warning",
-      "acknowledged": 0,
-      "detected_at": "2026-07-27T13:51:05.913419+00:00"
     }
   ]
 }
