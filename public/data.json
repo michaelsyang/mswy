@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T12:05:26.798027+00:00",
+  "generated_at": "2026-10-01T13:05:33.327566+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9388,22 +9388,22 @@
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": -20.0,
       "readiness_contrib_load": 0.0,
-      "sleep_hours": 2.1,
-      "sleep_efficiency": 63.4,
-      "sleep_deep_min": 40.707,
-      "sleep_rem_min": 18.773,
-      "sleep_light_min": 65.1297,
+      "sleep_hours": 2.9,
+      "sleep_efficiency": 70.8,
+      "sleep_deep_min": 46.5461,
+      "sleep_rem_min": 27.0267,
+      "sleep_light_min": 100.9207,
       "sleep_awake_min": 72.0718,
       "sleep_start_pt": "00:47",
-      "sleep_end_pt": "04:03",
+      "sleep_end_pt": "04:53",
       "sleep_start_utc": "2026-10-01T07:47:08.270Z",
-      "sleep_end_utc": "2026-10-01T11:03:48.739Z",
-      "sleep_duration_min": 124.6097,
+      "sleep_end_utc": "2026-10-01T11:53:41.687Z",
+      "sleep_duration_min": 174.4935,
       "stage_summary": {
         "awake": 72.0718,
-        "light": 65.1297,
-        "deep": 40.707,
-        "rem": 18.773
+        "light": 100.9207,
+        "deep": 46.5461,
+        "rem": 27.0267
       },
       "data_quality": null,
       "hrv": null,
