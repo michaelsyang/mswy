@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T08:05:38.094312+00:00",
+  "generated_at": "2026-10-02T11:05:57.167972+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9452,19 +9452,24 @@
       "readiness_contrib_rhr": null,
       "readiness_contrib_sleep": null,
       "readiness_contrib_load": null,
-      "sleep_hours": null,
-      "sleep_efficiency": null,
-      "sleep_deep_min": null,
+      "sleep_hours": 1.4,
+      "sleep_efficiency": 73.2,
+      "sleep_deep_min": 34.5344,
       "sleep_rem_min": null,
-      "sleep_light_min": null,
-      "sleep_awake_min": null,
-      "sleep_start_pt": null,
-      "sleep_end_pt": null,
-      "sleep_start_utc": null,
-      "sleep_end_utc": null,
-      "sleep_duration_min": null,
-      "stage_summary": {},
-      "data_quality": null,
+      "sleep_light_min": 50.0368,
+      "sleep_awake_min": 31.0309,
+      "sleep_start_pt": "00:40",
+      "sleep_end_pt": "02:36",
+      "sleep_start_utc": "2026-10-02T07:40:35.663Z",
+      "sleep_end_utc": "2026-10-02T09:36:11.540Z",
+      "sleep_duration_min": 84.5712,
+      "stage_summary": {
+        "awake": 31.0309,
+        "light": 50.0368,
+        "deep": 34.5344,
+        "rem": null
+      },
+      "data_quality": "statistical_outlier",
       "hrv": null,
       "rhr": null,
       "spo2_avg": null,
@@ -9498,6 +9503,17 @@
     "cardio_avg": 27
   },
   "anomalies": [
+    {
+      "id": 783,
+      "date": "2026-10-02",
+      "metric": "sleep_quality",
+      "value": 84.5712,
+      "baseline": null,
+      "deviation_pct": 100.0,
+      "severity": "warning",
+      "acknowledged": 0,
+      "detected_at": "2026-10-02T10:53:08.499548+00:00"
+    },
     {
       "id": 780,
       "date": "2026-10-01",
@@ -9706,17 +9722,6 @@
       "severity": "warning",
       "acknowledged": 0,
       "detected_at": "2026-08-09T14:26:05.093580+00:00"
-    },
-    {
-      "id": 391,
-      "date": "2026-08-08",
-      "metric": "sleep_quality",
-      "value": 115.4328,
-      "baseline": null,
-      "deviation_pct": 100.0,
-      "severity": "warning",
-      "acknowledged": 0,
-      "detected_at": "2026-08-09T13:54:03.132783+00:00"
     }
   ]
 }
