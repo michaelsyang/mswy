@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T17:05:16.441007+00:00",
+  "generated_at": "2026-10-03T18:05:22.912888+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9525,7 +9525,7 @@
       },
       "data_quality": "statistical_outlier",
       "hrv": null,
-      "rhr": 79.0,
+      "rhr": 80.0,
       "spo2_avg": null,
       "spo2_min": null,
       "spo2_max": null,
@@ -9546,7 +9546,7 @@
     "hrv_avg": 21.7,
     "hrv_min": 9.5,
     "hrv_max": 31.2,
-    "rhr_avg": 77.8,
+    "rhr_avg": 77.9,
     "rhr_min": 73.0,
     "rhr_max": 82.0,
     "sleep_avg": 6.1,
@@ -9558,7 +9558,7 @@
   },
   "anomalies": [
     {
-      "id": 793,
+      "id": 797,
       "date": "2026-10-03",
       "metric": "sleep_quality",
       "value": 121.0,
@@ -9566,7 +9566,7 @@
       "deviation_pct": 100.0,
       "severity": "warning",
       "acknowledged": 0,
-      "detected_at": "2026-10-03T16:49:28.708860+00:00"
+      "detected_at": "2026-10-03T17:53:33.867646+00:00"
     },
     {
       "id": 784,
