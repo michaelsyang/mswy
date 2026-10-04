@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T20:05:11.791444+00:00",
+  "generated_at": "2026-10-04T21:05:18.486386+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9534,7 +9534,7 @@
       "cardio_min": 2.0,
       "fat_burn_min": 34.0,
       "distance_km": 10.38,
-      "floors": 6.0,
+      "floors": 9.0,
       "exercises": [
         {
           "type": "WORKOUT",
@@ -9603,14 +9603,25 @@
       "spo2_avg": 94.5,
       "spo2_min": 91.9,
       "spo2_max": 96.4,
-      "steps": 7452,
-      "active_kcal": 359.55447,
-      "cardio_min": 60.0,
-      "fat_burn_min": 2.0,
-      "distance_km": 5.82,
+      "steps": 10243,
+      "active_kcal": 619.470648,
+      "cardio_min": 90.0,
+      "fat_burn_min": 4.0,
+      "distance_km": 9.09,
       "floors": 0,
-      "exercises": [],
-      "exercise_count": 0,
+      "exercises": [
+        {
+          "type": "RUNNING",
+          "name": "Run",
+          "calories": 630.0
+        },
+        {
+          "type": "STRENGTH_TRAINING",
+          "name": "Recovery Flow: Spinal & Glute Care",
+          "calories": 9.0
+        }
+      ],
+      "exercise_count": 2,
       "hrv_cv": 8.8,
       "hrv_range_low": 11.1,
       "hrv_range_high": 30.9
@@ -9627,8 +9638,8 @@
     "readiness_avg": 70.1,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 9013,
-    "cardio_avg": 28
+    "steps_avg": 9106,
+    "cardio_avg": 29
   },
   "anomalies": [
     {
