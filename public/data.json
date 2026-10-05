@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T19:05:43.672207+00:00",
+  "generated_at": "2026-10-05T20:05:50.804840+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9635,12 +9635,12 @@
       "date": "2026-10-05",
       "day_name": "Mon",
       "short_date": "10/5",
-      "readiness": 90.0,
-      "readiness_hrv_delta": 5.216197666437885,
+      "readiness": 95.0,
+      "readiness_hrv_delta": 7.858613589567607,
       "readiness_rhr_delta": -1.2142857142857082,
-      "readiness_sleep_eff": 98.36065573770492,
+      "readiness_sleep_eff": 98.97750511247445,
       "readiness_training_load": 801.0,
-      "readiness_contrib_hrv": 10.432395332875771,
+      "readiness_contrib_hrv": 15.717227179135214,
       "readiness_contrib_rhr": 2.4285714285714164,
       "readiness_contrib_sleep": 0.0,
       "readiness_contrib_load": -3.01,
@@ -9667,11 +9667,11 @@
       "spo2_avg": 95.7,
       "spo2_min": 93.6,
       "spo2_max": 98.2,
-      "steps": 1846,
-      "active_kcal": 119.024928,
+      "steps": 2186,
+      "active_kcal": 130.74707999999998,
       "cardio_min": 0,
       "fat_burn_min": 3.0,
-      "distance_km": 2.44,
+      "distance_km": 2.74,
       "floors": 0,
       "exercises": [
         {
@@ -9694,10 +9694,10 @@
     "rhr_min": 73.0,
     "rhr_max": 82.0,
     "sleep_avg": 6.4,
-    "readiness_avg": 71.5,
+    "readiness_avg": 71.7,
     "readiness_min": 26.0,
     "readiness_max": 100.0,
-    "steps_avg": 9108,
+    "steps_avg": 9119,
     "cardio_avg": 31
   },
   "anomalies": [
