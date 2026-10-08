@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T02:05:41.738564+00:00",
+  "generated_at": "2026-10-08T03:05:47.969808+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9776,11 +9776,11 @@
       "spo2_avg": 96.4,
       "spo2_min": 94.2,
       "spo2_max": 98.3,
-      "steps": 10504,
-      "active_kcal": 708.0789980000001,
+      "steps": 10713,
+      "active_kcal": 715.3682140000001,
       "cardio_min": 58.0,
       "fat_burn_min": 29.0,
-      "distance_km": 9.86,
+      "distance_km": 10.0,
       "floors": 0,
       "exercises": [
         {
@@ -9811,7 +9811,7 @@
     "readiness_avg": 75.9,
     "readiness_min": 41.0,
     "readiness_max": 100.0,
-    "steps_avg": 9087,
+    "steps_avg": 9094,
     "cardio_avg": 24
   },
   "anomalies": [
