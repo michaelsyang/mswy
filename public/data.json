@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T15:05:13.414943+00:00",
+  "generated_at": "2026-10-08T16:05:19.571120+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9832,17 +9832,23 @@
       "data_quality": null,
       "hrv": 23.45,
       "rhr": 75.0,
-      "spo2_avg": null,
-      "spo2_min": null,
-      "spo2_max": null,
-      "steps": 127,
-      "active_kcal": 5.63915,
-      "cardio_min": 0,
-      "fat_burn_min": 0,
-      "distance_km": 0.07,
+      "spo2_avg": 97.1,
+      "spo2_min": 94.8,
+      "spo2_max": 99.2,
+      "steps": 865,
+      "active_kcal": 86.73012700000001,
+      "cardio_min": 2.0,
+      "fat_burn_min": 10.0,
+      "distance_km": 0.56,
       "floors": 0,
-      "exercises": [],
-      "exercise_count": 0,
+      "exercises": [
+        {
+          "type": "STRENGTH_TRAINING",
+          "name": "Strength training",
+          "calories": 116.0
+        }
+      ],
+      "exercise_count": 1,
       "hrv_cv": 5.2,
       "hrv_range_low": 11.1,
       "hrv_range_high": 29.299
@@ -9859,8 +9865,8 @@
     "readiness_avg": 76.3,
     "readiness_min": 41.0,
     "readiness_max": 100.0,
-    "steps_avg": 8940,
-    "cardio_avg": 24
+    "steps_avg": 8964,
+    "cardio_avg": 23
   },
   "anomalies": [
     {
