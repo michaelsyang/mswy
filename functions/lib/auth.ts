@@ -44,6 +44,12 @@ export const PROTECTED_PREFIXES: ProtectedPrefix[] = [
     realm: "mswy health",
   },
   {
+    prefix: "/test/bio-updates",
+    userVar: "BIOUPD_USER",
+    passwordVar: "BIOUPD_PASSWORD",
+    realm: "mswy bio-updates",
+  },
+  {
     prefix: "/test",
     userVar: "TEST_USER",
     passwordVar: "TEST_PASSWORD",
