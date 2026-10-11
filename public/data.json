@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T17:05:58.785694+00:00",
+  "generated_at": "2026-10-11T18:05:59.901664+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9984,24 +9984,24 @@
       "readiness_contrib_rhr": 2.857142857142861,
       "readiness_contrib_sleep": null,
       "readiness_contrib_load": 0.0,
-      "sleep_hours": 2.2,
-      "sleep_efficiency": 62.0,
-      "sleep_deep_min": 55.7608,
-      "sleep_rem_min": 35.4678,
-      "sleep_light_min": 42.9432,
+      "sleep_hours": 3.2,
+      "sleep_efficiency": 70.3,
+      "sleep_deep_min": 58.2632,
+      "sleep_rem_min": 81.0972,
+      "sleep_light_min": 54.8798,
       "sleep_awake_min": 82.0818,
       "sleep_start_pt": "04:39",
-      "sleep_end_pt": "08:15",
+      "sleep_end_pt": "09:15",
       "sleep_start_utc": "2026-10-11T11:39:39.119Z",
-      "sleep_end_utc": "2026-10-11T15:15:53.922Z",
-      "sleep_duration_min": 134.1718,
+      "sleep_end_utc": "2026-10-11T16:15:57.918Z",
+      "sleep_duration_min": 194.2402,
       "stage_summary": {
         "awake": 82.0818,
-        "light": 42.9432,
-        "deep": 55.7608,
-        "rem": 35.4678
+        "light": 54.8798,
+        "deep": 58.2632,
+        "rem": 81.0972
       },
-      "data_quality": "statistical_outlier",
+      "data_quality": null,
       "hrv": null,
       "rhr": 76.0,
       "spo2_avg": null,
@@ -10027,7 +10027,7 @@
     "rhr_avg": 77.0,
     "rhr_min": 73.0,
     "rhr_max": 82.0,
-    "sleep_avg": 6.7,
+    "sleep_avg": 6.6,
     "readiness_avg": 76.7,
     "readiness_min": 41.0,
     "readiness_max": 100.0,
@@ -10036,7 +10036,7 @@
   },
   "anomalies": [
     {
-      "id": 821,
+      "id": 822,
       "date": "2026-10-11",
       "metric": "sleep_quality",
       "value": 134.1718,
@@ -10044,7 +10044,7 @@
       "deviation_pct": 100.0,
       "severity": "warning",
       "acknowledged": 0,
-      "detected_at": "2026-10-11T16:51:10.532282+00:00"
+      "detected_at": "2026-10-11T17:07:12.162436+00:00"
     },
     {
       "id": 812,
