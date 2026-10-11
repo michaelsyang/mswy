@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T15:06:00.010809+00:00",
+  "generated_at": "2026-10-11T16:05:59.832182+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -10036,7 +10036,7 @@
   },
   "anomalies": [
     {
-      "id": 814,
+      "id": 818,
       "date": "2026-10-11",
       "metric": "sleep_quality",
       "value": 87.0,
@@ -10044,7 +10044,7 @@
       "deviation_pct": 100.0,
       "severity": "warning",
       "acknowledged": 0,
-      "detected_at": "2026-10-11T14:59:11.462669+00:00"
+      "detected_at": "2026-10-11T16:03:12.022404+00:00"
     },
     {
       "id": 812,
