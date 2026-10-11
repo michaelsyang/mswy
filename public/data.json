@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T21:05:58.748967+00:00",
+  "generated_at": "2026-10-11T22:05:58.818424+00:00",
   "days": [
     {
       "date": "2026-04-05",
@@ -9978,11 +9978,11 @@
       "readiness": 100.0,
       "readiness_hrv_delta": 30.58417063505912,
       "readiness_rhr_delta": -3.4285714285714306,
-      "readiness_sleep_eff": 95.8005249343832,
+      "readiness_sleep_eff": 83.44269427932215,
       "readiness_training_load": 352.0,
       "readiness_contrib_hrv": 20.0,
       "readiness_contrib_rhr": 6.857142857142861,
-      "readiness_contrib_sleep": 0.0,
+      "readiness_contrib_sleep": -2.076407627570461,
       "readiness_contrib_load": 0.0,
       "sleep_hours": 6.9,
       "sleep_efficiency": 83.4,
@@ -9991,9 +9991,9 @@
       "sleep_light_min": 202.218,
       "sleep_awake_min": 82.0818,
       "sleep_start_pt": "04:39",
-      "sleep_end_pt": "12:55",
+      "sleep_end_pt": "13:17",
       "sleep_start_utc": "2026-10-11T11:39:39.119Z",
-      "sleep_end_utc": "2026-10-11T19:55:22.902Z",
+      "sleep_end_utc": "2026-10-11T20:17:09.196Z",
       "sleep_duration_min": 413.6619,
       "stage_summary": {
         "awake": 82.0818,
@@ -10007,11 +10007,11 @@
       "spo2_avg": null,
       "spo2_min": null,
       "spo2_max": null,
-      "steps": 396,
-      "active_kcal": 21.654336,
+      "steps": 498,
+      "active_kcal": 26.616788,
       "cardio_min": 0,
       "fat_burn_min": 0,
-      "distance_km": 0.22,
+      "distance_km": 0.28,
       "floors": 0,
       "exercises": [],
       "exercise_count": 0,
@@ -10031,7 +10031,7 @@
     "readiness_avg": 78.6,
     "readiness_min": 41.0,
     "readiness_max": 100.0,
-    "steps_avg": 9100,
+    "steps_avg": 9103,
     "cardio_avg": 27
   },
   "anomalies": [
